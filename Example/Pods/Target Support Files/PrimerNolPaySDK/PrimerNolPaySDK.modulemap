@@ -1,0 +1,6 @@
+framework module PrimerNolPaySDK {
+  umbrella header "PrimerNolPaySDK-umbrella.h"
+
+  export *
+  module * { export * }
+}

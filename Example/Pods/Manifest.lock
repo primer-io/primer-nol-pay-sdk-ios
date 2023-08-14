@@ -1,0 +1,16 @@
+PODS:
+  - PrimerNolPaySDK (0.1.0)
+
+DEPENDENCIES:
+  - PrimerNolPaySDK (from `../`)
+
+EXTERNAL SOURCES:
+  PrimerNolPaySDK:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  PrimerNolPaySDK: c0a93db02727032dda4d24a588b7297556666acd
+
+PODFILE CHECKSUM: 6ff6bf047745b394c04ad9abd6185e326927c996
+
+COCOAPODS: 1.12.1
