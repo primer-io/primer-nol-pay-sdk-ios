@@ -1,0 +1,11 @@
+framework module TransitSDK {
+  umbrella header "TransitSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module TransitSDK.Swift {
+  header "TransitSDK-Swift.h"
+  requires objc
+}

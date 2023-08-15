@@ -1,5 +1,5 @@
 PODS:
-  - PrimerNolPaySDK (0.1.0)
+  - PrimerNolPaySDK (1.0.0)
 
 DEPENDENCIES:
   - PrimerNolPaySDK (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  PrimerNolPaySDK: c0a93db02727032dda4d24a588b7297556666acd
+  PrimerNolPaySDK: 557324f16ad34f33b3f7c14d1193fb8fd633406b
 
 PODFILE CHECKSUM: 6ff6bf047745b394c04ad9abd6185e326927c996
 
