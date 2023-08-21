@@ -3,81 +3,88 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 53;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		F8AD2BC35B55A9F034807CF59000CC1C /* PrimerNolPaySDK */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = B16BA79CCEF50529F7B4E5A09A0ED685 /* Build configuration list for PBXAggregateTarget "PrimerNolPaySDK" */;
-			buildPhases = (
-			);
-			dependencies = (
-			);
-			name = PrimerNolPaySDK;
-			productName = PrimerNolPaySDK;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
+		183BC4A3F28E595B9F4FD3DBCA3B400D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
 		1C002E72C0173ACF9806E1FCD11D9A5E /* Pods-PrimerNolPaySDK_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E07796F3997E0BE9324EAFD0C029F078 /* Pods-PrimerNolPaySDK_Tests-dummy.m */; };
 		4016E6350D380F34CECC02380E2BD595 /* Pods-PrimerNolPaySDK_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C0B778C5CB79C3447F4EC9CAFCBEA64 /* Pods-PrimerNolPaySDK_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4F5209A2138A699F4C27D5B92A86B688 /* Pods-PrimerNolPaySDK_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 44F6393586F07E38F6EBD55CF2595D2A /* Pods-PrimerNolPaySDK_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5FDB341E39226EE977690C87379BD7E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		82C4668CD991D017813B4996891DD588 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		A1DF86BC2A8A7F9A00248C43 /* PrimerNolPay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DF86BB2A8A7F9A00248C43 /* PrimerNolPay.swift */; };
+		5FDB341E39226EE977690C87379BD7E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
+		6396F9A5AA5C3D2704827C5D56E78F18 /* PrimerNolPaySDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B899EC1B37A9191E1D42BACB3E6991C /* PrimerNolPaySDK-dummy.m */; };
+		82C4668CD991D017813B4996891DD588 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
+		84C117A257CE02BCE9DCAA12B9A9AE93 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */; };
 		ABB514CB3C2AFED253F9BFD81C7237A4 /* Pods-PrimerNolPaySDK_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0719F7E85E8CA14AB175B5D3AB9F958A /* Pods-PrimerNolPaySDK_Example-dummy.m */; };
+		BD38039211D4161B2EEDFFB5E0C34071 /* PrimerNolPaySDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A56F6B44035943068FC22802C04E7626 /* PrimerNolPaySDK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E06AEC58050DC1690F2AE363B0122330 /* PrimerNolPay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469A5D3F689B5855A6A2DAF9DB64F827 /* PrimerNolPay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		622713743A2C7120655C83F23CEB46B5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F8AD2BC35B55A9F034807CF59000CC1C;
-			remoteInfo = PrimerNolPaySDK;
-		};
-		920266BAE54B9DDCD2352FAC8A032DCC /* PBXContainerItemProxy */ = {
+		07C14C4811B13289E0AA3BA6E6062A02 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 326C92AA105A8BDA7FCB6AC432DC856A;
 			remoteInfo = "Pods-PrimerNolPaySDK_Example";
 		};
+		75349143BA7712B0423A846000DAB258 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F8AD2BC35B55A9F034807CF59000CC1C;
+			remoteInfo = PrimerNolPaySDK;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		06A0CAEB27A23E33D4F8FAEBFD906BA4 /* Pods-PrimerNolPaySDK_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PrimerNolPaySDK_Example.release.xcconfig"; sourceTree = "<group>"; };
 		0719F7E85E8CA14AB175B5D3AB9F958A /* Pods-PrimerNolPaySDK_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PrimerNolPaySDK_Example-dummy.m"; sourceTree = "<group>"; };
+		09F43B4F3B640B7B1DC803E3EE7D13D3 /* PrimerNolPaySDK.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = PrimerNolPaySDK.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		0C0B778C5CB79C3447F4EC9CAFCBEA64 /* Pods-PrimerNolPaySDK_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PrimerNolPaySDK_Tests-umbrella.h"; sourceTree = "<group>"; };
-		1ED2B2FAAAE277CF01420D4BFD0A09CD /* TransitSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TransitSDK.framework; path = Sources/Frameworks/TransitSDK.framework; sourceTree = "<group>"; };
+		0FC3E63CA03E18657D6980B690C09A4B /* PrimerNolPaySDK */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PrimerNolPaySDK; path = PrimerNolPaySDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		28AD0C9012809CFEFE9495CD0F2C0208 /* Pods-PrimerNolPaySDK_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PrimerNolPaySDK_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		2EB5F480D2B93F4ABE1F9C6228342BCD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		3524C45E74E4C9923EA8A15FF24E894F /* Pods-PrimerNolPaySDK_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PrimerNolPaySDK_Tests.modulemap"; sourceTree = "<group>"; };
-		42AF50D6268F27DF7D8E6E36DA96D5F4 /* PrimerNolPaySDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PrimerNolPaySDK.debug.xcconfig; sourceTree = "<group>"; };
+		3A765102462522BF9465959B9969AC95 /* TransitSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TransitSDK.framework; path = Sources/Frameworks/TransitSDK.framework; sourceTree = "<group>"; };
 		44F6393586F07E38F6EBD55CF2595D2A /* Pods-PrimerNolPaySDK_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PrimerNolPaySDK_Example-umbrella.h"; sourceTree = "<group>"; };
+		469A5D3F689B5855A6A2DAF9DB64F827 /* PrimerNolPay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PrimerNolPay.swift; path = Sources/PrimerNolPaySDK/Classes/PrimerNolPay.swift; sourceTree = "<group>"; };
+		4BCF4593B01304F40CE583AD927EC7FB /* PrimerNolPaySDK-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PrimerNolPaySDK-Info.plist"; sourceTree = "<group>"; };
+		4F1B2B155645F50F1A7FCE7D410478A4 /* PrimerNolPaySDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PrimerNolPaySDK-prefix.pch"; sourceTree = "<group>"; };
 		5888EAC9F9D90C8FB57381D5A792FB3E /* Pods-PrimerNolPaySDK_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PrimerNolPaySDK_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		608D2D85DF581FE4EE8CBCB0F2328F25 /* PrimerNolPaySDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PrimerNolPaySDK.release.xcconfig; sourceTree = "<group>"; };
-		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		7F4DB1039D017C1E8BE979E6DE06254B /* Pods_PrimerNolPaySDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrimerNolPaySDK_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		61CDE123B3C3A507735266A24A364484 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		6B899EC1B37A9191E1D42BACB3E6991C /* PrimerNolPaySDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PrimerNolPaySDK-dummy.m"; sourceTree = "<group>"; };
+		738056AA5E7486DE174D294CBBCCDEBB /* PrimerNolPaySDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PrimerNolPaySDK.modulemap; sourceTree = "<group>"; };
+		7AEE73FF41E1D0A93F0756CB76E336AE /* PrimerNolPaySDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PrimerNolPaySDK.release.xcconfig; sourceTree = "<group>"; };
+		7F4DB1039D017C1E8BE979E6DE06254B /* Pods-PrimerNolPaySDK_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-PrimerNolPaySDK_Example"; path = Pods_PrimerNolPaySDK_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		807B4030A421E5D083D81CF575F3292A /* Pods-PrimerNolPaySDK_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PrimerNolPaySDK_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		839192A9650473F996C5EF7A8CDE6AB6 /* PrimerNolPaySDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PrimerNolPaySDK.debug.xcconfig; sourceTree = "<group>"; };
 		87464AFE37AD7E01C2DDE2DEED490451 /* Pods-PrimerNolPaySDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PrimerNolPaySDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		9450D00855D3C7FC82B53EA59B0390A0 /* Pods-PrimerNolPaySDK_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PrimerNolPaySDK_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		95FFB27501EE210F7F38B8EEC73AA3A9 /* Pods-PrimerNolPaySDK_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-PrimerNolPaySDK_Tests"; path = Pods_PrimerNolPaySDK_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99962DAC4888FBCD19CB8FCACABE28C5 /* Pods-PrimerNolPaySDK_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PrimerNolPaySDK_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		9D7892E0A451FBCDF3EC189C224AC1FA /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A1DF86BB2A8A7F9A00248C43 /* PrimerNolPay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimerNolPay.swift; sourceTree = "<group>"; };
-		B41DD8EF5F2C1E63CBDF0E091621EED0 /* PrimerNolPaySDK.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = PrimerNolPaySDK.podspec; sourceTree = "<group>"; tabWidth = 2; };
-		BC758EE082FEFCEEB9BFC0BF33B9D462 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A56F6B44035943068FC22802C04E7626 /* PrimerNolPaySDK-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PrimerNolPaySDK-umbrella.h"; sourceTree = "<group>"; };
 		C775F591CDDFF3351062096A7889B501 /* Pods-PrimerNolPaySDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PrimerNolPaySDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		E07796F3997E0BE9324EAFD0C029F078 /* Pods-PrimerNolPaySDK_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PrimerNolPaySDK_Tests-dummy.m"; sourceTree = "<group>"; };
 		E1E02C059F30C94A093E7AAABF6D6A06 /* Pods-PrimerNolPaySDK_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PrimerNolPaySDK_Example.modulemap"; sourceTree = "<group>"; };
+		EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		F6C406EE1F22F5E3754542FD32007F2D /* Pods-PrimerNolPaySDK_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PrimerNolPaySDK_Tests-Info.plist"; sourceTree = "<group>"; };
 		FA8C6EA636F473CC03B483668E73E1DE /* Pods-PrimerNolPaySDK_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PrimerNolPaySDK_Example-frameworks.sh"; sourceTree = "<group>"; };
 		FEAC64E25C694D9E1D2DBA8BA749B0F5 /* Pods-PrimerNolPaySDK_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PrimerNolPaySDK_Example-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5FFFD4F654B695479697170138A363FD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				183BC4A3F28E595B9F4FD3DBCA3B400D /* Foundation.framework in Frameworks */,
+				84C117A257CE02BCE9DCAA12B9A9AE93 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7D528E2B9B1B895ECF864914FE11EDAF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -113,31 +120,21 @@
 			path = "Target Support Files/Pods-PrimerNolPaySDK_Tests";
 			sourceTree = "<group>";
 		};
-		3F5C7F857F66250FA883383155AD969B /* Products */ = {
+		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7F4DB1039D017C1E8BE979E6DE06254B /* Pods_PrimerNolPaySDK_Example.framework */,
-				95FFB27501EE210F7F38B8EEC73AA3A9 /* Pods-PrimerNolPaySDK_Tests */,
+				59DA5C1F72E1D5BABC43EACBA672C3BA /* iOS */,
 			);
-			name = Products;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+		59DA5C1F72E1D5BABC43EACBA672C3BA /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+				EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */,
+				D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */,
 			);
 			name = iOS;
-			sourceTree = "<group>";
-		};
-		644B8DAABA35707537D91066E935AF85 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				BC758EE082FEFCEEB9BFC0BF33B9D462 /* LICENSE */,
-				B41DD8EF5F2C1E63CBDF0E091621EED0 /* PrimerNolPaySDK.podspec */,
-				9D7892E0A451FBCDF3EC189C224AC1FA /* README.md */,
-			);
-			name = Pod;
 			sourceTree = "<group>";
 		};
 		665FA4854DD6955CEE20F7AF7D19319B /* Pods-PrimerNolPaySDK_Example */ = {
@@ -157,35 +154,37 @@
 			path = "Target Support Files/Pods-PrimerNolPaySDK_Example";
 			sourceTree = "<group>";
 		};
-		71C5FE002DC68DD3E0233F36961103B1 /* PrimerNolPaySDK */ = {
+		86429ABC2E0D239AE990BAD3BE39F91D /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				A1DF86BA2A8A7F8600248C43 /* Classes */,
-				FBF979258EFF802363139805426139BA /* Frameworks */,
-				644B8DAABA35707537D91066E935AF85 /* Pod */,
-				84F52D101A9547F518F23CCFEE35DA35 /* Support Files */,
-			);
-			name = PrimerNolPaySDK;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		84F52D101A9547F518F23CCFEE35DA35 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				42AF50D6268F27DF7D8E6E36DA96D5F4 /* PrimerNolPaySDK.debug.xcconfig */,
-				608D2D85DF581FE4EE8CBCB0F2328F25 /* PrimerNolPaySDK.release.xcconfig */,
+				738056AA5E7486DE174D294CBBCCDEBB /* PrimerNolPaySDK.modulemap */,
+				6B899EC1B37A9191E1D42BACB3E6991C /* PrimerNolPaySDK-dummy.m */,
+				4BCF4593B01304F40CE583AD927EC7FB /* PrimerNolPaySDK-Info.plist */,
+				4F1B2B155645F50F1A7FCE7D410478A4 /* PrimerNolPaySDK-prefix.pch */,
+				A56F6B44035943068FC22802C04E7626 /* PrimerNolPaySDK-umbrella.h */,
+				839192A9650473F996C5EF7A8CDE6AB6 /* PrimerNolPaySDK.debug.xcconfig */,
+				7AEE73FF41E1D0A93F0756CB76E336AE /* PrimerNolPaySDK.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/PrimerNolPaySDK";
 			sourceTree = "<group>";
 		};
-		A1DF86BA2A8A7F8600248C43 /* Classes */ = {
+		A3F6A7C9873261CF3278A43825869D32 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A1DF86BB2A8A7F9A00248C43 /* PrimerNolPay.swift */,
+				3A765102462522BF9465959B9969AC95 /* TransitSDK.framework */,
 			);
-			name = Classes;
-			path = Sources/PrimerNolPaySDK/Classes;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ABCE02EEC618BF759F50DA4E3830DA90 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7F4DB1039D017C1E8BE979E6DE06254B /* Pods-PrimerNolPaySDK_Example */,
+				95FFB27501EE210F7F38B8EEC73AA3A9 /* Pods-PrimerNolPaySDK_Tests */,
+				0FC3E63CA03E18657D6980B690C09A4B /* PrimerNolPaySDK */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		AC60D92F608E613705E7D9BCA94B5F07 /* Targets Support Files */ = {
@@ -197,39 +196,45 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		CF1408CF629C7361332E53B88F7BD30C = {
+		B643099B81A40DB75600F29B73CDB405 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				E588E61917BA12893B93073A37D2A04B /* Development Pods */,
-				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				3F5C7F857F66250FA883383155AD969B /* Products */,
-				AC60D92F608E613705E7D9BCA94B5F07 /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				578452D2E740E91742655AC8F1636D1F /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E588E61917BA12893B93073A37D2A04B /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				71C5FE002DC68DD3E0233F36961103B1 /* PrimerNolPaySDK */,
+				F08513A226F8F1F67A033BEFA22E8714 /* PrimerNolPaySDK */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		FBF979258EFF802363139805426139BA /* Frameworks */ = {
+		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
-				1ED2B2FAAAE277CF01420D4BFD0A09CD /* TransitSDK.framework */,
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				B643099B81A40DB75600F29B73CDB405 /* Development Pods */,
+				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
+				ABCE02EEC618BF759F50DA4E3830DA90 /* Products */,
+				AC60D92F608E613705E7D9BCA94B5F07 /* Targets Support Files */,
 			);
-			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F08513A226F8F1F67A033BEFA22E8714 /* PrimerNolPaySDK */ = {
+			isa = PBXGroup;
+			children = (
+				469A5D3F689B5855A6A2DAF9DB64F827 /* PrimerNolPay.swift */,
+				A3F6A7C9873261CF3278A43825869D32 /* Frameworks */,
+				FEE118EBE202077A91602D6BA9AE40C6 /* Pod */,
+				86429ABC2E0D239AE990BAD3BE39F91D /* Support Files */,
+			);
+			name = PrimerNolPaySDK;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		FEE118EBE202077A91602D6BA9AE40C6 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				61CDE123B3C3A507735266A24A364484 /* LICENSE */,
+				09F43B4F3B640B7B1DC803E3EE7D13D3 /* PrimerNolPaySDK.podspec */,
+				2EB5F480D2B93F4ABE1F9C6228342BCD /* README.md */,
+			);
+			name = Pod;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,6 +245,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F5209A2138A699F4C27D5B92A86B688 /* Pods-PrimerNolPaySDK_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20DE2AC65DA47C9B6139651CFFD5B4D4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD38039211D4161B2EEDFFB5E0C34071 /* PrimerNolPaySDK-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,11 +279,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				5BA55EE70B468A13780584913849595B /* PBXTargetDependency */,
+				11A175325C408C938F7BF26AC0032516 /* PBXTargetDependency */,
 			);
 			name = "Pods-PrimerNolPaySDK_Example";
 			productName = Pods_PrimerNolPaySDK_Example;
-			productReference = 7F4DB1039D017C1E8BE979E6DE06254B /* Pods_PrimerNolPaySDK_Example.framework */;
+			productReference = 7F4DB1039D017C1E8BE979E6DE06254B /* Pods-PrimerNolPaySDK_Example */;
 			productType = "com.apple.product-type.framework";
 		};
 		8A4A21ED2D70CB5BC7515BE615BC89AE /* Pods-PrimerNolPaySDK_Tests */ = {
@@ -285,11 +298,29 @@
 			buildRules = (
 			);
 			dependencies = (
-				75E0582C068EF5D3C3C4A4C684D392AB /* PBXTargetDependency */,
+				6DD7845CEB21F29296362809E63F96A5 /* PBXTargetDependency */,
 			);
 			name = "Pods-PrimerNolPaySDK_Tests";
 			productName = Pods_PrimerNolPaySDK_Tests;
 			productReference = 95FFB27501EE210F7F38B8EEC73AA3A9 /* Pods-PrimerNolPaySDK_Tests */;
+			productType = "com.apple.product-type.framework";
+		};
+		F8AD2BC35B55A9F034807CF59000CC1C /* PrimerNolPaySDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BF02825FFA6EE2332E546E97E1C53675 /* Build configuration list for PBXNativeTarget "PrimerNolPaySDK" */;
+			buildPhases = (
+				20DE2AC65DA47C9B6139651CFFD5B4D4 /* Headers */,
+				0C5470BFD9D2164F4260A60168BE1EE5 /* Sources */,
+				5FFFD4F654B695479697170138A363FD /* Frameworks */,
+				7DD41E0A64E01A25AD5A9ECA67736E7E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PrimerNolPaySDK;
+			productName = PrimerNolPaySDK;
+			productReference = 0FC3E63CA03E18657D6980B690C09A4B /* PrimerNolPaySDK */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -300,14 +331,9 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1300;
 				LastUpgradeCheck = 1300;
-				TargetAttributes = {
-					326C92AA105A8BDA7FCB6AC432DC856A = {
-						LastSwiftMigration = 1430;
-					};
-				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 11.4";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -315,7 +341,7 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 3F5C7F857F66250FA883383155AD969B /* Products */;
+			productRefGroup = ABCE02EEC618BF759F50DA4E3830DA90 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -334,6 +360,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7DD41E0A64E01A25AD5A9ECA67736E7E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C2DC413E90BDE854BCF35EE570806B71 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -344,12 +377,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0C5470BFD9D2164F4260A60168BE1EE5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E06AEC58050DC1690F2AE363B0122330 /* PrimerNolPay.swift in Sources */,
+				6396F9A5AA5C3D2704827C5D56E78F18 /* PrimerNolPaySDK-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C4FC42FB26D8AC4DE72BF95E58445645 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				ABB514CB3C2AFED253F9BFD81C7237A4 /* Pods-PrimerNolPaySDK_Example-dummy.m in Sources */,
-				A1DF86BC2A8A7F9A00248C43 /* PrimerNolPay.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,69 +405,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5BA55EE70B468A13780584913849595B /* PBXTargetDependency */ = {
+		11A175325C408C938F7BF26AC0032516 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = PrimerNolPaySDK;
 			target = F8AD2BC35B55A9F034807CF59000CC1C /* PrimerNolPaySDK */;
-			targetProxy = 622713743A2C7120655C83F23CEB46B5 /* PBXContainerItemProxy */;
+			targetProxy = 75349143BA7712B0423A846000DAB258 /* PBXContainerItemProxy */;
 		};
-		75E0582C068EF5D3C3C4A4C684D392AB /* PBXTargetDependency */ = {
+		6DD7845CEB21F29296362809E63F96A5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-PrimerNolPaySDK_Example";
 			target = 326C92AA105A8BDA7FCB6AC432DC856A /* Pods-PrimerNolPaySDK_Example */;
-			targetProxy = 920266BAE54B9DDCD2352FAC8A032DCC /* PBXContainerItemProxy */;
+			targetProxy = 07C14C4811B13289E0AA3BA6E6062A02 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		16CF548C56AD85678A16B84C4FCBC8DC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 42AF50D6268F27DF7D8E6E36DA96D5F4 /* PrimerNolPaySDK.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		43133806C6CE5D122D7ACC29B00296DD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 87464AFE37AD7E01C2DDE2DEED490451 /* Pods-PrimerNolPaySDK_Tests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-PrimerNolPaySDK_Tests/Pods-PrimerNolPaySDK_Tests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-PrimerNolPaySDK_Tests/Pods-PrimerNolPaySDK_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		7EE7A78859F657F6BEFC651185B43192 /* Release */ = {
+		072CF24DD597B28B1EC6485A97C6DC75 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -476,38 +470,23 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
-		849740DF62A9379D6E0D467003045487 /* Release */ = {
+		0E8D0BA3FC5A8F8AD9BA76E436AC1F41 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 608D2D85DF581FE4EE8CBCB0F2328F25 /* PrimerNolPaySDK.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		A356FB6B1872265333CB8647842E26E4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 28AD0C9012809CFEFE9495CD0F2C0208 /* Pods-PrimerNolPaySDK_Example.debug.xcconfig */;
+			baseConfigurationReference = 06A0CAEB27A23E33D4F8FAEBFD906BA4 /* Pods-PrimerNolPaySDK_Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -519,8 +498,12 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-PrimerNolPaySDK_Example/Pods-PrimerNolPaySDK_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-PrimerNolPaySDK_Example/Pods-PrimerNolPaySDK_Example.modulemap";
 				OTHER_LDFLAGS = "";
@@ -530,7 +513,78 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3E90A176DA03121E41FD5E65163ECBBD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87464AFE37AD7E01C2DDE2DEED490451 /* Pods-PrimerNolPaySDK_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-PrimerNolPaySDK_Tests/Pods-PrimerNolPaySDK_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PrimerNolPaySDK_Tests/Pods-PrimerNolPaySDK_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7576AC42A7BC9879D4F082DF30B7BD7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 839192A9650473F996C5EF7A8CDE6AB6 /* PrimerNolPaySDK.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PrimerNolPaySDK/PrimerNolPaySDK-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PrimerNolPaySDK/PrimerNolPaySDK-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/PrimerNolPaySDK/PrimerNolPaySDK.modulemap";
+				PRODUCT_MODULE_NAME = PrimerNolPaySDK;
+				PRODUCT_NAME = PrimerNolPaySDK;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -538,7 +592,7 @@
 			};
 			name = Debug;
 		};
-		ABC31D2B2F729CC8D83FE69D99CFF97F /* Release */ = {
+		83686A33BD263C2C8FBC7CEB01257711 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C775F591CDDFF3351062096A7889B501 /* Pods-PrimerNolPaySDK_Tests.release.xcconfig */;
 			buildSettings = {
@@ -554,8 +608,12 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-PrimerNolPaySDK_Tests/Pods-PrimerNolPaySDK_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-PrimerNolPaySDK_Tests/Pods-PrimerNolPaySDK_Tests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -572,43 +630,7 @@
 			};
 			name = Release;
 		};
-		D28A995A659B2FEC7BD34D7042A64F41 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 06A0CAEB27A23E33D4F8FAEBFD906BA4 /* Pods-PrimerNolPaySDK_Example.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-PrimerNolPaySDK_Example/Pods-PrimerNolPaySDK_Example-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-PrimerNolPaySDK_Example/Pods-PrimerNolPaySDK_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		D299434AB35E7FD6F7921C8EF24742FF /* Debug */ = {
+		94CA9DF48CE575FECE47DDD8786D50E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -661,7 +683,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -674,14 +696,87 @@
 			};
 			name = Debug;
 		};
+		9D0F6242BFC44A385C1FE6B689969A76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AEE73FF41E1D0A93F0756CB76E336AE /* PrimerNolPaySDK.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PrimerNolPaySDK/PrimerNolPaySDK-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PrimerNolPaySDK/PrimerNolPaySDK-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/PrimerNolPaySDK/PrimerNolPaySDK.modulemap";
+				PRODUCT_MODULE_NAME = PrimerNolPaySDK;
+				PRODUCT_NAME = PrimerNolPaySDK;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E14C37C1978AEC408E87D6954FF3F58E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28AD0C9012809CFEFE9495CD0F2C0208 /* Pods-PrimerNolPaySDK_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-PrimerNolPaySDK_Example/Pods-PrimerNolPaySDK_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PrimerNolPaySDK_Example/Pods-PrimerNolPaySDK_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D299434AB35E7FD6F7921C8EF24742FF /* Debug */,
-				7EE7A78859F657F6BEFC651185B43192 /* Release */,
+				94CA9DF48CE575FECE47DDD8786D50E7 /* Debug */,
+				072CF24DD597B28B1EC6485A97C6DC75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -689,17 +784,17 @@
 		AE9735B2E486FBF062E8B7A11D61F7F1 /* Build configuration list for PBXNativeTarget "Pods-PrimerNolPaySDK_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A356FB6B1872265333CB8647842E26E4 /* Debug */,
-				D28A995A659B2FEC7BD34D7042A64F41 /* Release */,
+				E14C37C1978AEC408E87D6954FF3F58E /* Debug */,
+				0E8D0BA3FC5A8F8AD9BA76E436AC1F41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B16BA79CCEF50529F7B4E5A09A0ED685 /* Build configuration list for PBXAggregateTarget "PrimerNolPaySDK" */ = {
+		BF02825FFA6EE2332E546E97E1C53675 /* Build configuration list for PBXNativeTarget "PrimerNolPaySDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				16CF548C56AD85678A16B84C4FCBC8DC /* Debug */,
-				849740DF62A9379D6E0D467003045487 /* Release */,
+				7576AC42A7BC9879D4F082DF30B7BD7A /* Debug */,
+				9D0F6242BFC44A385C1FE6B689969A76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -707,8 +802,8 @@
 		D67ECED1C8DBD8AADFB73DA658F4C9E4 /* Build configuration list for PBXNativeTarget "Pods-PrimerNolPaySDK_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				43133806C6CE5D122D7ACC29B00296DD /* Debug */,
-				ABC31D2B2F729CC8D83FE69D99CFF97F /* Release */,
+				3E90A176DA03121E41FD5E65163ECBBD /* Debug */,
+				83686A33BD263C2C8FBC7CEB01257711 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

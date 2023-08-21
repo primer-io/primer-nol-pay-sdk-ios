@@ -1,5 +1,5 @@
 import XCTest
-import PrimerNolPaySDK
+//import PrimerNolPaySDK
 
 class Tests: XCTestCase {
     

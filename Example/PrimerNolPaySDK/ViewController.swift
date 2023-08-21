@@ -7,12 +7,14 @@
 //
 
 import UIKit
-
+import PrimerNolPaySDK
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let nolPay = PrimerNolPay(appId: "1301")
+//        nolPay
     }
 
     override func didReceiveMemoryWarning() {
