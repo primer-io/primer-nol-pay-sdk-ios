@@ -7,25 +7,22 @@
 
 import Foundation
 import TransitSDK
-
-
-struct GetAppSecretResponse: Codable {
-    let appSecretKey: String
-}
+import CoreNFC
 
 public class PrimerNolPay {
-    
+    private var session: URLSession?
     
     /// Initialisation of the wrapper SDK
-    public init(appId: String) {
+    public init(appId: String, isDebug: Bool? = false, isSandbox: Bool? = false) {
+        
         let config = TransitSDK.TransitConfiguration()
         config.setAppID(appId)
-            .enableDebug(true)
-            .enableSandbox(true)
-            .setAppSecretKeyHandler { sdkId, deviceId, completion in
+        config.enableDebug(isDebug ?? false)
+        config.enableSandbox(isSandbox ?? false)
+        config.setAppSecretKeyHandler { sdkId, deviceId, completion in
                 Task {
                     do {
-                        let appSecretKey = try await self.fetchAppSecretKey()
+                        let appSecretKey = try await self.fetchAppSecretKey(sdkId: sdkId, deviceId: deviceId)
                         print("Fetched appSecretKey: \(appSecretKey)")
                         completion(appSecretKey, nil)
                     } catch {
@@ -35,38 +32,33 @@ public class PrimerNolPay {
                 }
             }
         Transit.initSDK(config)
-        Transit.shared.setLang(language: .EN)
     }
     
-    private func fetchAppSecretKey() async throws -> String {
-        let urlString = "https://your-api-endpoint.com/secretkey"
-        guard let url = URL(string: urlString) else {
-            throw URLError(.badURL)
-        }
+    private func fetchAppSecretKey(sdkId: String, deviceId: String) async throws -> String {
         
-        let (data, _) = try await URLSession.shared.data(from: url)
-        let response = try JSONDecoder().decode(GetAppSecretResponse.self, from: data)
-        
-        return response.appSecretKey
+        return "f335565cce50459d82e5542de7f56426"
+
     }
         
     /// Get Nol card number by scanning it with NFC
-    public func scanNFCCard(completion: @escaping (Result<String, Error>) -> Void) {
+    public func scanNFCCard(completion: @escaping (Result<String, PrimerNolPayError>) -> Void) {
+        
         let request = TransitGetPhysicalCardRequest()
-        request.setAccount("?????")
-        Transit.shared.getPhysicalCard(request) { result in
+        
+        Transit.shared.getPhysicalCard(request, delegate: self) { result in
             switch result {
                 
             case .success(let card):
                 completion(.success(card.cardNumber))
             case .failure(let error):
-                completion(.failure(error))
+                completion(.failure(PrimerNolPayError.makeFrom(transitSdkError: error)))
             }
         }
     }
     
-    /// Make token from scanned card
-    public func makeToken(for cardNumber: String, completion: @escaping (Result<String, Error>) -> Void) {
+    /// Make linking token from scanned card
+    public func makeToken(for cardNumber: String, completion: @escaping (Result<String, PrimerNolPayError>) -> Void) {
+        
         let request = TransitLinkPaymentCardTokenRequest()
         request.setCardNumber(cardNumber)
         
@@ -76,18 +68,18 @@ public class PrimerNolPay {
             case .success(let token):
                 completion(.success(token.linkToken))
             case .failure(let error):
-                completion(.failure(error))
+                completion(.failure(PrimerNolPayError.makeFrom(transitSdkError: error)))
             }
         }
     }
     
-    /// Trigger OTP sms sending
-    public func sendOTP(to mobileNumber: String,
-                        with countryCode: String,
-                        and token: String,
-                        completion: ((Result<Bool, Error>) -> Void)? = nil) {
+    /// Trigger OTP sms sending for linking
+    public func sendLinkOTP(to mobileNumber: String,
+                        withCountryCode countryCode: String,
+                        andToken token: String,
+                        completion: ((Result<Bool, PrimerNolPayError>) -> Void)? = nil) {
         
-        var request = TransitLinkPaymentCardOTPRequest()
+        let request = TransitLinkPaymentCardOTPRequest()
         request.setMobile(mobileNumber)
         request.setRegionCode(countryCode)
         request.setLinkToken(token)
@@ -98,15 +90,15 @@ public class PrimerNolPay {
             case .success(let success):
                 completion?(.success(success))
             case .failure(let error):
-                completion?(.failure(error))
+                completion?(.failure(PrimerNolPayError.makeFrom(transitSdkError: error)))
             }
         }
     }
     
-    /// Vault payment card
-    public func linkCard(for otp: String,
-                         and token: String,
-                         completion: @escaping (Result<Bool, Error>) -> Void) {
+    /// Link Nol payment card
+    public func linkCard(forOTP otp: String,
+                         andCardToken token: String,
+                         completion: @escaping (Result<Bool, PrimerNolPayError>) -> Void) {
         
         let request = TransitLinkPaymentCardRequest()
         request.setOTPCode(otp)
@@ -118,19 +110,18 @@ public class PrimerNolPay {
             case .success(let success):
                 completion(.success(success))
             case .failure(let error):
-                completion(.failure(error))
+                completion(.failure(PrimerNolPayError.makeFrom(transitSdkError: error)))
             }
         }
     }
     
-    
-    /// Trigger OTP sms sending
-    public func sendUnvaultOTP(to mobileNumber: String,
+    /// Trigger OTP sms sending for unlinking
+    public func sendUnlinkOTP(to mobileNumber: String,
                         with countryCode: String,
                         and cardNumber: String,
-                        completion: @escaping (Result<(String, String), Error>) -> Void) {
+                        completion: @escaping (Result<(String, String), PrimerNolPayError>) -> Void) {
         
-        var request = TransitUnlinkPaymentCardOTPRequest()
+        let request = TransitUnlinkPaymentCardOTPRequest()
         request.setMobile(mobileNumber)
         request.setRegionCode(countryCode)
         request.setCardNumber(cardNumber)
@@ -141,17 +132,17 @@ public class PrimerNolPay {
             case .success(let unlinkData):
                 completion(.success((unlinkData.cardNumber, unlinkData.token)))
             case .failure(let error):
-                completion(.failure(error))
+                completion(.failure(PrimerNolPayError.makeFrom(transitSdkError: error)))
             }
         }
     }
-
     
-    /// Unvault payment card
-    public func unvaultCard(for cardNumber: String,
+    /// Unlink payment card
+    public func unlinkCard(for cardNumber: String,
                             otp: String,
                             and token: String,
-                            completion: @escaping (Result<Bool, Error>) -> Void) {
+                            completion: @escaping (Result<Bool, PrimerNolPayError>) -> Void) {
+        
         let request = TransitUnlinkPaymentCardRequest()
         request.setOTPCode(otp)
         request.setCardNumber(cardNumber)
@@ -163,8 +154,69 @@ public class PrimerNolPay {
             case .success(let success):
                 completion(.success(success))
             case .failure(let error):
-                completion(.failure(error))
+                completion(.failure(PrimerNolPayError.makeFrom(transitSdkError: error)))
             }
         }
+    }
+    
+    /// Get linked cards from Nol
+    public func getAvaliableCards(for mobileNumber: String,
+                                  with countryCode: String,
+                                  completion: @escaping (Result<[PrimerNolPayCard], PrimerNolPayError>) -> Void) {
+        
+        let request = TransitPaymentCardListRequest()
+        request.setMobile(mobileNumber)
+        request.setRegionCode(countryCode)
+        
+        Transit.shared.getPaymentCardList(request) { result in
+            switch result {
+            
+            case .success(let cardsResponse):
+                if cardsResponse.data.count > 0 {
+                    let cards = PrimerNolPayCard.makeFrom(arrayOf: cardsResponse.data)
+                    completion(.success(cards))
+                } else {
+                    completion(.success([]))
+                }
+            case .failure(let error):
+                completion(.failure(PrimerNolPayError.makeFrom(transitSdkError: error)))
+            }
+        }
+    }
+    
+    /// Request payment
+    public func requestPayment(for cardNumber: String,
+                               and transactionNumber: String,
+                               completion: @escaping (Result<Bool, PrimerNolPayError>) -> Void) {
+        
+        let request = TransitPayRequest()
+        request.setCardNumber(cardNumber)
+        request.setTransactionNo(transactionNumber)
+        
+        Transit.shared.requestPayment(request, delegate: self) { result in
+            switch result {
+            
+            case .success(_):
+                completion(.success(true))
+            case .failure(let error):
+                completion(.failure(PrimerNolPayError.makeFrom(transitSdkError: error)))
+            }
+        }
+    }
+}
+
+extension PrimerNolPay: TransitNFCReaderDelegate {
+    
+    public func startCardReading(_ session: NFCTagReaderSession) {
+    
+        session.alertMessage =  "There is an NFC transaction on your physical nol card. Please do not remove your card until the transaction is complete."
+    }
+    public func readCardSuccess(_ session: NFCTagReaderSession?) {
+        if session != nil{
+            session!.alertMessage = "Card read successfully"
+        }
+    }
+    public func readCardFailure(_ session: NFCTagReaderSession?) {
+        
     }
 }

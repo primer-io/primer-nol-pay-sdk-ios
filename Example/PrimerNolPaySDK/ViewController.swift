@@ -7,20 +7,34 @@
 //
 
 import UIKit
+import CoreNFC
 import PrimerNolPaySDK
-class ViewController: UIViewController {
 
+class ViewController: UIViewController {
+    
+    var nolPay: PrimerNolPay!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        let nolPay = PrimerNolPay(appId: "1301")
-//        nolPay
+        nolPay = PrimerNolPay(appId: "1301", isDebug: true, isSandbox: true)
     }
-
+    
+    @IBAction func onScanNFCButtonTap(_ sender: Any) {
+        DispatchQueue.main.async {
+            self.nolPay.scanNFCCard { result in
+                switch result {
+                    
+                case .success(let cardNumber):
+                    print(cardNumber)
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
 }
-
