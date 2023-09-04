@@ -5,6 +5,8 @@ platform :ios, '13.1'
 target 'PrimerNolPaySDK_Example' do
   pod 'PrimerNolPaySDK', :path => '../'
 
+  pod 'IQKeyboardManagerSwift'
+
   target 'PrimerNolPaySDK_Tests' do
     inherit! :search_paths
 

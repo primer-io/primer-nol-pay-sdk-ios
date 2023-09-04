@@ -587,8 +587,8 @@ SWIFT_CLASS("_TtC10TransitSDK19TransitCardIssueFee")
 
 
 
-SWIFT_CLASS("_TtC10TransitSDK22TransitCardIssueFeeReq")
-@interface TransitCardIssueFeeReq : TransitBean
+SWIFT_CLASS("_TtC10TransitSDK23TransitCardIssueFeeResp")
+@interface TransitCardIssueFeeResp : TransitBean
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -667,6 +667,7 @@ SWIFT_CLASS("_TtC10TransitSDK15TransitDictResp")
 @end
 
 
+
 SWIFT_CLASS("_TtC10TransitSDK18TransitDigitalCard")
 @interface TransitDigitalCard : TransitCard
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -710,6 +711,12 @@ SWIFT_CLASS("_TtC10TransitSDK32TransitGenerateReOrderRefundInfo")
 @end
 
 
+SWIFT_CLASS("_TtC10TransitSDK16TransitLengthMax")
+@interface TransitLengthMax : TransitBean
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC10TransitSDK30TransitLinkPaymentCardResponse")
 @interface TransitLinkPaymentCardResponse : TransitBean
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -721,42 +728,21 @@ SWIFT_CLASS("_TtC10TransitSDK35TransitLinkPaymentCardTokenResponse")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-
-SWIFT_PROTOCOL("_TtP10TransitSDK26TransitNFCReaderDateSource_")
-@protocol TransitNFCReaderDateSource
-@optional
-/// 等待读卡 设置alertMessage
-/// \param session NFCTagReaderSession
-///
-- (NSString * _Nonnull)alertMessageForWaitCardReading SWIFT_WARN_UNUSED_RESULT;
-/// 开始读卡 设置alertMessage
-/// \param session NFCTagReaderSession
-///
-- (NSString * _Nonnull)alertMessageForStartCardReading SWIFT_WARN_UNUSED_RESULT;
-/// 读卡成功
-/// \param session NFCTagReaderSession
-///
-- (NSString * _Nonnull)alertMessageForReadCardSuccess SWIFT_WARN_UNUSED_RESULT;
-/// 读卡失败
-/// \param session NFCTagReaderSession
-///
-- (NSString * _Nonnull)alertMessageForReadCardFailure SWIFT_WARN_UNUSED_RESULT;
-@end
-
+@class NFCTagReaderSession;
 
 SWIFT_PROTOCOL("_TtP10TransitSDK24TransitNFCReaderDelegate_")
 @protocol TransitNFCReaderDelegate
 @optional
-/// 等待读卡
+/// waitCardReading
 /// \param session NFCTagReaderSession
 ///
-- (void)waitCardReading;
-/// 开始读卡
-- (void)startCardReading;
-/// 读卡成功
-- (void)readCardSuccess;
-/// 读卡失败
-- (void)readCardFailure;
+- (void)waitCardReading:(NFCTagReaderSession * _Nonnull)session;
+/// startCardReading
+- (void)startCardReading:(NFCTagReaderSession * _Nonnull)session;
+/// readCardSuccess
+- (void)readCardSuccess:(NFCTagReaderSession * _Nullable)session;
+/// readCardFailure
+- (void)readCardFailure:(NFCTagReaderSession * _Nullable)session;
 @end
 
 typedef SWIFT_ENUM(NSInteger, TransitNFCType, open) {

@@ -176,10 +176,12 @@ code_sign_if_enabled() {
 }
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework"
   install_framework "${PODS_ROOT}/../../Sources/Frameworks/TransitSDK.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PrimerNolPaySDK/PrimerNolPaySDK.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework"
   install_framework "${PODS_ROOT}/../../Sources/Frameworks/TransitSDK.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PrimerNolPaySDK/PrimerNolPaySDK.framework"
 fi

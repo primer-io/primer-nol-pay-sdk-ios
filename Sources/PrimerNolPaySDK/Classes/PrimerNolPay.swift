@@ -13,12 +13,12 @@ public class PrimerNolPay {
     private var session: URLSession?
     
     /// Initialisation of the wrapper SDK
-    public init(appId: String, isDebug: Bool? = false, isSandbox: Bool? = false) {
+    public init(appId: String, isDebug: Bool, isSandbox: Bool) {
         
         let config = TransitSDK.TransitConfiguration()
         config.setAppID(appId)
-        config.enableDebug(isDebug ?? false)
-        config.enableSandbox(isSandbox ?? false)
+        config.enableDebug(isDebug)
+        config.enableSandbox(isSandbox)
         config.setAppSecretKeyHandler { sdkId, deviceId, completion in
                 Task {
                     do {
@@ -36,7 +36,7 @@ public class PrimerNolPay {
     
     private func fetchAppSecretKey(sdkId: String, deviceId: String) async throws -> String {
         
-        return "f335565cce50459d82e5542de7f56426"
+        return "36b93501ce7f484d99c80d85d612e61b"
 
     }
         
@@ -116,9 +116,9 @@ public class PrimerNolPay {
     }
     
     /// Trigger OTP sms sending for unlinking
-    public func sendUnlinkOTP(to mobileNumber: String,
-                        with countryCode: String,
-                        and cardNumber: String,
+    public func sendUnlinkOTP(toMobileNumber mobileNumber: String,
+                        withCountryCode countryCode: String,
+                        andCardNumber cardNumber: String,
                         completion: @escaping (Result<(String, String), PrimerNolPayError>) -> Void) {
         
         let request = TransitUnlinkPaymentCardOTPRequest()
@@ -138,10 +138,10 @@ public class PrimerNolPay {
     }
     
     /// Unlink payment card
-    public func unlinkCard(for cardNumber: String,
-                            otp: String,
-                            and token: String,
-                            completion: @escaping (Result<Bool, PrimerNolPayError>) -> Void) {
+    public func unlinkCard(cardNumber: String,
+                           otp: String,
+                           token: String,
+                           completion: @escaping (Result<Bool, PrimerNolPayError>) -> Void) {
         
         let request = TransitUnlinkPaymentCardRequest()
         request.setOTPCode(otp)
