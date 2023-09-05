@@ -46,8 +46,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        nolPay = PrimerNolPay(appId: "1300", isDebug: true, isSandbox: true)
-        
+        nolPay = PrimerNolPay(appId: "1300", isDebug: true, isSandbox: true) { sdkId, deviceId in
+            // Implement your API call here and return the fetched secret key
+//            Task {
+//               ... async await
+//            }
+            return "36b93501ce7f484d99c80d85d612e61b"
+        }
         setupUI()
     }
     
