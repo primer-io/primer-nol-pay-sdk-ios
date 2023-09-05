@@ -13,7 +13,7 @@ The SDK provides a simple UI to demonstrate all available flows for implementati
 
 ## Requirements:
 
-- iOS 14.0 or later
+- iOS 13.1 or later
 - Compatible with devices supporting NFC (Near Field Communication)
 - Xcode 12 or later
 
@@ -78,15 +78,16 @@ NSAllowsArbitraryLoads set to `true`` is required during the development while u
 
 ```swift
 ...
-import CoreNFC
 import PrimerNolPaySDK
 
-let primerNolPay = PrimerNolPay(appId: "<Your-AppID>", isDebug: true, isSandbox: true)
+let primerNolPay = PrimerNolPay(appId: "<Your-AppID>", isDebug: true, isSandbox: true) { sdkId, deviceId in
+    return ""
+}
 ```
-You will probably want to set debug and sandbox flags to false in PROD environment.
+You will probably want to set debug and sandbox flags to false in PRODUCTION environment.
 
 
-### Scan NFC Card:
+### Linking a Card:
 
 ```swift
 primerNolPay.scanNFCCard { result in
@@ -99,12 +100,11 @@ primerNolPay.scanNFCCard { result in
 }
 ```
 
-### Linking a Card:
 
 First, create a token for the scanned card:
 
 ```swift
-primerNolPay.makeToken(for: "<Scanned-Card-Number>") { result in
+primerNolPay.makeLinkingTokenFor(cardNumber: "<Scanned-Card-Number>") { result in
     // Handle result
 }
 ```
@@ -112,7 +112,7 @@ primerNolPay.makeToken(for: "<Scanned-Card-Number>") { result in
 Then, send an OTP for linking:
 
 ```swift
-primerNolPay.sendLinkOTP(to: "<Mobile-Number>", withCountryCode: "<Country-Code>", andToken: "<Token>") { result in
+primerNolPay.sendLinkOTPto(mobileNumber: "<Mobile-Number>", withCountryCode: "<Country-Code>", andToken: "<Token>") { result in
     // Handle result
 }
 ```
@@ -120,7 +120,7 @@ primerNolPay.sendLinkOTP(to: "<Mobile-Number>", withCountryCode: "<Country-Code>
 Finally, link the card using the OTP:
 
 ```swift
-primerNolPay.linkCard(forOTP: "<OTP>", andCardToken: "<Token>") { result in
+primerNolPay.linkCardFor(otp: "<OTP>", andLinkToken: "<Token>") { result in
     // Handle result
 }
 ```
@@ -130,7 +130,7 @@ primerNolPay.linkCard(forOTP: "<OTP>", andCardToken: "<Token>") { result in
 Start by sending an OTP for unlinking:
 
 ```swift
-primerNolPay.sendUnlinkOTP(toMobileNumber: "<Mobile-Number>", withCountryCode: "<Country-Code>", andCardNumber: "<Card-Number>") { result in
+primerNolPay.sendUnlinkOTPTo(mobileNumber: "<Mobile-Number>", withCountryCode: "<Country-Code>", andCardNumber: "<Card-Number>") { result in
     // Handle result
 }
 ```
@@ -138,7 +138,7 @@ primerNolPay.sendUnlinkOTP(toMobileNumber: "<Mobile-Number>", withCountryCode: "
 Then, unlink the card using the OTP:
 
 ```swift
-primerNolPay.unlinkCard(cardNumber: "<Card-Number>", otp: "<OTP>", token: "<Token>") { result in
+primerNolPay.unlinkCardWith(cardNumber: "<Card-Number>", otp: "<OTP>", andUnlinkToken: "<Token>") { result in
     // Handle result
 }
 ```
@@ -146,7 +146,7 @@ primerNolPay.unlinkCard(cardNumber: "<Card-Number>", otp: "<OTP>", token: "<Toke
 ### Get Linked Cards:
 
 ```swift
-primerNolPay.getAvaliableCards(for: "<Mobile-Number>", with: "<Country-Code>") { result in
+primerNolPay.getAvaliableCardsFor(mobileNumber: "<Mobile-Number>", withCountryCode: "<Country-Code>") { result in
     // Handle result
 }
 ```
@@ -154,7 +154,7 @@ primerNolPay.getAvaliableCards(for: "<Mobile-Number>", with: "<Country-Code>") {
 ### Request Payment:
 
 ```swift
-primerNolPay.requestPayment(for: "<Card-Number>", and: "<Transaction-Number>") { result in
+primerNolPay.requestPaymentFor(cardNumber: "<Card-Number>", andTransactionNumber: "<Transaction-Number>") { result in
     // Handle result
 }
 ```

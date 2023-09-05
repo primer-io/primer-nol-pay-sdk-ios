@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     private var otpTextField: UITextField!
     private var submitOTPButton: UIButton!
     private var resultLabel: UILabel!
-
+    
     private var unlinkPhoneNumberTextField: UITextField!
     private var unlinkCountryCodeTextField: UITextField!
     private var unlinkSubmitPhoneNumberButton: UIButton!
@@ -33,7 +33,10 @@ class ViewController: UIViewController {
     private var listCardsPhoneNumberTextField: UITextField!
     private var listCardsCountryCodeTextField: UITextField!
     private var listCardsButton: UIButton!
-
+    
+    private var startPaymentButton: UIButton!
+    private var transactionNumberTextField: UITextField!
+    
     // Data
     // link
     private var cardLinkingToken: String?
@@ -42,16 +45,18 @@ class ViewController: UIViewController {
     // unlink
     private var unlinkCard: PrimerNolPayCard?
     private var unlinkCardToken: String?
-
+    // payment
+    private var paymentInProgress = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        nolPay = PrimerNolPay(appId: "1300", isDebug: true, isSandbox: true) { sdkId, deviceId in
+        nolPay = PrimerNolPay(appId: "", isDebug: true, isSandbox: true) { sdkId, deviceId in
             // Implement your API call here and return the fetched secret key
-//            Task {
-//               ... async await
-//            }
-            return "36b93501ce7f484d99c80d85d612e61b"
+            //            Task {
+            //               ... async await
+            //            }
+            return ""
         }
         setupUI()
     }
@@ -63,11 +68,11 @@ class ViewController: UIViewController {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(scrollView)
-
+        
         let contentView = UIView()
         contentView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.addSubview(contentView)
-
+        
         // Linking
         let linkLabel = UILabel()
         linkLabel.textAlignment = .left
@@ -85,7 +90,7 @@ class ViewController: UIViewController {
         countryCodeTextField.placeholder = "Country Code"
         countryCodeTextField.borderStyle = .roundedRect
         countryCodeTextField.keyboardType = .phonePad
-
+        
         phoneNumberTextField = UITextField()
         phoneNumberTextField.placeholder = "Phone Number"
         phoneNumberTextField.borderStyle = .roundedRect
@@ -117,7 +122,7 @@ class ViewController: UIViewController {
         let unlinkLabel = UILabel()
         unlinkLabel.textAlignment = .left
         unlinkLabel.text = "UNLINKING FLOW"
-
+        
         unlinkCountryCodeTextField = UITextField()
         unlinkCountryCodeTextField.placeholder = "Country Code"
         unlinkCountryCodeTextField.borderStyle = .roundedRect
@@ -136,28 +141,26 @@ class ViewController: UIViewController {
         unlinkSubmitPhoneNumberButton = UIButton(type: .roundedRect)
         unlinkSubmitPhoneNumberButton.setTitle("Submit Phone Number", for: .normal)
         unlinkSubmitPhoneNumberButton.addTarget(self, action: #selector(submitUnlinkPhoneNumberTapped), for: .touchUpInside)
-
+        
         unlinkOtpTextField = UITextField()
         unlinkOtpTextField.placeholder = "Enter Unlink OTP"
         unlinkOtpTextField.borderStyle = .roundedRect
         unlinkOtpTextField.keyboardType = .numberPad
-
+        
         unlinkSubmitOTPButton = UIButton(type: .roundedRect)
         unlinkSubmitOTPButton.setTitle("Submit unlink OTP", for: .normal)
         unlinkSubmitOTPButton.addTarget(self, action: #selector(submitUnlinkOTPTapped), for: .touchUpInside)
         
-        // MARK: - List linked cards
-        
+        // List linked cards
         let listCardsLabel = UILabel()
         listCardsLabel.textAlignment = .left
         listCardsLabel.text = "LIST LINKED CARDS FLOW"
         
-        //List Country Code and Phone Number TextFields
         listCardsCountryCodeTextField = UITextField()
         listCardsCountryCodeTextField.placeholder = "Country Code"
         listCardsCountryCodeTextField.borderStyle = .roundedRect
         listCardsCountryCodeTextField.keyboardType = .phonePad
-
+        
         listCardsPhoneNumberTextField = UITextField()
         listCardsPhoneNumberTextField.placeholder = "Phone Number"
         listCardsPhoneNumberTextField.borderStyle = .roundedRect
@@ -171,36 +174,50 @@ class ViewController: UIViewController {
         listCardsButton = UIButton(type: .roundedRect)
         listCardsButton.setTitle("List liked cards", for: .normal)
         listCardsButton.addTarget(self, action: #selector(getLinkedCards), for: .touchUpInside)
-
-        let stackView = UIStackView(arrangedSubviews: [linkLabel, scanCardButton, cardNumberLabel, phoneStackView, submitPhoneNumberButton, otpTextField, submitOTPButton, resultLabel, unlinkLabel, unlinkPhoneStackView, unlinkSubmitPhoneNumberButton, unlinkOtpTextField, unlinkSubmitOTPButton, listCardsLabel, listPhoneStackView, listCardsButton])
+        
+        // Payment flow
+        let paymentFlowLabel = UILabel()
+        paymentFlowLabel.textAlignment = .left
+        paymentFlowLabel.text = "PAYMENT FLOW"
+        
+        transactionNumberTextField = UITextField()
+        transactionNumberTextField.placeholder = "Enter transaction number"
+        transactionNumberTextField.borderStyle = .roundedRect
+        
+        startPaymentButton = UIButton(type: .roundedRect)
+        startPaymentButton.setTitle("Start Payment Flow", for: .normal)
+        startPaymentButton.addTarget(self, action: #selector(startPaymentFlow), for: .touchUpInside)
+        
+        
+        let stackView = UIStackView(arrangedSubviews: [linkLabel, scanCardButton, cardNumberLabel, phoneStackView, submitPhoneNumberButton, otpTextField, submitOTPButton, resultLabel, unlinkLabel, unlinkPhoneStackView, unlinkSubmitPhoneNumberButton, unlinkOtpTextField, unlinkSubmitOTPButton, listCardsLabel, listPhoneStackView, listCardsButton, paymentFlowLabel, transactionNumberTextField, startPaymentButton])
         stackView.axis = .vertical
         stackView.spacing = 15
         stackView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(stackView)
         setupTableView(contentView)
-
+        
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-
+            
             contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
             contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
             contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             contentView.widthAnchor.constraint(equalTo: view.widthAnchor),  // This makes sure our content is only scrollable vertically
-
+            
             stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
             stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-
+            
             linkedCardsTableView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 20),
             linkedCardsTableView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             linkedCardsTableView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             linkedCardsTableView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
-
+        
     }
     
     func setupTableView(_ contentView: UIView) {
@@ -215,33 +232,33 @@ class ViewController: UIViewController {
         // (For brevity, this assumes the table is taking up the entire screen below the existing UI components)
         linkedCardsTableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            linkedCardsTableView.topAnchor.constraint(equalTo: listCardsButton.bottomAnchor, constant: 20),
+            linkedCardsTableView.topAnchor.constraint(equalTo: startPaymentButton.bottomAnchor, constant: 20),
             linkedCardsTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             linkedCardsTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             linkedCardsTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
     
+    // MARK: - Link
+    
     @objc func scanCardButtonTapped() {
-        DispatchQueue.main.async {
-            self.nolPay.scanNFCCard { result in
-                switch result {
-                    
-                case .success(let cardNumber):
-                    self.cardNumberLabel.text = cardNumber
-                    self.nolPay.makeToken(for: cardNumber) { result in
-                        switch result {
-                            
-                        case .success(let token):
-                            self.cardLinkingToken = token
-                            self.showAlert(title: "Next step", message: "Enter phone number and country code")
-                        case .failure(let error):
-                            self.showAlert(title: "Error", message: error.localizedDescription)
-                        }
+        self.nolPay.scanNFCCard { result in
+            switch result {
+                
+            case .success(let cardNumber):
+                self.cardNumberLabel.text = cardNumber
+                self.nolPay.makeLinkingTokenFor(cardNumber: cardNumber) { result in
+                    switch result {
+                        
+                    case .success(let token):
+                        self.cardLinkingToken = token
+                        self.showAlert(title: "Next step", message: "Enter phone number and country code")
+                    case .failure(let error):
+                        self.showAlert(title: "Error", message: error.localizedDescription)
                     }
-                case .failure(let error):
-                    self.showAlert(title: "Error", message: error.localizedDescription)
                 }
+            case .failure(let error):
+                self.showAlert(title: "Error", message: error.localizedDescription)
             }
         }
     }
@@ -253,8 +270,6 @@ class ViewController: UIViewController {
             showAlert(title: "Error", message: "Please enter both country code and phone number.")
             return
         }
-
-        getLinkedCards()
         
         guard let linkToken = cardLinkingToken
         else {
@@ -262,7 +277,7 @@ class ViewController: UIViewController {
             return
         }
         
-        nolPay.sendLinkOTP(to: phoneNumber, withCountryCode: countryCode, andToken: linkToken) { result in
+        nolPay.sendLinkOTPTo(mobileNumber: phoneNumber, withCountryCode: countryCode, andToken: linkToken) { result in
             switch result {
             case .success(let success):
                 if success {
@@ -289,13 +304,13 @@ class ViewController: UIViewController {
             return
         }
         
-        nolPay.linkCard(forOTP: otp, andCardToken: linkToken) { result in
+        nolPay.linkCardFor(otp: otp, andLinkToken: linkToken) { result in
             switch result {
             case .success(let success):
                 if success {
                     self.showAlert(title: "Success", message: "Card linked successfully!")
                     self.getLinkedCards()
-
+                    
                 } else {
                     self.showAlert(title: "Error", message: "Failed to link the card.")
                 }
@@ -309,7 +324,7 @@ class ViewController: UIViewController {
     
     @objc func submitUnlinkPhoneNumberTapped() {
         guard let countryCode = unlinkCountryCodeTextField.text, !countryCode.isEmpty,
-              let phoneNumber = unlinkPhoneNumberTextField.text, !phoneNumber.isEmpty
+              let mobileNumber = unlinkPhoneNumberTextField.text, !mobileNumber.isEmpty
         else {
             showAlert(title: "Error", message: "Please enter both country code and phone number.")
             return
@@ -320,8 +335,8 @@ class ViewController: UIViewController {
             showAlert(title: "Error", message: "Select card for unlinking.")
             return
         }
-
-        nolPay.sendUnlinkOTP(toMobileNumber: phoneNumber, withCountryCode: countryCode, andCardNumber: cardNumber) { result in
+        
+        nolPay.sendUnlinkOTPTo(mobileNumber: mobileNumber, withCountryCode: countryCode, andCardNumber: cardNumber) { result in
             switch result {
                 
             case .success((_, let token)):
@@ -349,10 +364,8 @@ class ViewController: UIViewController {
             showAlert(title: "Error", message: "Missing a unlink token")
             return
         }
-
-        nolPay.unlinkCard(cardNumber: cardNumber,
-                          otp: otp,
-                          token: unlinkToken) { result in
+        
+        nolPay.unlinkCardWith(cardNumber: cardNumber, otp: otp, andUnlinkToken: unlinkToken) { result in
             switch result {
                 
             case .success(let success):
@@ -371,7 +384,7 @@ class ViewController: UIViewController {
     // MARK: - Listing of the linked cards
     
     @objc private func getLinkedCards() {
-
+        
         guard let phoneNumber = self.listCardsPhoneNumberTextField.text, !phoneNumber.isEmpty,
               let countryCode = self.listCardsCountryCodeTextField.text, !countryCode.isEmpty
         else {
@@ -379,13 +392,50 @@ class ViewController: UIViewController {
             return
         }
         
-        nolPay.getAvaliableCards(for: phoneNumber, with: countryCode) { result in
+        nolPay.getAvaliableCardsFor(mobileNumber: phoneNumber, withCountryCode: countryCode) { result in
             switch result {
                 
             case .success(let cards):
                 self.linkedCards = cards
                 self.linkedCardsTableView.reloadData()
             case .failure(let error):
+                self.showAlert(title: "Error", message: error.localizedDescription)
+            }
+        }
+    }
+    
+    // MARK: - Payment flow
+    
+    @objc private func startPaymentFlow() {
+        guard let transactionNumber = transactionNumberTextField.text, !transactionNumber.isEmpty
+        else {
+            self.showAlert(title: "Error", message: "Invalid transaction number")
+            return
+        }
+        paymentInProgress = true
+        showAlert(title: "Perform Payment", message: "To perform payment please select the card from the list of already linked cards")
+    }
+    
+    private func performPaymentWith(card: PrimerNolPayCard) {
+        guard let transactionNumber = transactionNumberTextField.text, !transactionNumber.isEmpty
+        else {
+            self.showAlert(title: "Error", message: "Invalid transaction number")
+            paymentInProgress = false
+            return
+        }
+        
+        nolPay.requestPaymentFor(cardNumber: card.cardNumber, andTransactionNumber: transactionNumber) { result in
+            self.paymentInProgress = false
+            
+            switch result {
+            case .success(let success):
+                if success {
+                    self.showAlert(title: "Success", message: "Payment performed successfully!")
+                    self.transactionNumberTextField.text = nil
+                } else {
+                    self.showAlert(title: "Error", message: "Failed to perform the payment.")
+                }
+            case let .failure(error):
                 self.showAlert(title: "Error", message: error.localizedDescription)
             }
         }
@@ -400,7 +450,7 @@ class ViewController: UIViewController {
     
 }
 
-
+// MARK: - UITableViewDataSource, UITableViewDelegate
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return linkedCards.count
@@ -413,7 +463,12 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        unlinkCard = linkedCards[indexPath.row]
-        showAlert(title: "Unlink card", message: "To unlink this card enter phone number and country code, and then enter unlink OTP.")
+        let card = linkedCards[indexPath.row]
+        if paymentInProgress {
+            performPaymentWith(card: card)
+        } else {
+            unlinkCard = card
+            showAlert(title: "Unlink card", message: "To unlink this card enter phone number and country code, and then enter unlink OTP.")
+        }
     }
 }
