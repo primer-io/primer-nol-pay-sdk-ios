@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'PrimerNolPaySDK'
-  s.version          = '1.0.0'
+  s.version          = '0.0.0'
   s.summary          = 'A wrapper for the Nol SDK'
   s.description      = <<-DESC
 A wrapper around the Nol payment SDK.

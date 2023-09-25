@@ -1,6 +1,6 @@
 PODS:
   - IQKeyboardManagerSwift (6.5.12)
-  - PrimerNolPaySDK (1.0.0)
+  - PrimerNolPaySDK (0.0.0)
 
 DEPENDENCIES:
   - IQKeyboardManagerSwift
@@ -16,8 +16,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 371b08cb39664fb56030f5345c815a4ffc74bbc0
-  PrimerNolPaySDK: c9480120e24905372b64c4752229b9ba0b8cdb13
+  PrimerNolPaySDK: 7d11300f286a6ed3ee12370239f847ff01074811
 
 PODFILE CHECKSUM: 10b7fa1189625ec8ac43243bbc69dc22175dab35
 
-COCOAPODS: 1.12.1
+COCOAPODS: 1.13.0
