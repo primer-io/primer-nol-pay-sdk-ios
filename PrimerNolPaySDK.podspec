@@ -23,6 +23,6 @@ A wrapper around the Nol payment SDK.
 
   s.ios.source_files = 'Sources/PrimerNolPaySDK/Classes/*.{swift}'
   s.ios.frameworks  = 'Foundation', 'UIKit'
-  s.ios.vendored_frameworks = 'Sources/Frameworks/TransitSDK.framework'
+  s.ios.vendored_frameworks = 'Sources/Frameworks/TransitSDK.xcframework'
 
 end

@@ -1,0 +1,2529 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)
+// swift-module-flags: -target arm64-apple-ios13.1-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name TransitSDK
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import Combine
+import CommonCrypto
+import CoreGraphics
+import CoreNFC
+import Darwin
+import Dispatch
+import Foundation
+import MobileCoreServices
+import Network
+import Security
+import Swift
+import SystemConfiguration
+@_exported import TransitSDK
+import UIKit
+import UniformTypeIdentifiers
+import _Concurrency
+import _StringProcessing
+import zlib
+@_hasMissingDesignatedInitializers public class Property : Swift.CustomStringConvertible {
+  final public let name: Swift.String
+  final public let type: Any.Type
+  public var dataType: Any.Type {
+    get
+  }
+  final public let isVar: Swift.Bool
+  final public let offset: Swift.Int
+  final public let ownerType: Any.Type
+  public var description: Swift.String {
+    get
+  }
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class MetaType : TransitSDK.BaseType {
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class AppEnvironmentUtils : ObjectiveC.NSObject {
+  @objc public class func isMainThread() -> Swift.Bool
+  @objc public class func isBeingDebugged() -> Swift.Bool
+  @objc public class func isJailbroken() -> Swift.Bool
+  @objc public class func evidenceOfSymbolLinking() -> Swift.Bool
+  @objc public class func sandboxBreached() -> Swift.Bool
+  @objc public class func jailbreakFileExists() -> Swift.Bool
+  @objc public class func systemForkCall() -> Swift.Bool
+  @objc override dynamic public init()
+  @objc deinit
+}
+open class KeychainSwift {
+  open var lastResultCode: Darwin.OSStatus
+  open var accessGroup: Swift.String?
+  open var synchronizable: Swift.Bool
+  public init()
+  public init(keyPrefix: Swift.String)
+  @discardableResult
+  open func set(_ value: Swift.String, forKey key: Swift.String, withAccess access: TransitSDK.KeychainSwiftAccessOptions? = nil) -> Swift.Bool
+  @discardableResult
+  open func set(_ value: Foundation.Data, forKey key: Swift.String, withAccess access: TransitSDK.KeychainSwiftAccessOptions? = nil) -> Swift.Bool
+  @discardableResult
+  open func set(_ value: Swift.Bool, forKey key: Swift.String, withAccess access: TransitSDK.KeychainSwiftAccessOptions? = nil) -> Swift.Bool
+  open func get(_ key: Swift.String) -> Swift.String?
+  open func getData(_ key: Swift.String, asReference: Swift.Bool = false) -> Foundation.Data?
+  open func getBool(_ key: Swift.String) -> Swift.Bool?
+  @discardableResult
+  open func delete(_ key: Swift.String) -> Swift.Bool
+  public var allKeys: [Swift.String] {
+    get
+  }
+  @discardableResult
+  open func clear() -> Swift.Bool
+  @objc deinit
+}
+public struct KeychainSwiftConstants {
+  public static var accessGroup: Swift.String {
+    get
+  }
+  public static var accessible: Swift.String {
+    get
+  }
+  public static var attrAccount: Swift.String {
+    get
+  }
+  public static var attrSynchronizable: Swift.String {
+    get
+  }
+  public static var klass: Swift.String {
+    get
+  }
+  public static var matchLimit: Swift.String {
+    get
+  }
+  public static var returnData: Swift.String {
+    get
+  }
+  public static var valueData: Swift.String {
+    get
+  }
+  public static var returnReference: Swift.String {
+    get
+  }
+  public static var returnAttributes: Swift.String {
+    get
+  }
+  public static var secMatchLimitAll: Swift.String {
+    get
+  }
+}
+public enum KeychainSwiftAccessOptions {
+  case accessibleWhenUnlocked
+  case accessibleWhenUnlockedThisDeviceOnly
+  case accessibleAfterFirstUnlock
+  case accessibleAfterFirstUnlockThisDeviceOnly
+  case accessibleWhenPasscodeSetThisDeviceOnly
+  public static func == (a: TransitSDK.KeychainSwiftAccessOptions, b: TransitSDK.KeychainSwiftAccessOptions) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @objc public class KeyChainManager : ObjectiveC.NSObject {
+  @objc public class func saveCertificate(certificate: Security.SecCertificate, label: Swift.String) -> Swift.Bool
+  @objc public class func getCertificate(label: Swift.String) -> Security.SecCertificate?
+  @objc public class func deleteCertificate(label: Swift.String) -> Swift.Bool
+  @objc public class func saveSecKey(key: Security.SecKey, label: Swift.String) -> Swift.Bool
+  @objc public class func getKey(label: Swift.String) -> Security.SecKey?
+  @objc public class func deleteKey(label: Swift.String) -> Swift.Bool
+  @objc public class func saveData(data: Foundation.Data, service: Swift.String, account: Swift.String) -> Swift.Bool
+  @objc public class func getData(service: Swift.String, account: Swift.String) -> Foundation.Data?
+  @objc public class func deleteData(service: Swift.String, account: Swift.String) -> Swift.Bool
+  @objc public class func saveExpiredTime(expiredTime: Swift.String, label: Swift.String) -> Swift.Bool
+  @objc public class func getExpiredTime(label: Swift.String) -> Swift.String?
+  @objc public class func deleteExpiredTime(label: Swift.String) -> Swift.Bool
+  @objc override dynamic public init()
+  @objc deinit
+}
+public enum Values {
+}
+extension TransitSDK.Values {
+  public static func value<T>(_ val: Any?, of type: T.Type) -> T?
+  public static func string(_ val: Any?) -> Swift.String?
+  public static func bool(_ val: Any?) -> Swift.Bool?
+  public static func int(_ val: Any?) -> Swift.Int?
+  public static func int8(_ val: Any?) -> Swift.Int8?
+  public static func int16(_ val: Any?) -> Swift.Int16?
+  public static func int32(_ val: Any?) -> Swift.Int32?
+  public static func int64(_ val: Any?) -> Swift.Int64?
+  public static func uInt(_ val: Any?) -> Swift.UInt?
+  public static func uInt8(_ val: Any?) -> Swift.UInt8?
+  public static func uInt16(_ val: Any?) -> Swift.UInt16?
+  public static func uInt32(_ val: Any?) -> Swift.UInt32?
+  public static func uInt64(_ val: Any?) -> Swift.UInt64?
+  public static func float(_ val: Any?) -> Swift.Float?
+  public static func double(_ val: Any?) -> Swift.Double?
+  public static func cgFloat(_ val: Any?) -> CoreFoundation.CGFloat?
+  public static func decimal(_ val: Any?) -> Foundation.Decimal?
+  public static func number(_ val: Any?) -> Foundation.NSNumber?
+  public static func decimalNumber(_ val: Any?) -> Foundation.NSDecimalNumber?
+}
+postfix operator ~!
+public protocol AuthenticatorProtocol {
+  func authenticate(_ bytes: Swift.Array<Swift.UInt8>) -> Swift.Array<Swift.UInt8>
+}
+@objc @_inheritsConvenienceInitializers public class TransitNetworkLogger : ObjectiveC.NSObject {
+  public var logRequest: ((Swift.String?, Swift.String?) -> Swift.Void)?
+  public func log(request: Swift.String?, parameters: Swift.String?)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class TupleType : TransitSDK.BaseType {
+  public var properties: [TransitSDK.Property]! {
+    get
+  }
+  override public var description: Swift.String {
+    get
+  }
+  @objc deinit
+}
+public typealias ModelKeyConfig = (TransitSDK.Property) -> TransitSDK.ModelPropertyKey
+public typealias ModelValueConfig = (Any?, TransitSDK.Property) -> Any?
+public typealias JSONKeyConfig = (TransitSDK.Property) -> TransitSDK.JSONPropertyKey
+public typealias JSONValueConfig = (Any?, TransitSDK.Property) -> Any?
+@_hasMissingDesignatedInitializers public class ConvertibleConfig {
+  public static func modelKey(from property: TransitSDK.Property) -> TransitSDK.ModelPropertyKey
+  public static func modelKey(from property: TransitSDK.Property, _ model: TransitSDK.Convertible) -> TransitSDK.ModelPropertyKey
+  public static func modelKey(from property: TransitSDK.Property, _ type: TransitSDK.Convertible.Type) -> TransitSDK.ModelPropertyKey
+  public static func modelValue(from jsonValue: Any?, _ property: TransitSDK.Property) -> Any?
+  public static func modelValue(from jsonValue: Any?, _ property: TransitSDK.Property, _ model: TransitSDK.Convertible) -> Any?
+  public static func modelValue(from jsonValue: Any?, _ property: TransitSDK.Property, _ type: TransitSDK.Convertible.Type) -> Any?
+  public static func JSONKey(from property: TransitSDK.Property) -> TransitSDK.JSONPropertyKey
+  public static func JSONKey(from property: TransitSDK.Property, _ model: TransitSDK.Convertible) -> TransitSDK.JSONPropertyKey
+  public static func JSONKey(from property: TransitSDK.Property, _ type: TransitSDK.Convertible.Type) -> TransitSDK.JSONPropertyKey
+  public static func JSONValue(from modelValue: Any?, _ property: TransitSDK.Property) -> Any?
+  public static func JSONValue(from modelValue: Any?, _ property: TransitSDK.Property, _ model: TransitSDK.Convertible) -> Any?
+  public static func JSONValue(from modelValue: Any?, _ property: TransitSDK.Property, _ type: TransitSDK.Convertible.Type) -> Any?
+  public static func setModelKey(for type: TransitSDK.Convertible.Type, _ modelKey: @escaping TransitSDK.ModelKeyConfig)
+  public static func setModelKey(for types: [TransitSDK.Convertible.Type] = [], _ modelKey: @escaping TransitSDK.ModelKeyConfig)
+  public static func setModelValue(for type: TransitSDK.Convertible.Type, modelValue: @escaping TransitSDK.ModelValueConfig)
+  public static func setModelValue(for types: [TransitSDK.Convertible.Type] = [], modelValue: @escaping TransitSDK.ModelValueConfig)
+  public static func setJSONKey(for type: TransitSDK.Convertible.Type, jsonKey: @escaping TransitSDK.JSONKeyConfig)
+  public static func setJSONKey(for types: [TransitSDK.Convertible.Type] = [], jsonKey: @escaping TransitSDK.JSONKeyConfig)
+  public static func setJSONValue(for type: TransitSDK.Convertible.Type, jsonValue: @escaping TransitSDK.JSONValueConfig)
+  public static func setJSONValue(for types: [TransitSDK.Convertible.Type] = [], jsonValue: @escaping TransitSDK.JSONValueConfig)
+  @objc deinit
+}
+@objc public class TransitException : ObjectiveC.NSObject, Swift.Error {
+  public var code: Swift.String
+  public var message: Swift.String
+  public init(code: Swift.String, message: Swift.String)
+  public func toString() -> Swift.String
+  public var isSystemError: Swift.Bool {
+    get
+  }
+  @objc deinit
+}
+public struct SecCertificateConstants {
+  public static let csrHeader: Swift.String
+  public static let csrFooter: Swift.String
+  public static let certHeader: Swift.String
+  public static let certFooter: Swift.String
+}
+@_inheritsConvenienceInitializers @objc public class SecCertificateManager : ObjectiveC.NSObject {
+  public class func generateCsr(keyPair: TransitSDK.SecKeyPair, deviceId: Swift.String) -> Swift.String
+  @objc public class func getCertificate(fromPem pem: Swift.String) -> Security.SecCertificate?
+  @objc public class func getData(fromCertificate certificate: Security.SecCertificate) -> Foundation.Data
+  @objc public class func loadCACertificate(path: Swift.String) -> Security.SecCertificate?
+  @objc public class func verifyOBCertificateWithCA(obPemString: Swift.String, caPemString: Swift.String) -> Security.SecKey?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@inlinable internal func rotateLeft1(_ value: Swift.UInt8, by: Swift.UInt8) -> Swift.UInt8 {
+  ((value << by) & 0xff) | (value >> (8 - by))
+}
+@inlinable internal func rotateLeft1(_ value: Swift.UInt16, by: Swift.UInt16) -> Swift.UInt16 {
+  ((value << by) & 0xffff) | (value >> (16 - by))
+}
+@inlinable internal func rotateLeft1(_ value: Swift.UInt32, by: Swift.UInt32) -> Swift.UInt32 {
+  ((value << by) & 0xffffffff) | (value >> (32 - by))
+}
+@inlinable internal func rotateLeft1(_ value: Swift.UInt64, by: Swift.UInt64) -> Swift.UInt64 {
+  (value << by) | (value >> (64 - by))
+}
+@inlinable internal func rotateRight1(_ value: Swift.UInt16, by: Swift.UInt16) -> Swift.UInt16 {
+  (value >> by) | (value << (16 - by))
+}
+@inlinable internal func rotateRight1(_ value: Swift.UInt32, by: Swift.UInt32) -> Swift.UInt32 {
+  (value >> by) | (value << (32 - by))
+}
+@inlinable internal func rotateRight1(_ value: Swift.UInt64, by: Swift.UInt64) -> Swift.UInt64 {
+  ((value >> by) | (value << (64 - by)))
+}
+@inlinable internal func reversed1(_ uint8: Swift.UInt8) -> Swift.UInt8 {
+  var v = uint8
+  v = (v & 0xf0) >> 4 | (v & 0x0f) << 4
+  v = (v & 0xcc) >> 2 | (v & 0x33) << 2
+  v = (v & 0xaa) >> 1 | (v & 0x55) << 1
+  return v
+}
+@inlinable internal func reversed1(_ uint32: Swift.UInt32) -> Swift.UInt32 {
+  var v = uint32
+  v = ((v >> 1) & 0x55555555) | ((v & 0x55555555) << 1)
+  v = ((v >> 2) & 0x33333333) | ((v & 0x33333333) << 2)
+  v = ((v >> 4) & 0x0f0f0f0f) | ((v & 0x0f0f0f0f) << 4)
+  v = ((v >> 8) & 0x00ff00ff) | ((v & 0x00ff00ff) << 8)
+  v = ((v >> 16) & 0xffff) | ((v & 0xffff) << 16)
+  return v
+}
+@inlinable internal func xor1<T, V>(_ left: T, _ right: V) -> Swift.ArraySlice<Swift.UInt8> where T : Swift.RandomAccessCollection, V : Swift.RandomAccessCollection, T.Element == Swift.UInt8, T.Index == Swift.Int, V.Element == Swift.UInt8, V.Index == Swift.Int {
+  return xor1(left, right).slice1
+}
+@inlinable internal func xor1<T, V>(_ left: T, _ right: V) -> Swift.Array<Swift.UInt8> where T : Swift.RandomAccessCollection, V : Swift.RandomAccessCollection, T.Element == Swift.UInt8, T.Index == Swift.Int, V.Element == Swift.UInt8, V.Index == Swift.Int {
+  let length = Swift.min(left.count, right.count)
+
+  let buf = UnsafeMutablePointer<UInt8>.allocate(capacity: length)
+  buf.initialize(repeating: 0, count: length)
+  defer {
+    buf.deinitialize(count: length)
+    buf.deallocate()
+  }
+
+  // xor
+  for i in 0..<length {
+    buf[i] = left[left.startIndex.advanced(by: i)] ^ right[right.startIndex.advanced(by: i)]
+  }
+
+  return Array(UnsafeBufferPointer(start: buf, count: length))
+}
+@inline(__always) @inlinable internal func bitPadding1(to data: inout Swift.Array<Swift.UInt8>, blockSize: Swift.Int, allowance: Swift.Int = 0) {
+  let msgLength = data.count
+  // Step 1. Append Padding Bits
+  // append one bit (UInt8 with one bit) to message
+  data.append(0x80)
+
+  // Step 2. append "0" bit until message length in bits ≡ 448 (mod 512)
+  let max = blockSize - allowance // 448, 986
+  if msgLength % blockSize < max { // 448
+    data += Array<UInt8>(repeating: 0, count: max - 1 - (msgLength % blockSize))
+  } else {
+    data += Array<UInt8>(repeating: 0, count: blockSize + max - 1 - (msgLength % blockSize))
+  }
+}
+extension Swift.Array {
+  @inlinable internal var slice1: Swift.ArraySlice<Element> {
+    get {
+    self[self.startIndex ..< self.endIndex]
+  }
+  }
+}
+infix operator ~>> : MultiplicationPrecedence
+infix operator ~> : MultiplicationPrecedence
+@_inheritsConvenienceInitializers @objc public class SecKeyManager : ObjectiveC.NSObject {
+  @objc public class func generateSecKeyPair(deviceId: Swift.String) -> TransitSDK.SecKeyPair?
+  @objc public class func getPublicKey(certificate: Security.SecCertificate) -> Security.SecKey?
+  @objc public class func getData(fromSecKey key: Security.SecKey) -> Foundation.Data?
+  @objc public class func encrypt(publicKey: Security.SecKey, plainText: Foundation.Data) -> Foundation.Data?
+  @objc public class func decrypt(privateKey: Security.SecKey, cipherText: Foundation.Data) -> Foundation.Data?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public class SecKeyPair : ObjectiveC.NSObject {
+  final public let publicKey: Security.SecKey
+  final public let privateKey: Security.SecKey
+  public init(publicKey: Security.SecKey, privateKey: Security.SecKey)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class ModelType : TransitSDK.BaseType {
+  public var properties: [TransitSDK.Property]? {
+    get
+  }
+  public var genericTypes: [Any.Type]? {
+    get
+  }
+  @objc deinit
+}
+public struct KJ<Base> {
+}
+public protocol KJCompatible {
+}
+extension TransitSDK.KJCompatible {
+  public static var kj: TransitSDK.KJ<Self>.Type {
+    get
+    set
+  }
+  public var kj: TransitSDK.KJ<Self> {
+    get
+    set
+  }
+}
+public struct KJGeneric<Base, T> {
+}
+public protocol KJGenericCompatible {
+  associatedtype T
+}
+extension TransitSDK.KJGenericCompatible {
+  public static var kj: TransitSDK.KJGeneric<Self, Self.T>.Type {
+    get
+    set
+  }
+  public var kj: TransitSDK.KJGeneric<Self, Self.T> {
+    get
+    set
+  }
+}
+public struct KJGeneric2<Base, T1, T2> {
+}
+public protocol KJGenericCompatible2 {
+  associatedtype T1
+  associatedtype T2
+}
+extension TransitSDK.KJGenericCompatible2 {
+  public static var kj: TransitSDK.KJGeneric2<Self, Self.T1, Self.T2>.Type {
+    get
+    set
+  }
+  public var kj: TransitSDK.KJGeneric2<Self, Self.T1, Self.T2> {
+    get
+    set
+  }
+}
+public struct Metadata {
+  public static func type(_ type: Any.Type) -> TransitSDK.BaseType?
+  public static func type(_ obj: Any) -> TransitSDK.BaseType?
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class ForeignClassType : TransitSDK.BaseType {
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class DateUtils : ObjectiveC.NSObject {
+  @objc public class func toDate(from dateString: Swift.String, dateFormat: Swift.String = "yyyy-MM-dd'T'HH:mm:ss.SSSZZ") -> Foundation.Date?
+  @objc public class func toString(from date: Foundation.Date, dateFormat: Swift.String = "yyyy-MM-dd HH:mm:ss") -> Swift.String
+  @objc public class func toUTCString(from date: Foundation.Date, dateFormat: Swift.String = "yyyy-MM-dd'T'HH:mm:ss.SSSZZ") -> Swift.String
+  @objc public class func toTimeStamp(from date: Foundation.Date) -> Swift.Int
+  @objc public class func delay(from date: Foundation.Date, days: Swift.Int) -> Foundation.Date
+  @objc public class func delay(from date: Foundation.Date, timeInterval: Swift.Int) -> Foundation.Date
+  @objc public class func isExpired(expiredTime: Swift.String?) -> Swift.Bool
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class TransitCardListRequest : TransitSDK.TransitRequestBean {
+  required public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class TransitCardDetailRequest : TransitSDK.TransitRequestBean {
+  @discardableResult
+  public func setCardNumber(_ cardNumber: Swift.String) -> Self
+  required public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class TransitCardProgressRequest : TransitSDK.TransitRequestBean {
+  @discardableResult
+  public func setOrderNumber(_ orderNumber: Swift.String) -> Self
+  @discardableResult
+  public func setProgressId(_ progressId: Swift.String) -> Self
+  @discardableResult
+  public func setProgressType(_ progressType: Swift.Int) -> Self
+  required public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class TransitResettingPinInfoRequest : TransitSDK.TransitRequestBean {
+  @discardableResult
+  public func setCardNumber(_ cardNumber: Swift.String) -> Self
+  @discardableResult
+  public func setBirthday(_ birthday: Swift.String) -> Self
+  required public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class TransitResetPinRequest : TransitSDK.TransitRequestBean {
+  @discardableResult
+  public func setCardNumber(_ cardNumber: Swift.String) -> Self
+  @discardableResult
+  public func setBirthday(_ birthday: Swift.String) -> Self
+  required public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class TransitResubmitDetailRequest : TransitSDK.TransitRequestBean {
+  @discardableResult
+  public func setOrderNumber(_ orderNumber: Swift.String) -> Self
+  required public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class TransitRenewResubmitDetailRequest : TransitSDK.TransitRequestBean {
+  @discardableResult
+  public func setOrderNumber(_ orderNumber: Swift.String) -> Self
+  required public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class TransitRenewReviewRequest : TransitSDK.TransitRequestBean {
+  public var addressArea: Swift.String
+  public var addressEmirate: Swift.String
+  public var addressFlat: Swift.String
+  public var addressStreet: Swift.String
+  public var email: Swift.String
+  public var mobile: Swift.String
+  public var nameFull: Swift.String
+  public var orderType: TransitSDK.TransitOrderType
+  public var pin: Swift.String
+  public var orderNumber: Swift.String
+  public var cardNumber: Swift.String
+  public var photoReferenceNo: Swift.String
+  public var concessionReferenceNo: Swift.String
+  public var concessionType: Swift.Int
+  required public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class TransitReviewRequest : TransitSDK.TransitRequestBean {
+  public var addressArea: Swift.String
+  public var addressEmirate: Swift.String
+  public var addressFlat: Swift.String
+  public var addressStreet: Swift.String
+  public var email: Swift.String
+  public var mobile: Swift.String
+  public var nameFull: Swift.String
+  public var orderType: TransitSDK.TransitOrderType
+  public var orderNumber: Swift.String
+  public var photoReferenceNo: Swift.String
+  public var concessionReferenceNo: Swift.String
+  public var concessionType: Swift.Int
+  public var cardMedia: TransitSDK.TransitCardMedia
+  public var classType: TransitSDK.TransitClassType
+  public var cardDesignFee: Swift.Int
+  public var cardDesignId: Swift.String
+  required public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class TransitCardFeeRequest : TransitSDK.TransitRequestBean {
+  public var applyCardBiz: Swift.Int
+  @discardableResult
+  public func setCardNumber(_ cardNumber: Swift.String) -> Self
+  @discardableResult
+  public func setOrderType(_ orderType: TransitSDK.TransitOrderType?) -> Self
+  @discardableResult
+  public func applyCardBiz(_ applyCardBiz: Swift.Int) -> Self
+  required public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class TransitRefundListRequest : TransitSDK.TransitRequestBean {
+  public var currentPage: Swift.Int
+  public var pageSize: Swift.Int
+  public var progressTypes: [TransitSDK.TransitProgressType]
+  @discardableResult
+  public func setPageSize(_ pageSize: Swift.Int) -> Self
+  @discardableResult
+  public func setCurrentPage(_ currentPage: Swift.Int) -> Self
+  @discardableResult
+  public func setProgressTypes(_ progressTypes: [TransitSDK.TransitProgressType]) -> Self
+  required public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class TransitRefundTerminalDeleteRequest : TransitSDK.TransitRequestBean {
+  @discardableResult
+  public func setProgressId(_ progressId: Swift.String) -> Self
+  required public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TransitDictResp : TransitSDK.TransitBean {
+  public var addressEmirates: [TransitSDK.TransitDict]
+  public var cardMedias: [TransitSDK.TransitDict]
+  public var cardPDesigns: [TransitSDK.TransitCardPDesign]
+  public var classType: [TransitSDK.TransitClassTypeDict]
+  public var concessionTypes: [TransitSDK.TransitConcessionTypeDict]
+  public var refundReasons: [TransitSDK.TransitDict]
+  public var topupAmounts: [Swift.Int]
+  public var addressArea: TransitSDK.TransitLengthMax?
+  public var addressStreet: TransitSDK.TransitLengthMax?
+  public var addressFlat: TransitSDK.TransitLengthMax?
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TransitLengthMax : TransitSDK.TransitBean {
+  public var lengthMax: Swift.Int
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TransitClassTypeDict : TransitSDK.TransitDict {
+  public var concessionTypes: [TransitSDK.TransitConcessionTypeDict]
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TransitConcessionTypeDict : TransitSDK.TransitDict {
+  public var needEvidence: Swift.Bool
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TransitCardPDesign : TransitSDK.TransitBean {
+  public var designCategory: TransitSDK.TransitDict?
+  public var designs: [TransitSDK.TransitDesign]
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TransitDesign : TransitSDK.TransitBean {
+  public var categoryId: Swift.Int
+  public var designCategory: TransitSDK.TransitDict?
+  public var designFee: Swift.Int
+  public var designId: Swift.Int
+  public var imageUrl: Swift.String
+  public var designName: Swift.String
+  public var nameShort: Swift.String
+  public var updateTime: Swift.String
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TransitDict : TransitSDK.TransitBean {
+  public var desc: Swift.String
+  public var value: Swift.String
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public struct TransitCardFieldValue {
+}
+extension TransitSDK.TransitCardFieldValue {
+  public var supportingGold: Swift.Bool {
+    get
+  }
+  public var supportingSilver: Swift.Bool {
+    get
+  }
+  public var supportingAdult: Swift.Bool {
+    get
+  }
+  public var supportingStudent: Swift.Bool {
+    get
+  }
+  public var supportingSenior: Swift.Bool {
+    get
+  }
+  public var supportingPOD: Swift.Bool {
+    get
+  }
+}
+extension Foundation.NSDictionary : TransitSDK.KJCompatible {
+}
+extension Swift.Dictionary : TransitSDK.KJGenericCompatible {
+  public typealias T = Value
+}
+extension TransitSDK.KJGeneric where Base == [Swift.String : T] {
+  public func model<M>(_ type: M.Type) -> M where M : TransitSDK.Convertible
+  public func model(type: TransitSDK.Convertible.Type) -> TransitSDK.Convertible
+}
+extension TransitSDK.KJGeneric where Base == [Foundation.NSString : T] {
+  public func model<M>(_ type: M.Type) -> M where M : TransitSDK.Convertible
+  public func model(type: TransitSDK.Convertible.Type) -> TransitSDK.Convertible
+}
+extension TransitSDK.KJ where Base : Foundation.NSDictionary {
+  public func model<M>(_ type: M.Type) -> M? where M : TransitSDK.Convertible
+  public func model(type: TransitSDK.Convertible.Type) -> TransitSDK.Convertible?
+}
+open class TransitRequestBean : TransitSDK.Convertible, Swift.Codable {
+  public var accountId: Swift.String
+  @discardableResult
+  public func setAccount(_ account: Swift.String) -> Self
+  required public init()
+  @objc deinit
+  open func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers public class TransitOrderListRequest : TransitSDK.TransitRequestBean {
+  @discardableResult
+  public func setPage(_ page: Swift.Int) -> Self
+  @discardableResult
+  public func setPageSize(_ pageSize: Swift.Int) -> Self
+  @discardableResult
+  public func setStartDate(_ startDate: Swift.String) -> Self
+  @discardableResult
+  public func setEndDate(_ endDate: Swift.String) -> Self
+  @discardableResult
+  public func setOrderStatus(_ ordeStatus: TransitSDK.TransitOrderStatus?) -> Self
+  @discardableResult
+  public func setPaymentStatus(_ paymentStatus: TransitSDK.TransitPaymentStatus?) -> Self
+  required public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class TransitPhysicalTopupOrderRequest : TransitSDK.TransitRequestBean {
+  public var amount: Swift.Int
+  public var orderType: TransitSDK.TransitOrderType?
+  public var cardInfo: TransitSDK.TransitCardInfo
+  public var topupInfo: TransitSDK.TransitTopupInfo
+  public var paymentChannel: TransitSDK.TransitPaymentChannel
+  public var personProfile: TransitSDK.TransitPersonProfile
+  public var refundInfo: TransitSDK.TransitRefundInfo
+  public var productInfo: TransitSDK.TransitProductInfo
+  public class func refundCardRequest(accountId: Swift.String, cardNumber: Swift.String, pin: Swift.String, reason: Swift.String, transferCardNumber: Swift.String, orderType: TransitSDK.TransitOrderType?, paymentChannel: TransitSDK.TransitPaymentChannel) -> TransitSDK.TransitPhysicalTopupOrderRequest
+  @discardableResult
+  public func setCardNumber(_ cardNumber: Swift.String) -> Self
+  @discardableResult
+  public func setOrderType(_ orderType: TransitSDK.TransitOrderType) -> Self
+  @discardableResult
+  public func setPaymentChannel(_ paymentChannel: TransitSDK.TransitPaymentChannel) -> Self
+  @discardableResult
+  public func setTopupAmount(_ amount: Swift.Int) -> Self
+  @discardableResult
+  public func setAmount(_ amount: Swift.Int) -> Self
+  @discardableResult
+  public func setProductInfo(_ productInfo: TransitSDK.TransitProductInfo) -> Self
+  required public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public class TransitCardInfo : TransitSDK.Convertible {
+  public var cardNumber: Swift.String
+  public var imageInfo: TransitSDK.TransitCardImageInfo
+  public var serverFee: Swift.Int
+  public var surcharge: Swift.Int
+  public var cardFee: Swift.Int
+  public var pin: Swift.String
+  required public init()
+  @objc deinit
+}
+public class TransitCardImageInfo : TransitSDK.Convertible {
+  public var designFee: Swift.Int
+  public var designId: Swift.String
+  required public init()
+  @objc deinit
+}
+public class TransitRefundInfo : TransitSDK.Convertible {
+  public var mobile: Swift.String
+  public var reason: Swift.String
+  public var transferCardNumber: Swift.String
+  required public init()
+  @objc deinit
+}
+public class TransitTopupInfo : TransitSDK.Convertible {
+  public var amount: Swift.Int
+  required public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class TransitPaymentInfo : TransitSDK.TransitRequestBean {
+  public var paymentChannel: TransitSDK.TransitPaymentChannel
+  public var paymentUrl: Swift.String?
+  public var expiryTime: Swift.String?
+  required public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public class TransitPersonProfile : TransitSDK.Convertible {
+  public var email: Swift.String
+  public var fullName: Swift.String
+  public var mobile: Swift.String
+  public var referenceId: Swift.String
+  required public init()
+  @objc deinit
+}
+public class TransitProductInfo : TransitSDK.Convertible {
+  public var code: Swift.Int
+  public var effectiveDate: Swift.String
+  public var expiryDate: Swift.String
+  public var price: Swift.Int
+  public var surcharge: Swift.Int
+  public var zoneType: Swift.Int
+  public var zoneValidity: Swift.String
+  required public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class TransitTopupFeeRequest : TransitSDK.TransitRequestBean {
+  public var cardNumber: Swift.String
+  @discardableResult
+  public func setCardNumber(_ cardNumber: Swift.String) -> Self
+  required public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class AppTokenReq : TransitSDK.TransitRequestBean {
+  public var packageName: Swift.String
+  required public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class TransitGetPhysicalCardRequest : TransitSDK.TransitRequestBean {
+  public var orderNumber: Swift.String
+  @discardableResult
+  public func setOrderNumber(_ orderNumber: Swift.String) -> Self
+  required public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class TransitOrderDetailRequest : TransitSDK.TransitRequestBean {
+  public var orderNumber: Swift.String
+  @discardableResult
+  public func setOrderNumber(_ orderNumber: Swift.String) -> Self
+  required public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class TransitCancelOrderRequest : TransitSDK.TransitRequestBean {
+  public var orderNumber: Swift.String
+  @discardableResult
+  public func setOrderNumber(_ orderNumber: Swift.String) -> Self
+  required public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class TransitTopupPhysicalRequest : TransitSDK.TransitRequestBean {
+  public var orderNumber: Swift.String
+  public var orderType: TransitSDK.TransitOrderType?
+  @discardableResult
+  public func setOrderNumber(_ orderNumber: Swift.String) -> Self
+  @discardableResult
+  public func setOrderType(_ orderType: TransitSDK.TransitOrderType?) -> Self
+  required public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class TransitExceptionLogsReq : TransitSDK.TransitRequestBean {
+  @discardableResult
+  public func addLog(_ log: TransitSDK.TransitLogsReq) -> Self
+  required public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public class TransitLogsReq : TransitSDK.Convertible, Swift.Codable {
+  required public init()
+  @discardableResult
+  public func setApi(_ api: Swift.String) -> Self
+  @discardableResult
+  public func setBusinessType(_ businessType: Swift.String) -> Self
+  public func setCreateLogTime(_ createLogTime: Swift.String) -> Self
+  public func setRequest(_ request: Swift.String) -> Self
+  public func setOccurCount(_ occurCount: Swift.String) -> Self
+  public func setContext(_ context: Swift.String) -> Self
+  public func setException(_ exception: Swift.String) -> Self
+  public func setMessage(_ message: Swift.String) -> Self
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+public class TransitExchangeCertReq : TransitSDK.Convertible, Swift.Codable {
+  required public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+public class TransitExchangeKeyReq : TransitSDK.Convertible, Swift.Codable {
+  required public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers public class TransitGenerateReOrderRequest : TransitSDK.TransitRequestBean {
+  public var orderInfo: TransitSDK.TransitOrderInfo
+  @discardableResult
+  public func setOrderNumber(_ orderNumber: Swift.String) -> Self
+  required public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public class TransitOrderInfo : TransitSDK.Convertible {
+  public var orderNumber: Swift.String
+  required public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class TransitGeneralDictRequest : TransitSDK.TransitRequestBean {
+  required public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class TransitProductFeeRequest : TransitSDK.TransitRequestBean {
+  public var cardNumber: Swift.String
+  public var orderType: TransitSDK.TransitOrderType?
+  @discardableResult
+  public func setOrderType(_ orderType: TransitSDK.TransitOrderType) -> Self
+  @discardableResult
+  public func setCardNumber(_ cardNumber: Swift.String) -> Self
+  required public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public protocol ModelPropertyKey {
+}
+extension Swift.String : TransitSDK.ModelPropertyKey {
+}
+extension Swift.Array : TransitSDK.ModelPropertyKey where Element == Swift.String {
+}
+public typealias JSONPropertyKey = Swift.String
+public protocol Convertible {
+  init()
+  func kj_modelKey(from property: TransitSDK.Property) -> TransitSDK.ModelPropertyKey
+  func kj_modelValue(from jsonValue: Any?, _ property: TransitSDK.Property) -> Any?
+  func kj_modelType(from jsonValue: Any?, _ property: TransitSDK.Property) -> TransitSDK.Convertible.Type?
+  mutating func kj_willConvertToModel(from json: [Swift.String : Any])
+  mutating func kj_didConvertToModel(from json: [Swift.String : Any])
+  func kj_JSONKey(from property: TransitSDK.Property) -> TransitSDK.JSONPropertyKey
+  func kj_JSONValue(from modelValue: Any?, _ property: TransitSDK.Property) -> Any?
+  func kj_willConvertToJSON()
+  func kj_didConvertToJSON(json: [Swift.String : Any])
+}
+extension TransitSDK.Convertible {
+  public func kj_modelKey(from property: TransitSDK.Property) -> TransitSDK.ModelPropertyKey
+  public func kj_modelValue(from jsonValue: Any?, _ property: TransitSDK.Property) -> Any?
+  public func kj_modelType(from jsonValue: Any?, _ property: TransitSDK.Property) -> TransitSDK.Convertible.Type?
+  public func kj_willConvertToModel(from json: [Swift.String : Any])
+  public func kj_didConvertToModel(from json: [Swift.String : Any])
+  public func kj_JSONKey(from property: TransitSDK.Property) -> TransitSDK.JSONPropertyKey
+  public func kj_JSONValue(from modelValue: Any?, _ property: TransitSDK.Property) -> Any?
+  public func kj_willConvertToJSON()
+  public func kj_didConvertToJSON(json: [Swift.String : Any])
+}
+extension TransitSDK.Convertible {
+  public static var kj: TransitSDK.ConvertibleKJ<Self>.Type {
+    get
+    set
+  }
+  public var kj: TransitSDK.ConvertibleKJ<Self> {
+    get
+    set
+  }
+  public var kj_m: TransitSDK.ConvertibleKJ_M<Self> {
+    mutating get
+    set
+  }
+}
+public struct ConvertibleKJ_M<T> where T : TransitSDK.Convertible {
+  public func convert(from jsonData: Foundation.Data)
+  public func convert(from jsonData: Foundation.NSData)
+  public func convert(from jsonString: Swift.String)
+  public func convert(from jsonString: Foundation.NSString)
+  public func convert(from json: [Swift.String : Any])
+  public func convert(from json: [Foundation.NSString : Any])
+  public func convert(from json: Foundation.NSDictionary)
+}
+public struct ConvertibleKJ<T> where T : TransitSDK.Convertible {
+  public func JSONObject() -> [Swift.String : Any]
+  public func JSONString(prettyPrinted: Swift.Bool = false) -> Swift.String
+}
+@objc public enum TransitNFCType : Swift.Int {
+  case CHECK_CARD_INFO
+  case TRANSACTION
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum SnbISO7816TagError : Swift.Error {
+  case countExceed
+  case typeMismatch
+  case userCancel
+  case becomeInvalidate
+  case cannotConnect
+  public static func == (a: TransitSDK.SnbISO7816TagError, b: TransitSDK.SnbISO7816TagError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol Type : AnyObject {
+  var name: Swift.String { get }
+  var type: Any.Type { get }
+  var kind: TransitSDK.Kind { get }
+  var module: Swift.String { get }
+  var isSystemModule: Swift.Bool { get }
+}
+public protocol ExCodable : Swift.Decodable, Swift.Encodable {
+  associatedtype Root : TransitSDK.ExCodable = Self
+  static var keyMapping: [TransitSDK.KeyMap<Self.Root>] { get }
+}
+extension TransitSDK.ExCodable {
+  public func encode(to encoder: Swift.Encoder, with keyMapping: [TransitSDK.KeyMap<Self>], nonnull: Swift.Bool = false, throws: Swift.Bool = false) throws
+  public mutating func decode(from decoder: Swift.Decoder, with keyMapping: [TransitSDK.KeyMap<Self>], nonnull: Swift.Bool = false, throws: Swift.Bool = false) throws
+  public func decodeReference(from decoder: Swift.Decoder, with keyMapping: [TransitSDK.KeyMap<Self>], nonnull: Swift.Bool = false, throws: Swift.Bool = false) throws
+}
+extension TransitSDK.ExCodable where Self == Self.Root {
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@_hasMissingDesignatedInitializers final public class KeyMap<Root> where Root : Swift.Decodable, Root : Swift.Encodable {
+  @objc deinit
+}
+extension TransitSDK.KeyMap {
+  convenience public init<Value>(_ keyPath: Swift.WritableKeyPath<Root, Value>, to codingKeys: Swift.String..., nonnull: Swift.Bool? = nil, throws: Swift.Bool? = nil) where Value : Swift.Decodable, Value : Swift.Encodable
+  convenience public init<Value, Key>(_ keyPath: Swift.WritableKeyPath<Root, Value>, to codingKeys: Key..., nonnull: Swift.Bool? = nil, throws: Swift.Bool? = nil) where Value : Swift.Decodable, Value : Swift.Encodable, Key : Swift.CodingKey
+  convenience public init<Value>(ref keyPath: Swift.ReferenceWritableKeyPath<Root, Value>, to codingKeys: Swift.String..., nonnull: Swift.Bool? = nil, throws: Swift.Bool? = nil) where Value : Swift.Decodable, Value : Swift.Encodable
+  convenience public init<Value, Key>(ref keyPath: Swift.ReferenceWritableKeyPath<Root, Value>, to codingKeys: Key..., nonnull: Swift.Bool? = nil, throws: Swift.Bool? = nil) where Value : Swift.Decodable, Value : Swift.Encodable, Key : Swift.CodingKey
+}
+extension Swift.Encoder {
+  public subscript<T>(stringKey: Swift.String) -> T? where T : Swift.Encodable {
+    get
+    nonmutating set
+  }
+  public subscript<T, K>(codingKey: K) -> T? where T : Swift.Encodable, K : Swift.CodingKey {
+    get
+    nonmutating set
+  }
+}
+extension Swift.Decoder {
+  public subscript<T>(stringKeys: [Swift.String]) -> T? where T : Swift.Decodable {
+    get
+  }
+  public subscript<T>(stringKeys: Swift.String...) -> T? where T : Swift.Decodable {
+    get
+  }
+  public subscript<T, K>(codingKeys: [K]) -> T? where T : Swift.Decodable, K : Swift.CodingKey {
+    get
+  }
+  public subscript<T, K>(codingKeys: K...) -> T? where T : Swift.Decodable, K : Swift.CodingKey {
+    get
+  }
+}
+extension Swift.Encoder {
+  public func encodeNonnullThrows<T>(_ value: T, for stringKey: Swift.String) throws where T : Swift.Encodable
+  public func encodeThrows<T>(_ value: T?, for stringKey: Swift.String) throws where T : Swift.Encodable
+  public func encode<T>(_ value: T?, for stringKey: Swift.String) where T : Swift.Encodable
+  public func encodeNonnullThrows<T, K>(_ value: T, for codingKey: K) throws where T : Swift.Encodable, K : Swift.CodingKey
+  public func encodeThrows<T, K>(_ value: T?, for codingKey: K) throws where T : Swift.Encodable, K : Swift.CodingKey
+  public func encode<T, K>(_ value: T?, for codingKey: K) where T : Swift.Encodable, K : Swift.CodingKey
+}
+extension Swift.Decoder {
+  public func decodeNonnullThrows<T>(_ stringKeys: Swift.String..., as type: T.Type = T.self) throws -> T where T : Swift.Decodable
+  public func decodeNonnullThrows<T>(_ stringKeys: [Swift.String], as type: T.Type = T.self) throws -> T where T : Swift.Decodable
+  public func decodeThrows<T>(_ stringKeys: Swift.String..., as type: T.Type = T.self) throws -> T? where T : Swift.Decodable
+  public func decodeThrows<T>(_ stringKeys: [Swift.String], as type: T.Type = T.self) throws -> T? where T : Swift.Decodable
+  public func decode<T>(_ stringKeys: Swift.String..., as type: T.Type = T.self) -> T? where T : Swift.Decodable
+  public func decode<T>(_ stringKeys: [Swift.String], as type: T.Type = T.self) -> T? where T : Swift.Decodable
+  public func decodeNonnullThrows<T, K>(_ codingKeys: K..., as type: T.Type = T.self) throws -> T where T : Swift.Decodable, K : Swift.CodingKey
+  public func decodeNonnullThrows<T, K>(_ codingKeys: [K], as type: T.Type = T.self) throws -> T where T : Swift.Decodable, K : Swift.CodingKey
+  public func decodeThrows<T, K>(_ codingKeys: K..., as type: T.Type = T.self) throws -> T? where T : Swift.Decodable, K : Swift.CodingKey
+  public func decodeThrows<T, K>(_ codingKeys: [K], as type: T.Type = T.self) throws -> T? where T : Swift.Decodable, K : Swift.CodingKey
+  public func decode<T, K>(_ codingKeys: K..., as type: T.Type = T.self) -> T? where T : Swift.Decodable, K : Swift.CodingKey
+  public func decode<T, K>(_ codingKeys: [K], as type: T.Type = T.self) -> T? where T : Swift.Decodable, K : Swift.CodingKey
+}
+public protocol ExCodableDecodingTypeConverter {
+  func decode<T, K>(_ container: Swift.KeyedDecodingContainer<K>, codingKey: K, as type: T.Type) throws -> T? where T : Swift.Decodable, K : Swift.CodingKey
+}
+public func register(_ decodingTypeConverter: TransitSDK.ExCodableDecodingTypeConverter)
+extension Swift.Encodable {
+  public func encoded(using encoder: TransitSDK.DataEncoder = JSONEncoder()) throws -> Foundation.Data
+  public func encoded(using encoder: Foundation.JSONEncoder = JSONEncoder()) throws -> [Swift.String : Any]
+  public func encoded(using encoder: Foundation.JSONEncoder = JSONEncoder()) throws -> [Any]
+  public func encoded(using encoder: Foundation.JSONEncoder = JSONEncoder()) throws -> Swift.String
+}
+extension Swift.Decodable {
+  public static func decoded(from data: Foundation.Data, using decoder: TransitSDK.SnbExDataDecoder = JSONDecoder(), as type: Self.Type = Self.self) throws -> Self
+  public static func decoded(from json: [Swift.String : Any], using decoder: Foundation.JSONDecoder = JSONDecoder(), as type: Self.Type = Self.self) throws -> Self
+  public static func decoded(from jsonArray: [Any], using decoder: Foundation.JSONDecoder = JSONDecoder(), as type: Self.Type = Self.self) throws -> Self
+  public static func decoded(from string: Swift.String, using decoder: Foundation.JSONDecoder = JSONDecoder(), as type: Self.Type = Self.self) throws -> Self
+}
+extension Foundation.Data {
+  public func decoded<T>(using decoder: TransitSDK.SnbExDataDecoder = JSONDecoder(), as type: T.Type = T.self) throws -> T where T : Swift.Decodable
+}
+extension Swift.Dictionary {
+  public func decoded<T>(using decoder: Foundation.JSONDecoder = JSONDecoder(), as type: T.Type = T.self) throws -> T where T : Swift.Decodable
+}
+extension Swift.Array {
+  public func decoded<T>(using decoder: Foundation.JSONDecoder = JSONDecoder(), as type: T.Type = T.self) throws -> T where T : Swift.Decodable
+}
+extension Swift.String {
+  public func decoded<T>(using decoder: Foundation.JSONDecoder = JSONDecoder(), as type: T.Type = T.self) throws -> T where T : Swift.Decodable
+}
+public protocol DataEncoder {
+  func encode<T>(_ value: T) throws -> Foundation.Data where T : Swift.Encodable
+}
+public protocol SnbExDataDecoder {
+  func decode<T>(_ type: T.Type, from data: Foundation.Data) throws -> T where T : Swift.Decodable
+}
+extension Foundation.JSONEncoder : TransitSDK.DataEncoder {
+}
+extension Foundation.JSONDecoder : TransitSDK.SnbExDataDecoder {
+}
+extension Foundation.PropertyListEncoder : TransitSDK.DataEncoder {
+}
+extension Foundation.PropertyListDecoder : TransitSDK.SnbExDataDecoder {
+}
+extension TransitSDK.ExCodable {
+  @available(*, deprecated, renamed: "encode(to:with:nonnull:throws:)")
+  public func encode(with keyMapping: [TransitSDK.KeyMap<Self>], using encoder: Swift.Encoder)
+  @available(*, deprecated, renamed: "decode(from:with:nonnull:throws:)")
+  public mutating func decode(with keyMapping: [TransitSDK.KeyMap<Self>], using decoder: Swift.Decoder)
+  @available(*, deprecated, renamed: "decodeReference(from:with:nonnull:throws:)")
+  public func decodeReference(with keyMapping: [TransitSDK.KeyMap<Self>], using decoder: Swift.Decoder)
+}
+@available(*, deprecated, renamed: "append(decodingTypeConverter:)")
+public protocol KeyedDecodingContainerCustomTypeConversion : TransitSDK.ExCodableDecodingTypeConverter {
+  func decodeForTypeConversion<T, K>(_ container: Swift.KeyedDecodingContainer<K>, codingKey: K, as type: T.Type) -> T? where T : Swift.Decodable, K : Swift.CodingKey
+}
+@available(*, deprecated)
+extension TransitSDK.KeyedDecodingContainerCustomTypeConversion {
+  public func decode<T, K>(_ container: Swift.KeyedDecodingContainer<K>, codingKey: K, as type: T.Type) throws -> T? where T : Swift.Decodable, K : Swift.CodingKey
+}
+public protocol Jsonable : Swift.Decodable, Swift.Encodable {
+}
+extension TransitSDK.Jsonable {
+  public func toJsonStr() -> Swift.String
+  public func toJson() -> [Swift.String : Any]
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class StructType : TransitSDK.ModelType {
+  override public var description: Swift.String {
+    get
+  }
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class BytesUtils : ObjectiveC.NSObject {
+  @objc public class func toBytes(string: Swift.String) -> [Swift.UInt8]
+  @objc public class func toBytes(data: Foundation.Data) -> [Swift.UInt8]
+  @objc public class func toHexBytes(string: Swift.String) -> [Swift.UInt8]
+  @objc public class func toHexBytes(data: Foundation.Data) -> [Swift.UInt8]
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension Foundation.NSArray : TransitSDK.KJCompatible {
+}
+extension Swift.Array : TransitSDK.KJCompatible {
+}
+extension Swift.Set : TransitSDK.KJCompatible {
+}
+extension Foundation.NSSet : TransitSDK.KJCompatible {
+}
+extension TransitSDK.KJ where Base : Swift.ExpressibleByArrayLiteral, Base : Swift.Sequence {
+  public func enumArray<M>(_ type: M.Type) -> [M] where M : TransitSDK.ConvertibleEnum
+  public func enumArray(type: TransitSDK.ConvertibleEnum.Type) -> [TransitSDK.ConvertibleEnum]
+  public func modelArray<M>(_ type: M.Type) -> [M] where M : TransitSDK.Convertible
+  public func modelArray(type: TransitSDK.Convertible.Type) -> [TransitSDK.Convertible]
+  public func JSONObjectArray() -> [[Swift.String : Any]]
+  public func JSONArray() -> [Any]
+  public func JSONString(prettyPrinted: Swift.Bool = false) -> Swift.String
+}
+@frozen public enum TransitCallback<T, TransitException> {
+  case success(T)
+  case failure(TransitException)
+}
+extension Swift.Bool : TransitSDK.Convertible {
+}
+@_inheritsConvenienceInitializers @objc public class DataUtils : ObjectiveC.NSObject {
+  @objc public class func toData(string: Swift.String) -> Foundation.Data
+  @objc public class func toHexData(string: Swift.String) -> Foundation.Data
+  @objc public class func toBase64DecodedData(string: Swift.String) -> Foundation.Data?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class FunctionType : TransitSDK.BaseType {
+  public var `throws`: Swift.Bool {
+    get
+  }
+  public var returnType: Any.Type {
+    get
+  }
+  public var argumentTypes: [Any.Type]? {
+    get
+  }
+  override public var description: Swift.String {
+    get
+  }
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class SecurityManager : ObjectiveC.NSObject {
+  @objc public class func sha256(plainText: Swift.String) -> Swift.String
+  @objc public class func sha256(data: Foundation.Data) -> Swift.String
+  @objc public class func generateCmac(key: [Swift.UInt8], msg: [Swift.UInt8]) -> [Swift.UInt8]?
+  @objc public class func verifyCmac(key: Swift.String, msg: Swift.String, remoteCmac: [Swift.UInt8]) -> Swift.Bool
+  @objc public class func aesCBCEncrypt(key: Foundation.Data, data: Foundation.Data) -> Foundation.Data?
+  @objc public class func aesCBCDecrypt(key: Foundation.Data, data: Foundation.Data) -> Foundation.Data?
+  @objc public class func aesECBEncrypt(key: Foundation.Data, data: Foundation.Data) -> Foundation.Data?
+  @objc public class func aesECBDecrypt(key: Foundation.Data, data: Foundation.Data) -> Foundation.Data?
+  @objc public class func crc16Ccitt(hexString: Swift.String) -> Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@frozen public enum TransitOrderType : Swift.Int, Swift.Codable, TransitSDK.ConvertibleEnum {
+  case CARD_REFUND_A_4_VIRTUAL
+  case CARD_REFUND_P_4_VIRTUAL
+  case CARD_ISSUE_P_4_VIRTUAL
+  case CARD_RENEW_P_4_VIRTUAL
+  case CARD_TOPUP_P_4_PHYSICAL
+  case CARD_PDSL_P_4_PHYSICAL
+  case CARD_REFUND_P_4_PHYSICAL
+  case CARD_REGISTER_P_4_PHYSICAL
+  case CARD_ISSUE_P_4_PHYSICAL
+  case CARD_RENEW_P_4_PHYSICAL
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@frozen public enum CardStatusType : Swift.Int, Swift.Codable, TransitSDK.ConvertibleEnum {
+  case INITIALIZED
+  case ENABLED
+  case DISABLED
+  case BLOCKED
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@frozen public enum TransitClassType : Swift.Int, Swift.Codable, TransitSDK.ConvertibleEnum {
+  case Gold
+  case Silver
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@frozen public enum TransitEpurseStatusType : Swift.Int, TransitSDK.ConvertibleEnum {
+  case INITIALIZED
+  case ENABLED
+  case DISABLED
+  case BLOCKED
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@frozen public enum ZoneType : Swift.Int, TransitSDK.ConvertibleEnum {
+  case SINGLE
+  case ADJACENT
+  case ALL
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@frozen public enum TransitPaymentStatus : Swift.Int, Swift.Codable, TransitSDK.ConvertibleEnum {
+  case PAY_FAILED
+  case PAYING
+  case PAY_SUCCEED
+  case REFUND_DOING
+  case REFUND_FAILED
+  case REFUND_SUCCEED
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@frozen public enum TransitOrderStatus : Swift.Int, Swift.Codable, TransitSDK.ConvertibleEnum {
+  case CLOSE
+  case NEW
+  case SUCCESS
+  case DOUBT
+  case ORDER_WHITELISTING
+  case ORDER_WHITELISTED
+  case ORDER_WHITELIST_DOUBT
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@frozen public enum TransitConcessionType : Swift.Int, Swift.Codable, TransitSDK.ConvertibleEnum {
+  case ADULT
+  case STUDENT
+  case PENSIONER
+  case DISABLED
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@frozen public enum TransitCardMedia : Swift.Int, Swift.Codable, TransitSDK.ConvertibleEnum {
+  case VIRTUAL
+  case PHYSICAL
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@frozen public enum TransitCardPosition : Swift.Int, Swift.Codable, TransitSDK.ConvertibleEnum {
+  case NATIVE
+  case CLOUD
+  case OTHER
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@frozen public enum TransitProgressType : Swift.Int, Swift.Codable, TransitSDK.ConvertibleEnum {
+  case CARD_REFUND_A_4_VIRTUAL
+  case CARD_REFUND_P_4_VIRTUAL
+  case CARD_ISSUE_P_4_VIRTUAL
+  case CARD_RENEW_P_4_VIRTUAL
+  case CARD_REFUND_P_4_PHYSICAL
+  case CARD_ISSUE_P_4_PHYSICAL
+  case CARD_RENEW_P_4_PHYSICAL
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@frozen public enum TransitPaymentChannel : Swift.Int, Swift.Codable, TransitSDK.ConvertibleEnum {
+  case PAY_NO
+  case CASH
+  case E_WALLET
+  case G_PAY
+  case E_PAY
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@frozen public enum TransitLang : Swift.String, Swift.Codable, TransitSDK.ConvertibleEnum {
+  case AR
+  case EN
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@frozen public enum TransitProductStatus : Swift.Int, Swift.Codable, TransitSDK.ConvertibleEnum {
+  case INITIALIZED
+  case ENABLED
+  case DISABLED
+  case BLOCKED
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@frozen public enum TransitProductZoneType : Swift.Int, Swift.Codable, TransitSDK.ConvertibleEnum {
+  case SINGLE
+  case ADJACENT
+  case ALL
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@frozen public enum TransitTransactionStatus : Swift.Int, Swift.Codable, TransitSDK.ConvertibleEnum {
+  case CHECK_IN
+  case CHECK_OUT
+  case DISRUPTION
+  case INTERCHANGE
+  case E_PURSE_DEDUCTION
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@frozen public enum TransitTransactionType : Swift.Int, Swift.Codable, TransitSDK.ConvertibleEnum {
+  case CONSUME
+  case TOPUP
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@frozen public enum TransitProductValidStatus : Swift.Int, Swift.Codable, TransitSDK.ConvertibleEnum {
+  case BEFORE_VALIDITY
+  case VALID
+  case OUT_OF_VALIDITY
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@frozen public enum TransitCardPayType : Swift.Int, Swift.Codable, TransitSDK.ConvertibleEnum {
+  case LINK
+  case UNLINK
+  case PAYMENT
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @objc public class AppUtils : ObjectiveC.NSObject {
+  @objc public class func getAppBundleId() -> Swift.String
+  @objc public class func getAppVersion() -> Swift.String
+  @objc public class func getAppBuildNumber() -> Swift.String
+  @objc public class func getKeyWindow() -> UIKit.UIWindow?
+  @objc public class func openUrl(domain: Swift.String, paramString: Swift.String)
+  @objc override dynamic public init()
+  @objc deinit
+}
+public struct UserDefaultsManager {
+  public static func setObject<T>(_ object: T, forKey key: Swift.String) where T : Swift.Encodable
+  public static func getObject<T>(_ type: T.Type, forKey key: Swift.String) -> T? where T : Swift.Decodable
+}
+@_inheritsConvenienceInitializers @objc public class Transit : ObjectiveC.NSObject {
+  public static let shared: TransitSDK.Transit
+  public static func initSDK(_ config: TransitSDK.TransitConfiguration)
+  public func isNFCReadingAvailable() -> Swift.Bool
+  public func getPhysicalCard(_ request: TransitSDK.TransitGetPhysicalCardRequest, delegate: TransitSDK.TransitNFCReaderDelegate? = nil, callback: @escaping (TransitSDK.TransitCallback<TransitSDK.TransitPhysicalCard, TransitSDK.TransitException>) -> Swift.Void)
+  public func getTopupFee(topupFeeReq: TransitSDK.TransitTopupFeeRequest, callback: @escaping (TransitSDK.TransitCallback<TransitSDK.TransitTopupFee, TransitSDK.TransitException>) -> Swift.Void)
+  public func generateTopupOrder(_ request: TransitSDK.TransitPhysicalTopupOrderRequest, callback: @escaping (TransitSDK.TransitCallback<TransitSDK.TransitPhysicalTopupOrderResponse, TransitSDK.TransitException>) -> Swift.Void)
+  public func topupPhysicalCard(_ request: TransitSDK.TransitTopupPhysicalRequest, delegate: TransitSDK.TransitNFCReaderDelegate? = nil, callback: @escaping (TransitSDK.TransitCallback<Swift.Bool, TransitSDK.TransitException>) -> Swift.Void)
+  public func getOrderList(_ request: TransitSDK.TransitOrderListRequest, callback: @escaping (TransitSDK.TransitCallback<TransitSDK.TranitOrderListResponse, TransitSDK.TransitException>) -> Swift.Void)
+  public func getOrderDetail(_ request: TransitSDK.TransitOrderDetailRequest, callback: @escaping (TransitSDK.TransitCallback<TransitSDK.TransitOrderDetail, TransitSDK.TransitException>) -> Swift.Void)
+  public func getCardList(_ request: TransitSDK.TransitCardListRequest, callback: @escaping (TransitSDK.TransitCallback<TransitSDK.TransitCardList, TransitSDK.TransitException>) -> Swift.Void)
+  public func getCardDetail(_ request: TransitSDK.TransitCardDetailRequest, callback: @escaping (TransitSDK.TransitCallback<TransitSDK.TransitCardDetail, TransitSDK.TransitException>) -> Swift.Void)
+  public func cancelOrder(_ request: TransitSDK.TransitCancelOrderRequest, callback: @escaping (TransitSDK.TransitCallback<TransitSDK.TransitCancelOrder, TransitSDK.TransitException>) -> Swift.Void)
+  public func getCardProgress(_ request: TransitSDK.TransitCardProgressRequest, callback: @escaping (TransitSDK.TransitCallback<TransitSDK.TransitCardProgress, TransitSDK.TransitException>) -> Swift.Void)
+  public func getResettingPinInfo(_ request: TransitSDK.TransitResettingPinInfoRequest, callback: @escaping (TransitSDK.TransitCallback<TransitSDK.TransitResettingPinInfoResponse, TransitSDK.TransitException>) -> Swift.Void)
+  public func resetPin(_ request: TransitSDK.TransitResetPinRequest, callback: @escaping (TransitSDK.TransitCallback<Swift.Bool, TransitSDK.TransitException>) -> Swift.Void)
+  public func getACardRegisterFee(_ request: TransitSDK.TransitCardFeeRequest, callback: @escaping (TransitSDK.TransitCallback<TransitSDK.TransitACardRegisterFee, TransitSDK.TransitException>) -> Swift.Void)
+  public func getCardIssueFee(_ request: TransitSDK.TransitCardFeeRequest, callback: @escaping (TransitSDK.TransitCallback<TransitSDK.TransitCardIssueFeeResp, TransitSDK.TransitException>) -> Swift.Void)
+  public func resubmitDetail(_ request: TransitSDK.TransitResubmitDetailRequest, callback: @escaping (TransitSDK.TransitCallback<TransitSDK.TransitResubmitDetail, TransitSDK.TransitException>) -> Swift.Void)
+  public func renewResubmitDetail(_ request: TransitSDK.TransitRenewResubmitDetailRequest, callback: @escaping (TransitSDK.TransitCallback<TransitSDK.TransitRenewResubmitDetail, TransitSDK.TransitException>) -> Swift.Void)
+  public func renewResubmit(_ request: TransitSDK.TransitRenewReviewRequest, callback: @escaping (TransitSDK.TransitCallback<TransitSDK.TransitRenewReview, TransitSDK.TransitException>) -> Swift.Void)
+  public func pCardResubmit(_ request: TransitSDK.TransitReviewRequest, callback: @escaping (TransitSDK.TransitCallback<TransitSDK.TransitReview, TransitSDK.TransitException>) -> Swift.Void)
+  public func pCardRenewFee(_ request: TransitSDK.TransitCardFeeRequest, callback: @escaping (TransitSDK.TransitCallback<TransitSDK.TransitCardRenewFeeReq, TransitSDK.TransitException>) -> Swift.Void)
+  public func pCardRefundList(_ request: TransitSDK.TransitRefundListRequest, callback: @escaping (TransitSDK.TransitCallback<TransitSDK.TransitRefundListReq, TransitSDK.TransitException>) -> Swift.Void)
+  public func pCardRefundSelect(_ request: TransitSDK.TransitRequestBean, callback: @escaping (TransitSDK.TransitCallback<TransitSDK.TransitRefundCards, TransitSDK.TransitException>) -> Swift.Void)
+  public func generateReorder(_ request: TransitSDK.TransitGenerateReOrderRequest, callback: @escaping (TransitSDK.TransitCallback<TransitSDK.TransitGenerateReOrder, TransitSDK.TransitException>) -> Swift.Void)
+  public func generalDict(_ request: TransitSDK.TransitGeneralDictRequest, callback: @escaping (TransitSDK.TransitCallback<TransitSDK.TransitDictResp, TransitSDK.TransitException>) -> Swift.Void)
+  public func getProductFee(_ request: TransitSDK.TransitProductFeeRequest, callback: @escaping (TransitSDK.TransitCallback<TransitSDK.TransitProductFeeResponse, TransitSDK.TransitException>) -> Swift.Void)
+  public func refundTerminalDelete(_ request: TransitSDK.TransitRefundTerminalDeleteRequest, callback: @escaping (TransitSDK.TransitCallback<Swift.Bool, TransitSDK.TransitException>) -> Swift.Void)
+  public func getLinkPaymentCardToken(_ request: TransitSDK.TransitLinkPaymentCardTokenRequest, callback: @escaping (TransitSDK.TransitCallback<TransitSDK.TransitLinkPaymentCardTokenResponse, TransitSDK.TransitException>) -> Swift.Void)
+  public func getLinkPaymentCardOTP(_ request: TransitSDK.TransitLinkPaymentCardOTPRequest, callback: @escaping (TransitSDK.TransitCallback<Swift.Bool, TransitSDK.TransitException>) -> Swift.Void)
+  public func linkPaymentCard(_ request: TransitSDK.TransitLinkPaymentCardRequest, callback: @escaping (TransitSDK.TransitCallback<Swift.Bool, TransitSDK.TransitException>) -> Swift.Void)
+  public func getUnlinkPaymentCardOTP(_ request: TransitSDK.TransitUnlinkPaymentCardOTPRequest, callback: @escaping (TransitSDK.TransitCallback<TransitSDK.TransitSendOtpResponse, TransitSDK.TransitException>) -> Swift.Void)
+  public func unlinkPaymentCard(_ request: TransitSDK.TransitUnlinkPaymentCardRequest, callback: @escaping (TransitSDK.TransitCallback<Swift.Bool, TransitSDK.TransitException>) -> Swift.Void)
+  public func getPayOTP(_ request: TransitSDK.TransitPayOTPRequest, callback: @escaping (TransitSDK.TransitCallback<Swift.Bool, TransitSDK.TransitException>) -> Swift.Void)
+  public func verifyPayOTP(_ request: TransitSDK.TransitVerifyPayOTPRequest, callback: @escaping (TransitSDK.TransitCallback<Swift.Bool, TransitSDK.TransitException>) -> Swift.Void)
+  public func requestPayment(_ request: TransitSDK.TransitPayRequest, delegate: TransitSDK.TransitNFCReaderDelegate? = nil, callback: @escaping (TransitSDK.TransitCallback<Swift.Bool, TransitSDK.TransitException>) -> Swift.Void)
+  public func getPaymentCardList(_ request: TransitSDK.TransitPaymentCardListRequest, callback: @escaping (TransitSDK.TransitCallback<TransitSDK.TransitPaymentCardListResponse, TransitSDK.TransitException>) -> Swift.Void)
+  public func createTransaction(_ request: TransitSDK.TransitPayCreateTransactionRequest, callback: @escaping (TransitSDK.TransitCallback<TransitSDK.TransitPayCreateTransactionResponse, TransitSDK.TransitException>) -> Swift.Void)
+  public func setLang(language: TransitSDK.TransitLang)
+  public func getApplySdkSecret(_ request: TransitSDK.TransitSdkSecretRequest, callback: @escaping (TransitSDK.TransitCallback<TransitSDK.TransitSdkSecretResponse, TransitSDK.TransitException>) -> Swift.Void)
+  public func generateOutTradeNos(_ request: TransitSDK.TransitRequestBean, callback: @escaping (TransitSDK.TransitCallback<TransitSDK.TransitSdkOutTradeNoResponse, TransitSDK.TransitException>) -> Swift.Void)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class EnumType : TransitSDK.BaseType {
+  public var genericTypes: [Any.Type]? {
+    get
+  }
+  public var cases: [Swift.String]? {
+    get
+  }
+  override public var description: Swift.String {
+    get
+  }
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class ProtocolType : TransitSDK.BaseType {
+  @objc deinit
+}
+public class CMACManager : TransitSDK.AuthenticatorProtocol {
+  public enum Error : Swift.Error {
+    case wrongKeyLength
+    public static func == (a: TransitSDK.CMACManager.Error, b: TransitSDK.CMACManager.Error) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public init(key: Swift.Array<Swift.UInt8>) throws
+  public func authenticate(_ bytes: Swift.Array<Swift.UInt8>) -> Swift.Array<Swift.UInt8>
+  @objc deinit
+}
+@usableFromInline
+internal struct NewBatchedCollectionIndex<Base> where Base : Swift.Collection {
+}
+extension TransitSDK.NewBatchedCollectionIndex : Swift.Comparable {
+  @usableFromInline
+  internal static func == <Base>(lhs: TransitSDK.NewBatchedCollectionIndex<Base>, rhs: TransitSDK.NewBatchedCollectionIndex<Base>) -> Swift.Bool where Base : Swift.Collection
+  @usableFromInline
+  internal static func < <Base>(lhs: TransitSDK.NewBatchedCollectionIndex<Base>, rhs: TransitSDK.NewBatchedCollectionIndex<Base>) -> Swift.Bool where Base : Swift.Collection
+}
+@usableFromInline
+internal struct NewBatchedCollection<Base> : Swift.Collection where Base : Swift.Collection {
+  @usableFromInline
+  internal init(base: Base, size: Swift.Int)
+  @usableFromInline
+  internal typealias Index = TransitSDK.NewBatchedCollectionIndex<Base>
+  @usableFromInline
+  internal var startIndex: TransitSDK.NewBatchedCollection<Base>.Index {
+    get
+  }
+  @usableFromInline
+  internal var endIndex: TransitSDK.NewBatchedCollection<Base>.Index {
+    get
+  }
+  @usableFromInline
+  internal func index(after idx: TransitSDK.NewBatchedCollection<Base>.Index) -> TransitSDK.NewBatchedCollection<Base>.Index
+  @usableFromInline
+  internal subscript(idx: TransitSDK.NewBatchedCollection<Base>.Index) -> Base.SubSequence {
+    get
+  }
+  @usableFromInline
+  internal typealias Element = Base.SubSequence
+  @usableFromInline
+  internal typealias Indices = Swift.DefaultIndices<TransitSDK.NewBatchedCollection<Base>>
+  @usableFromInline
+  internal typealias Iterator = Swift.IndexingIterator<TransitSDK.NewBatchedCollection<Base>>
+  @usableFromInline
+  internal typealias SubSequence = Swift.Slice<TransitSDK.NewBatchedCollection<Base>>
+}
+extension Swift.Collection {
+  @inlinable internal func batched1(by size: Swift.Int) -> TransitSDK.NewBatchedCollection<Self> {
+    NewBatchedCollection(base: self, size: size)
+  }
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class ObjCClassType : TransitSDK.BaseType {
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class TransitPayRequest : TransitSDK.TransitRequestBean {
+  public var transactionNo: Swift.String
+  public var cardNumber: Swift.String
+  @discardableResult
+  public func setTransactionNo(_ transactionNo: Swift.String) -> Self
+  @discardableResult
+  public func setCardNumber(_ cardNumber: Swift.String) -> Self
+  required public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class TransitPaymentCardListRequest : TransitSDK.TransitRequestBean {
+  public var mobile: Swift.String
+  public var regionCode: Swift.String
+  @discardableResult
+  public func setMobile(_ mobile: Swift.String) -> Self
+  @discardableResult
+  public func setRegionCode(_ regionCode: Swift.String) -> Self
+  required public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class TransitCardPaySendOtpRequest : TransitSDK.TransitRequestBean {
+  public var mobile: Swift.String
+  public var regionCode: Swift.String
+  @discardableResult
+  public func setMobile(_ mobile: Swift.String) -> Self
+  @discardableResult
+  public func setRegionCode(_ regionCode: Swift.String) -> Self
+  required public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class TransitLinkPaymentCardOTPRequest : TransitSDK.TransitCardPaySendOtpRequest {
+  public var linkToken: Swift.String
+  @discardableResult
+  public func setLinkToken(_ linkToken: Swift.String) -> Self
+  required public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class TransitLinkPaymentCardTokenRequest : TransitSDK.TransitRequestBean {
+  public var cardNumber: Swift.String
+  @discardableResult
+  public func setCardNumber(_ cardNumber: Swift.String) -> Self
+  required public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class TransitVerifyPayOTPRequest : TransitSDK.TransitRequestBean {
+  public var otpCode: Swift.String
+  public var transactionNo: Swift.String
+  @discardableResult
+  public func setOTPCode(_ otpCode: Swift.String) -> Self
+  @discardableResult
+  public func setTransactionNo(_ transactionNo: Swift.String) -> Self
+  required public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class TransitPayOTPRequest : TransitSDK.TransitCardPaySendOtpRequest {
+  public var transactionNo: Swift.String
+  @discardableResult
+  public func setTransactionNo(_ transactionNo: Swift.String) -> Self
+  required public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class TransitUnlinkPaymentCardRequest : TransitSDK.TransitRequestBean {
+  public var cardNumber: Swift.String
+  public var otpCode: Swift.String
+  public var token: Swift.String
+  @discardableResult
+  public func setOTPCode(_ otpCode: Swift.String) -> Self
+  @discardableResult
+  public func setUnLinkPaymentCardToken(_ token: Swift.String) -> Self
+  @discardableResult
+  public func setCardNumber(_ cardNumber: Swift.String) -> Self
+  required public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class TransitUnlinkPaymentCardOTPRequest : TransitSDK.TransitCardPaySendOtpRequest {
+  public var cardNumber: Swift.String
+  @discardableResult
+  public func setCardNumber(_ cardNumber: Swift.String) -> Self
+  required public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class TransitLinkPaymentCardRequest : TransitSDK.TransitRequestBean {
+  public var otpCode: Swift.String
+  public var linkToken: Swift.String
+  @discardableResult
+  public func setOTPCode(_ otpCode: Swift.String) -> Self
+  @discardableResult
+  public func setLinkPaymentCardToken(_ linkToken: Swift.String) -> Self
+  required public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class TransitSdkSecretRequest : TransitSDK.TransitRequestBean {
+  public var deviceId: Swift.String
+  public var appId: Swift.String
+  @discardableResult
+  public func setDeviceId(_ deviceId: Swift.String) -> Self
+  @discardableResult
+  public func setAppId(_ appId: Swift.String) -> Self
+  required public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class TransitPayCreateTransactionRequest : TransitSDK.TransitRequestBean {
+  public var outTradeNo: Swift.String
+  public var outTradeName: Swift.String
+  public var currency: Swift.String
+  public var total: Swift.Int
+  public var beId: Swift.String
+  public var deviceId: Swift.String
+  public var duration: Swift.Int
+  public var notificationUrl: Swift.String
+  public var appId: Swift.String
+  public var mobile: Swift.String
+  public var regionCode: Swift.String
+  @discardableResult
+  public func setOutTradeNo(_ outTradeNo: Swift.String) -> Self
+  @discardableResult
+  public func setTotal(_ total: Swift.Int) -> Self
+  @discardableResult
+  public func setDeviceId(_ deviceId: Swift.String) -> Self
+  @discardableResult
+  public func setMobile(_ mobile: Swift.String) -> Self
+  @discardableResult
+  public func setRegionCode(_ regionCode: Swift.String) -> Self
+  @discardableResult
+  public func setBeId(_ beId: Swift.String) -> Self
+  @discardableResult
+  public func setOutTradeName(_ outTradeName: Swift.String) -> Self
+  @discardableResult
+  public func setDuration(_ duration: Swift.Int) -> Self
+  @discardableResult
+  public func setCurrency(_ currency: Swift.String) -> Self
+  @discardableResult
+  public func setNotificationUrl(_ notificationUrl: Swift.String) -> Self
+  @discardableResult
+  public func setAppId(_ appId: Swift.String) -> Self
+  required public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class TransitConfiguration : ObjectiveC.NSObject {
+  public typealias TransitAppSecretKeyHandler = (_ sdkId: Swift.String, _ deviceId: Swift.String, _ completion: @escaping (Swift.String?, Swift.Error?) -> Swift.Void) -> Swift.Void
+  public var appSecretKeyHandler: TransitSDK.TransitConfiguration.TransitAppSecretKeyHandler?
+  @discardableResult
+  public func setAppID(_ appId: Swift.String) -> Self
+  @discardableResult
+  public func setAppSecretKey(_ appSecretKey: Swift.String) -> Self
+  @discardableResult
+  public func setLang(_ lang: TransitSDK.TransitLang) -> Self
+  @discardableResult
+  public func enableSandbox(_ sandbox: Swift.Bool) -> Self
+  @discardableResult
+  public func enableDebug(_ debug: Swift.Bool) -> Self
+  @discardableResult
+  public func setEnvironment(_ environment: TransitSDK.TransitEnvironment?) -> Self
+  @discardableResult
+  public func setAppSecretKeyHandler(_ appSecretKeyHandler: TransitSDK.TransitConfiguration.TransitAppSecretKeyHandler?) -> Self
+  @objc override dynamic public init()
+  @objc deinit
+}
+public enum Kind {
+  case `class`
+  case `struct`
+  case `enum`
+  case optional
+  case foreignClass
+  case opaque
+  case tuple
+  case function
+  case existential
+  case metatype
+  case objCClassWrapper
+  case existentialMetatype
+  case heapLocalVariable
+  case heapArray
+  case heapGenericLocalVariable
+  case errorObject
+  public static func == (a: TransitSDK.Kind, b: TransitSDK.Kind) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol ConvertibleEnum {
+  static func kj_convert(from value: Any) -> Self?
+  var kj_value: Any { get }
+  static var kj_valueType: Any.Type { get }
+}
+extension Swift.RawRepresentable where Self : TransitSDK.ConvertibleEnum {
+  public static func kj_convert(from value: Any) -> Self?
+  public var kj_value: Any {
+    get
+  }
+  public static var kj_valueType: Any.Type {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers public class TransitPaymentCard : TransitSDK.TransitBean {
+  public var cardNumber: Swift.String
+  public var expiredTime: Swift.String
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class TransitLinkPaymentCardTokenResponse : TransitSDK.TransitBean {
+  public var linkToken: Swift.String
+  public var expiredTime: Swift.String
+  public var cardNumber: Swift.String
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class TransitPaymentCardListResponse : TransitSDK.TransitBean {
+  public var total: Swift.Int
+  public var data: [TransitSDK.TransitPaymentCard]
+  public var cardList: [TransitSDK.TransitPaymentCard]
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class TransitLinkPaymentCardResponse : TransitSDK.TransitBean {
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class TransitUnlinkPaymentCardOTPResponse : TransitSDK.TransitBean {
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class TransitSdkSecretResponse : TransitSDK.TransitBean {
+  public var sdkSecret: Swift.String
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class TransitSdkOutTradeNoResponse : TransitSDK.TransitBean {
+  public var outTradeNo: Swift.String
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class TransitSendOtpResponse : TransitSDK.TransitBean {
+  public var token: Swift.String
+  public var cardNumber: Swift.String
+  public var expiredTime: Swift.String
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class TransitPayCreateTransactionResponse : TransitSDK.TransitRequestBean {
+  public var transactionNo: Swift.String
+  public var tradeStatus: Swift.String
+  public var total: Swift.Int
+  required public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public enum TransitErrorCode : Swift.String, Swift.Error {
+  case ERROR_INIT_SDK
+  case ERROR_PARAMS
+  case ERROR_NET
+  case ERROR_RESPONSE
+  case ERROR_NFC_DISABLE
+  case ERROR_NFC_UNSUPPORTED
+  case ERROR_NFC_TAG_INVALID
+  case ERROR_NFC_DISCONNECT
+  case ERROR_NFC_COMMAND_EXEC
+  case ERROR_NFC_TIMEOUT
+  case ERROR_NFC_USERCANCELED
+  case ERROR_NFC_CONNECTION_LOST
+  case ERROR_NFC_SYSTEM_IS_BUSY
+  case ERROR_NFC_ENREAD_CARD
+  case ERROR_NFC_MISMATCH
+  case NO_NET
+  case ERROR_NET_TIME_OUT
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @objc public class StringUtils : ObjectiveC.NSObject {
+  @objc public class func toDictionary(string: Swift.String) -> [Swift.String : Any]
+  public class func toJsonString(value: Swift.Codable) -> Swift.String
+  @objc public class func toString(data: Foundation.Data) -> Swift.String
+  @objc public class func toHexString(string: Swift.String) -> Swift.String
+  @objc public class func toHexString(byte: Swift.UInt8) -> Swift.String
+  @objc public class func toHexString(bytes: [Swift.UInt8]) -> Swift.String
+  @objc public class func toHexString(data: Foundation.Data) -> Swift.String
+  @objc public class func toFormatHexString(hexString: Swift.String) -> Swift.String
+  @objc public class func toFormatHexString(data: Foundation.Data) -> Swift.String
+  @objc public class func toFormatHexString(bytes: [Swift.UInt8]) -> Swift.String
+  @objc public class func removeHexadecimalMarkAndSpace(hexString: Swift.String) -> Swift.String
+  @objc public class func hexadecimalToDecimal(hexString: Swift.String) -> Swift.String
+  @objc public class func decimalToBinary(decimalString: Swift.String) -> Swift.String
+  @objc public class func hexadecimalToBinary(hexString: Swift.String) -> Swift.String
+  @objc public class func decimalToHexadecimal(decimalString: Swift.String) -> Swift.String
+  @objc public class func binaryToDecimal(binaryString: Swift.String) -> Swift.String
+  @objc public class func binaryToHexadecimal(binaryString: Swift.String) -> Swift.String
+  @objc public class func setAesEncryptPadding(message: Swift.String) -> Swift.String
+  @objc public class func toBase64EncodedString(bytes: [Swift.UInt8]) -> Swift.String
+  @objc public class func generateRandomString(length: Swift.Int = 16) -> Swift.String
+  @objc public class func substring(string: Swift.String, fromIndex: Swift.Int) -> Swift.String
+  @objc public class func substring(string: Swift.String, toIndex: Swift.Int) -> Swift.String
+  @objc public class func substring(string: Swift.String, fromIndex: Swift.Int, toIndex: Swift.Int) -> Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class BaseType : TransitSDK.`Type`, Swift.CustomStringConvertible {
+  final public let name: Swift.String
+  final public let type: Any.Type
+  final public let kind: TransitSDK.Kind
+  public var module: Swift.String {
+    get
+  }
+  public var isSystemModule: Swift.Bool {
+    get
+  }
+  public var description: Swift.String {
+    get
+  }
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class ClassType : TransitSDK.ModelType {
+  public var `super`: TransitSDK.ClassType? {
+    get
+  }
+  override public var description: Swift.String {
+    get
+  }
+  @objc deinit
+}
+public func model<M>(from json: [Swift.String : Any], _ type: M.Type) -> M where M : TransitSDK.Convertible
+public func model(from json: [Swift.String : Any], type: TransitSDK.Convertible.Type) -> TransitSDK.Convertible
+public func model<M>(from json: [Foundation.NSString : Any], _ type: M.Type) -> M where M : TransitSDK.Convertible
+public func model(from json: [Foundation.NSString : Any], type: TransitSDK.Convertible.Type) -> TransitSDK.Convertible
+public func model<M>(from json: Foundation.NSDictionary, _ type: M.Type) -> M? where M : TransitSDK.Convertible
+public func model(from json: Foundation.NSDictionary, type: TransitSDK.Convertible.Type) -> TransitSDK.Convertible?
+public func model<M>(from jsonString: Swift.String, _ type: M.Type) -> M? where M : TransitSDK.Convertible
+public func model(from jsonString: Swift.String, type: TransitSDK.Convertible.Type) -> TransitSDK.Convertible?
+public func model<M>(from jsonString: Foundation.NSString, _ type: M.Type) -> M? where M : TransitSDK.Convertible
+public func model(from jsonString: Foundation.NSString, type: TransitSDK.Convertible.Type) -> TransitSDK.Convertible?
+public func model<M>(from jsonData: Foundation.Data, _ type: M.Type) -> M? where M : TransitSDK.Convertible
+public func model(from jsonData: Foundation.Data, type: TransitSDK.Convertible.Type) -> TransitSDK.Convertible?
+public func model<M>(from jsonData: Foundation.NSData, _ type: M.Type) -> M? where M : TransitSDK.Convertible
+public func model(from jsonData: Foundation.NSData, type: TransitSDK.Convertible.Type) -> TransitSDK.Convertible?
+public func modelArray<M>(from json: [Any], _ type: M.Type) -> [M] where M : TransitSDK.Convertible
+public func modelArray(from json: [Any], type: TransitSDK.Convertible.Type) -> [TransitSDK.Convertible]
+public func modelArray<M>(from json: Foundation.NSArray, _ type: M.Type) -> [M] where M : TransitSDK.Convertible
+public func modelArray(from json: Foundation.NSArray, type: TransitSDK.Convertible.Type) -> [TransitSDK.Convertible]
+public func modelArray<M>(from jsonString: Swift.String, _ type: M.Type) -> [M] where M : TransitSDK.Convertible
+public func modelArray(from jsonString: Swift.String, type: TransitSDK.Convertible.Type) -> [TransitSDK.Convertible]
+public func modelArray<M>(from jsonString: Foundation.NSString, _ type: M.Type) -> [M] where M : TransitSDK.Convertible
+public func modelArray(from jsonString: Foundation.NSString, type: TransitSDK.Convertible.Type) -> [TransitSDK.Convertible]
+public func modelArray<M>(from jsonData: Foundation.Data, _ type: M.Type) -> [M] where M : TransitSDK.Convertible
+public func modelArray(from jsonData: Foundation.Data, type: TransitSDK.Convertible.Type) -> [TransitSDK.Convertible]
+public func modelArray<M>(from jsonData: Foundation.NSData, _ type: M.Type) -> [M] where M : TransitSDK.Convertible
+public func modelArray(from jsonData: Foundation.NSData, type: TransitSDK.Convertible.Type) -> [TransitSDK.Convertible]
+@discardableResult
+public func write(_ value: Any, to file: Swift.String, atomically: Swift.Bool = true, encoding: Swift.String.Encoding = .utf8) -> Swift.String?
+@discardableResult
+public func write(_ value: Any, to URL: Foundation.URL, atomically: Swift.Bool = true, encoding: Swift.String.Encoding = .utf8) -> Swift.String?
+public func read<T>(_ type: T.Type, from file: Swift.String, encoding: Swift.String.Encoding = .utf8) -> T?
+public func read<T>(_ type: T.Type, from URL: Foundation.URL, encoding: Swift.String.Encoding = .utf8) -> T?
+@objc @_inheritsConvenienceInitializers open class TransitCardList : TransitSDK.TransitBean {
+  public var accountCards: [TransitSDK.TransitAccountCard]
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TransitAccountCard : TransitSDK.TransitBean {
+  public var card: TransitSDK.TransitCard?
+  public var progress: TransitSDK.TransitProgress?
+  public var sortedIndex: Swift.Int
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TransitTopupEligibility : TransitSDK.TransitBean {
+  open var des: Swift.String
+  public var errorCode: Swift.Int
+  public var errorMessage: Swift.String
+  public var isEligible: Swift.Bool
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TransitProgress : TransitSDK.TransitBean {
+  public var progressStatus: Swift.Int
+  public var progressStatusDesc: Swift.String
+  public var progressId: Swift.String
+  public var progressType: Swift.Int
+  public var trackStatus: Swift.Int
+  public var trackTitle: Swift.String
+  public var cardMedia: Swift.Int
+  public var cardTypeDesc: Swift.String
+  public var cardType: Swift.Int
+  public var concessionType: Swift.Int
+  public var concessionTypeDesc: Swift.String
+  public var trackStatusDesc: Swift.String
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TransitCardDetail : TransitSDK.TransitCard {
+  public var deleteCardEligibility: TransitSDK.TransitEligibility?
+  public var parkingCardEligibility: TransitSDK.TransitEligibility?
+  public var refundCardEligibility: TransitSDK.TransitEligibility?
+  public var renewalCardEligibility: TransitSDK.TransitEligibility?
+  public var restoreCardEligibility: TransitSDK.TransitEligibility?
+  public var upgradeToRAEligibility: TransitSDK.TransitEligibility?
+  public var userInfo: TransitSDK.TransitUserInfo?
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TransitUserInfo : TransitSDK.TransitBean {
+  public var fullName: Swift.String
+  public var fullNameAr: Swift.String
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TransitCardProgress : TransitSDK.TransitBean {
+  public var cardImageUrl: Swift.String
+  public var cardMedia: Swift.Int
+  public var cardMediaDesc: Swift.String
+  public var cardNumber: Swift.String
+  public var cardType: Swift.Int
+  public var cardTypeDesc: Swift.String
+  public var classType: TransitSDK.TransitClassType
+  public var classTypeDesc: Swift.String
+  public var concessionType: Swift.Int
+  public var concessionTypeDesc: Swift.String
+  public var orderNumber: Swift.String
+  public var progressId: Swift.String
+  public var progressStatus: Swift.Int
+  public var progressType: TransitSDK.TransitProgressType
+  public var trackDesc: Swift.String
+  public var trackStatus: Swift.Int
+  public var trackTitle: Swift.String
+  public var progressStatusDesc: Swift.String
+  public var accountName: Swift.String
+  public var cardStatusDesc: Swift.String
+  public var expiryDate: Swift.String
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TransitResettingPinInfoResponse : TransitSDK.TransitBean {
+  public var email: Swift.String
+  public var emailMask: Swift.String
+  public var mobile: Swift.String
+  public var mobileMask: Swift.String
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TransitResubmitDetail : TransitSDK.TransitBean {
+  public var addressArea: Swift.String
+  public var addressEmirate: Swift.String
+  public var addressEmirateDesc: Swift.String
+  public var addressFlat: Swift.String
+  public var addressStreet: Swift.String
+  public var cardDesignFee: Swift.Int
+  public var cardDesignId: Swift.String
+  public var cardMedia: TransitSDK.TransitCardMedia?
+  public var classType: TransitSDK.TransitClassType?
+  public var concessionInBase64: Swift.String
+  public var concessionReferenceNo: Swift.String
+  public var concessionType: TransitSDK.TransitConcessionType?
+  public var email: Swift.String
+  public var emailMask: Swift.String
+  public var mobile: Swift.String
+  public var mobileMask: Swift.String
+  public var nameFull: Swift.String
+  public var orderType: TransitSDK.TransitOrderType
+  public var photoInBase64: Swift.String
+  public var photoReferenceNo: Swift.String
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TransitRenewResubmitDetail : TransitSDK.TransitBean {
+  public var addressArea: Swift.String
+  public var addressEmirate: Swift.String
+  public var addressEmirateDesc: Swift.String
+  public var addressFlat: Swift.String
+  public var addressStreet: Swift.String
+  public var email: Swift.String
+  public var emailMask: Swift.String
+  public var mobile: Swift.String
+  public var mobileMask: Swift.String
+  public var nameFull: Swift.String
+  public var orderType: TransitSDK.TransitOrderType
+  public var pin: Swift.String
+  public var cardNumber: Swift.String
+  public var photoReferenceNo: Swift.String
+  public var concessionReferenceNo: Swift.String
+  public var concessionType: Swift.Int
+  public var photoInBase64: Swift.String
+  public var concessionInBase64: Swift.String
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TransitRenewReview : TransitSDK.TransitBean {
+  public var referenceId: Swift.String
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TransitReview : TransitSDK.TransitBean {
+  public var referenceId: Swift.String
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TransitACardRegisterFee : TransitSDK.TransitBean {
+  public var aCardRegistrationFee: Swift.Int
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TransitCardIssueFeeResp : TransitSDK.TransitBean {
+  public var fees: [TransitSDK.TransitCardIssueFee]
+  public var supportingDigital: Swift.Bool
+  public var supportingPhysical: Swift.Bool
+  public var supportingTravelClass: Swift.Int
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TransitCardIssueFee : TransitSDK.TransitBean {
+  public var appCode: Swift.String
+  public var cardFee: Swift.Int
+  public var cardImageUrl: Swift.String
+  public var cardRetirementPeriod: Swift.Int
+  public var classType: Swift.String
+  public var initialAmount: Swift.Int
+  public var serverFee: Swift.Int
+  public var surcharge: Swift.Int
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+extension TransitSDK.TransitCardIssueFee {
+  public var totalFee: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers open class TransitCardRenewFeeReq : TransitSDK.TransitBean {
+  public var fee: TransitSDK.TransitCardRenewFee?
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TransitCardRenewFee : TransitSDK.TransitBean {
+  public var appCode: Swift.String
+  public var cardFee: Swift.Int
+  public var initialAmount: Swift.Int
+  public var serverFee: Swift.Int
+  public var surcharge: Swift.Int
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+extension TransitSDK.TransitCardRenewFee {
+  public var totalFee: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers open class TransitRefundListReq : TransitSDK.TransitBean {
+  public var currentPage: Swift.Int
+  public var pageSize: Swift.Int
+  public var pageTotal: Swift.Int
+  public var records: [TransitSDK.TransitRefundRecord]
+  public var recordTotal: Swift.Int
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TransitRefundRecord : TransitSDK.TransitBean {
+  public var card: TransitSDK.TransitCard?
+  public var progress: TransitSDK.TransitProgress?
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TransitRefundCards : TransitSDK.TransitBean {
+  public var refundingCards: [TransitSDK.TransitRefundCard]
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TransitRefundCard : TransitSDK.TransitBean {
+  public var cardImageUrl: Swift.String
+  public var cardMedia: Swift.Int
+  public var cardNumber: Swift.String
+  public var cardNumberMask: Swift.String
+  public var cardType: Swift.Int
+  public var cardTypeDesc: Swift.String
+  public var classType: TransitSDK.TransitClassType
+  public var classTypeDesc: Swift.String
+  public var concessionType: Swift.Int
+  public var concessionTypeDesc: Swift.String
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TransitGenerateReOrder : TransitSDK.TransitBean {
+  public var orderNumber: Swift.String
+  public var orderType: TransitSDK.TransitOrderType?
+  public var paymentInfo: TransitSDK.TransitPaymentInfo?
+  public var refundInfo: TransitSDK.TransitGenerateReOrderRefundInfo?
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TransitGenerateReOrderRefundInfo : TransitSDK.TransitBean {
+  public var expiryTime: Swift.String
+  public var refundChannel: Swift.Int
+  public var refundDataTimestamp: Swift.String
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+extension Foundation.Data : TransitSDK.KJCompatible {
+}
+extension Foundation.NSData : TransitSDK.KJCompatible {
+}
+extension TransitSDK.KJ where Base == Foundation.Data {
+  public func model<M>(_ type: M.Type) -> M? where M : TransitSDK.Convertible
+  public func model(type: TransitSDK.Convertible.Type) -> TransitSDK.Convertible?
+  public func modelArray<M>(_ type: M.Type) -> [M] where M : TransitSDK.Convertible
+  public func modelArray(type: TransitSDK.Convertible.Type) -> [TransitSDK.Convertible]
+}
+extension TransitSDK.KJ where Base : Foundation.NSData {
+  public func model<M>(_ type: M.Type) -> M? where M : TransitSDK.Convertible
+  public func model(type: TransitSDK.Convertible.Type) -> TransitSDK.Convertible?
+  public func modelArray<M>(_ type: M.Type) -> [M] where M : TransitSDK.Convertible
+  public func modelArray(type: TransitSDK.Convertible.Type) -> [TransitSDK.Convertible]
+}
+public enum SubjectItem {
+  case commonName(Swift.String), organizationName(Swift.String), organizationUnitName(Swift.String), countryName(Swift.String), stateOrProvinceName(Swift.String), serialNumber(Swift.String), localityName(Swift.String), description(Swift.String), emailAddress(Swift.String)
+}
+@objc @_inheritsConvenienceInitializers public class CertificateSigningRequest : ObjectiveC.NSObject {
+  public init(keyAlgorithm: TransitSDK.KeyAlgorithm)
+  @objc convenience override dynamic public init()
+  convenience public init(commonName: Swift.String? = nil, organizationName: Swift.String? = nil, organizationUnitName: Swift.String? = nil, countryName: Swift.String? = nil, stateOrProvinceName: Swift.String? = nil, localityName: Swift.String? = nil, serialNumber: Swift.String? = nil, emailAddress: Swift.String? = nil, description: Swift.String? = nil, keyAlgorithm: TransitSDK.KeyAlgorithm)
+  public func addSubjectItem(_ subjectItem: TransitSDK.SubjectItem)
+  public func build(_ publicKeyBits: Foundation.Data, privateKey: Security.SecKey, publicKey: Security.SecKey? = nil) -> Foundation.Data?
+  public func buildAndEncodeDataAsString(_ publicKeyBits: Foundation.Data, privateKey: Security.SecKey, publicKey: Security.SecKey? = nil) -> Swift.String?
+  public func buildCSRAndReturnString(_ publicKeyBits: Foundation.Data, privateKey: Security.SecKey, publicKey: Security.SecKey? = nil) -> Swift.String?
+  @objc deinit
+}
+public func JSONObject<M>(from model: M) -> [Swift.String : Any] where M : TransitSDK.Convertible
+public func JSONObjectArray<M>(from models: [M]) -> [[Swift.String : Any]] where M : TransitSDK.Convertible
+public func JSONString(from value: Any, prettyPrinted: Swift.Bool = false) -> Swift.String
+@objc @_inheritsConvenienceInitializers open class TransitBean : ObjectiveC.NSObject, TransitSDK.Convertible, Swift.Codable {
+  public func kj_modelKey(from property: TransitSDK.Property) -> TransitSDK.ModelPropertyKey
+  @objc required override dynamic public init()
+  @objc deinit
+  open func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers open class TransitEligibility : TransitSDK.TransitBean {
+  public var isEligible: Swift.Bool
+  public var errorCode: Swift.Int
+  public var errorMessage: Swift.String
+  public var desc: Swift.String
+  override public func kj_modelKey(from property: TransitSDK.Property) -> TransitSDK.ModelPropertyKey
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TransitCard : TransitSDK.TransitBean {
+  public var appCode: Swift.String
+  public var balance: Swift.Int
+  public var cardNumber: Swift.String
+  public var cardType: Swift.Int
+  public var cardTypeDesc: Swift.String
+  public var classType: TransitSDK.TransitClassType?
+  public var classTypeDesc: Swift.String
+  public var concessionType: Swift.Int
+  public var concessionTypeDesc: Swift.String
+  public var cardStatus: TransitSDK.CardStatusType
+  public var cardStatusDesc: Swift.String
+  public var ePurseStatus: TransitSDK.TransitEpurseStatusType
+  public var ePurseStatusDesc: Swift.String
+  public var expiryDate: Swift.String
+  public var products: [TransitSDK.TransitProduct]
+  public var expiryDateTime: Swift.String
+  public var transactions: [TransitSDK.TransitTransaction]
+  public var cardImageUrl: Swift.String
+  public var cardNumberMask: Swift.String
+  public var activeStatus: Swift.Int
+  public var cardMedia: TransitSDK.TransitCardMedia
+  public var cardPosition: TransitSDK.TransitCardPosition
+  public var cardPositionDesc: Swift.String
+  public var isFreeCard: Swift.Bool
+  public var accountName: Swift.String
+  public var concessionExpiryDate: Swift.String
+  public var validStatus: TransitSDK.TransitProductValidStatus
+  public var validStatusDesc: Swift.String
+  public var cardEligibility: TransitSDK.TransitEligibility?
+  public var topupCardEligibility: TransitSDK.TransitEligibility?
+  public var purchaseTravelPassEligibility: TransitSDK.TransitEligibility?
+  public var linkCardEligibility: TransitSDK.TransitEligibility?
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TransitDigitalCard : TransitSDK.TransitCard {
+  public var topupEligibility: TransitSDK.TransitEligibility?
+  public var purchaseTravelPasssEligibility: TransitSDK.TransitEligibility?
+  public var refundEligibility: TransitSDK.TransitEligibility?
+  public var deleteEligibility: TransitSDK.TransitEligibility?
+  public var parkingEligibility: TransitSDK.TransitEligibility?
+  public var renewEligibility: TransitSDK.TransitEligibility?
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TransitPhysicalCard : TransitSDK.TransitCard {
+  public var topupEligibility: TransitSDK.TransitEligibility?
+  public var purchaseTravelPasssEligibility: TransitSDK.TransitEligibility?
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TransitTransaction : TransitSDK.TransitBean {
+  public var stationName: Swift.String
+  public var type: TransitSDK.TransitTransactionType
+  public var typeDesc: Swift.String
+  public var amount: Swift.Int
+  public var status: TransitSDK.TransitTransactionStatus
+  public var statusDesc: Swift.String
+  public var transactionTime: Swift.String
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TransitProduct : TransitSDK.TransitBean {
+  public var code: Swift.Int
+  public var codeDesc: Swift.String
+  public var used: Swift.Int
+  public var usedDesc: Swift.String
+  public var status: TransitSDK.TransitProductStatus
+  public var statusDesc: Swift.String
+  public var effectiveDate: Swift.String
+  public var effectiveDateTime: Swift.String
+  public var expiryDate: Swift.String
+  public var expiryDateTime: Swift.String
+  public var zoneType: TransitSDK.TransitProductZoneType
+  public var autoRenewStatus: Swift.Bool
+  public var zoneValidity: Swift.String
+  public var providerId: Swift.Int
+  public var validStatus: TransitSDK.TransitProductValidStatus
+  public var validStatusDesc: Swift.String
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TransitTopupFee : TransitSDK.TransitBean {
+  public var maxTopupAmount: Swift.Int
+  public var minTopupAmount: Swift.Int
+  public var purseMaxAmount: Swift.Int
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TranitOrderListResponse : TransitSDK.TransitBean {
+  public var page: Swift.Int
+  public var pageTotal: Swift.Int
+  public var records: [TransitSDK.TransitOrderDetail]
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TransitOrderDetail : TransitSDK.TransitBean {
+  public var cardNumber: Swift.String
+  public var orderNumber: Swift.String
+  public var orderType: TransitSDK.TransitOrderType?
+  public var orderTypeDesc: Swift.String
+  public var orderStatus: TransitSDK.TransitOrderStatus?
+  public var orderStatusDesc: Swift.String
+  public var amount: Swift.Int
+  public var paymentRefNumber: Swift.String
+  public var paymentChannel: Swift.String
+  public var paymentChannelDesc: Swift.String
+  public var paymentStatus: TransitSDK.TransitPaymentStatus?
+  public var paymentStatusDesc: Swift.String
+  public var createTime: Swift.String
+  public var paymentMessage: Swift.String
+  public var cardMedia: TransitSDK.TransitCardMedia
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TransitPhysicalTopupOrderResponse : TransitSDK.TransitBean {
+  public var orderNumber: Swift.String
+  public var account: Swift.String
+  public var orderType: TransitSDK.TransitOrderType?
+  public var paymentInfo: TransitSDK.TransitPaymentInfo?
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TransitCancelOrder : TransitSDK.TransitBean {
+  public var status: Swift.Bool?
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TransitAppToken : TransitSDK.TransitBean {
+  public var accessToken: Swift.String?
+  public var expiredTime: Swift.String?
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TransitCertAapplyResp : TransitSDK.TransitBean {
+  public var certCMBase64: Swift.String
+  public var expiredTime: Swift.String
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TransitExchangeCertResp : TransitSDK.TransitBean {
+  public var certOBBase64: Swift.String
+  public var randomEncryptedBase64: Swift.String
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TransitExchangeKeyResp : TransitSDK.TransitBean {
+  public var successful: Swift.Bool?
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TransitProductFeeResponse : TransitSDK.TransitBean {
+  public var minRemainValue: Swift.Int
+  public var products: [TransitSDK.TransitProductFee]
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TransitProductFee : TransitSDK.TransitBean {
+  public var fares: [TransitSDK.TransitProductFare]
+  public var paymentMethods: [Swift.Int]
+  public var productCode: Swift.Int
+  public var productName: Swift.String
+  public var productNameAbbre: Swift.String
+  public var validityDuration: Swift.Int
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TransitProductFare : TransitSDK.TransitBean {
+  public var effectiveEndDate: Swift.String
+  public var effectiveEndDateStr: Swift.String
+  public var effectiveStartDate: Swift.String
+  public var effectiveStartDateStr: Swift.String
+  public var minRemainValue: Swift.Int
+  public var price: Swift.Int
+  public var surcharge: Swift.Int
+  public var tierNumber: Swift.Int
+  public var validEndTime: Swift.String
+  public var validStartTime: Swift.String
+  @objc required dynamic public init()
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class DeviceUtils : ObjectiveC.NSObject {
+  @objc public class func isSimulator() -> Swift.Bool
+  @objc public class func getModelIdentifier() -> Swift.String
+  @objc public class func getSystemName() -> Swift.String
+  @objc public class func getSystemVersion() -> Swift.String
+  @objc public class func generateUUIDString(shouldFormat: Swift.Bool = false) -> Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension Swift.String : TransitSDK.KJCompatible {
+}
+extension Foundation.NSString : TransitSDK.KJCompatible {
+}
+extension TransitSDK.KJ where Base : Swift.ExpressibleByStringLiteral {
+  public func camelCased() -> Swift.String
+  public func underlineCased() -> Swift.String
+  public func model<M>(_ type: M.Type) -> M? where M : TransitSDK.Convertible
+  public func model(type: TransitSDK.Convertible.Type) -> TransitSDK.Convertible?
+  public func modelArray<M>(_ type: M.Type) -> [M] where M : TransitSDK.Convertible
+  public func modelArray(type: TransitSDK.Convertible.Type) -> [TransitSDK.Convertible]
+}
+@objc public protocol TransitNFCReaderDelegate {
+  @objc optional func waitCardReading(_ session: CoreNFC.NFCTagReaderSession)
+  @objc optional func startCardReading(_ session: CoreNFC.NFCTagReaderSession)
+  @objc optional func readCardSuccess(_ session: CoreNFC.NFCTagReaderSession?)
+  @objc optional func readCardFailure(_ session: CoreNFC.NFCTagReaderSession?)
+}
+public enum KeyAlgorithm {
+  case rsa(signatureType: TransitSDK.KeyAlgorithm.Signature), ec(signatureType: TransitSDK.KeyAlgorithm.Signature)
+  @available(iOS 10, macCatalyst 13.0, macOS 10.12, tvOS 10.0, watchOS 3.0, *)
+  public var secKeyAttrType: CoreFoundation.CFString {
+    get
+  }
+  public var availableKeySizes: [Swift.Int] {
+    get
+  }
+  public enum Signature {
+    case sha1, sha256, sha512
+    public static func == (a: TransitSDK.KeyAlgorithm.Signature, b: TransitSDK.KeyAlgorithm.Signature) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public var type: Swift.String {
+    get
+  }
+  @available(iOS 10, macCatalyst 13.0, macOS 10.12, tvOS 10.0, watchOS 3.0, *)
+  public var signatureAlgorithm: Security.SecKeyAlgorithm {
+    get
+  }
+}
+public enum TransitEnvironment {
+  case DEV
+  case SIT
+  case UAT
+  case PRODUCT
+  public static func == (a: TransitSDK.TransitEnvironment, b: TransitSDK.TransitEnvironment) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class OptionalType : TransitSDK.EnumType {
+  public var wrapType: Any.Type {
+    get
+  }
+  override public var description: Swift.String {
+    get
+  }
+  @objc deinit
+}
+extension TransitSDK.KeychainSwiftAccessOptions : Swift.Equatable {}
+extension TransitSDK.KeychainSwiftAccessOptions : Swift.Hashable {}
+extension TransitSDK.TransitNFCType : Swift.Equatable {}
+extension TransitSDK.TransitNFCType : Swift.Hashable {}
+extension TransitSDK.TransitNFCType : Swift.RawRepresentable {}
+extension TransitSDK.SnbISO7816TagError : Swift.Equatable {}
+extension TransitSDK.SnbISO7816TagError : Swift.Hashable {}
+extension TransitSDK.TransitOrderType : Swift.Equatable {}
+extension TransitSDK.TransitOrderType : Swift.Hashable {}
+extension TransitSDK.TransitOrderType : Swift.RawRepresentable {}
+extension TransitSDK.TransitOrderType : Swift.Sendable {}
+extension TransitSDK.CardStatusType : Swift.Equatable {}
+extension TransitSDK.CardStatusType : Swift.Hashable {}
+extension TransitSDK.CardStatusType : Swift.RawRepresentable {}
+extension TransitSDK.CardStatusType : Swift.Sendable {}
+extension TransitSDK.TransitClassType : Swift.Equatable {}
+extension TransitSDK.TransitClassType : Swift.Hashable {}
+extension TransitSDK.TransitClassType : Swift.RawRepresentable {}
+extension TransitSDK.TransitClassType : Swift.Sendable {}
+extension TransitSDK.TransitEpurseStatusType : Swift.Equatable {}
+extension TransitSDK.TransitEpurseStatusType : Swift.Hashable {}
+extension TransitSDK.TransitEpurseStatusType : Swift.RawRepresentable {}
+extension TransitSDK.TransitEpurseStatusType : Swift.Sendable {}
+extension TransitSDK.ZoneType : Swift.Equatable {}
+extension TransitSDK.ZoneType : Swift.Hashable {}
+extension TransitSDK.ZoneType : Swift.RawRepresentable {}
+extension TransitSDK.ZoneType : Swift.Sendable {}
+extension TransitSDK.TransitPaymentStatus : Swift.Equatable {}
+extension TransitSDK.TransitPaymentStatus : Swift.Hashable {}
+extension TransitSDK.TransitPaymentStatus : Swift.RawRepresentable {}
+extension TransitSDK.TransitPaymentStatus : Swift.Sendable {}
+extension TransitSDK.TransitOrderStatus : Swift.Equatable {}
+extension TransitSDK.TransitOrderStatus : Swift.Hashable {}
+extension TransitSDK.TransitOrderStatus : Swift.RawRepresentable {}
+extension TransitSDK.TransitOrderStatus : Swift.Sendable {}
+extension TransitSDK.TransitConcessionType : Swift.Equatable {}
+extension TransitSDK.TransitConcessionType : Swift.Hashable {}
+extension TransitSDK.TransitConcessionType : Swift.RawRepresentable {}
+extension TransitSDK.TransitConcessionType : Swift.Sendable {}
+extension TransitSDK.TransitCardMedia : Swift.Equatable {}
+extension TransitSDK.TransitCardMedia : Swift.Hashable {}
+extension TransitSDK.TransitCardMedia : Swift.RawRepresentable {}
+extension TransitSDK.TransitCardMedia : Swift.Sendable {}
+extension TransitSDK.TransitCardPosition : Swift.Equatable {}
+extension TransitSDK.TransitCardPosition : Swift.Hashable {}
+extension TransitSDK.TransitCardPosition : Swift.RawRepresentable {}
+extension TransitSDK.TransitCardPosition : Swift.Sendable {}
+extension TransitSDK.TransitProgressType : Swift.Equatable {}
+extension TransitSDK.TransitProgressType : Swift.Hashable {}
+extension TransitSDK.TransitProgressType : Swift.RawRepresentable {}
+extension TransitSDK.TransitProgressType : Swift.Sendable {}
+extension TransitSDK.TransitPaymentChannel : Swift.Equatable {}
+extension TransitSDK.TransitPaymentChannel : Swift.Hashable {}
+extension TransitSDK.TransitPaymentChannel : Swift.RawRepresentable {}
+extension TransitSDK.TransitPaymentChannel : Swift.Sendable {}
+extension TransitSDK.TransitLang : Swift.Equatable {}
+extension TransitSDK.TransitLang : Swift.Hashable {}
+extension TransitSDK.TransitLang : Swift.RawRepresentable {}
+extension TransitSDK.TransitLang : Swift.Sendable {}
+extension TransitSDK.TransitProductStatus : Swift.Equatable {}
+extension TransitSDK.TransitProductStatus : Swift.Hashable {}
+extension TransitSDK.TransitProductStatus : Swift.RawRepresentable {}
+extension TransitSDK.TransitProductStatus : Swift.Sendable {}
+extension TransitSDK.TransitProductZoneType : Swift.Equatable {}
+extension TransitSDK.TransitProductZoneType : Swift.Hashable {}
+extension TransitSDK.TransitProductZoneType : Swift.RawRepresentable {}
+extension TransitSDK.TransitProductZoneType : Swift.Sendable {}
+extension TransitSDK.TransitTransactionStatus : Swift.Equatable {}
+extension TransitSDK.TransitTransactionStatus : Swift.Hashable {}
+extension TransitSDK.TransitTransactionStatus : Swift.RawRepresentable {}
+extension TransitSDK.TransitTransactionStatus : Swift.Sendable {}
+extension TransitSDK.TransitTransactionType : Swift.Equatable {}
+extension TransitSDK.TransitTransactionType : Swift.Hashable {}
+extension TransitSDK.TransitTransactionType : Swift.RawRepresentable {}
+extension TransitSDK.TransitTransactionType : Swift.Sendable {}
+extension TransitSDK.TransitProductValidStatus : Swift.Equatable {}
+extension TransitSDK.TransitProductValidStatus : Swift.Hashable {}
+extension TransitSDK.TransitProductValidStatus : Swift.RawRepresentable {}
+extension TransitSDK.TransitProductValidStatus : Swift.Sendable {}
+extension TransitSDK.TransitCardPayType : Swift.Equatable {}
+extension TransitSDK.TransitCardPayType : Swift.Hashable {}
+extension TransitSDK.TransitCardPayType : Swift.RawRepresentable {}
+extension TransitSDK.TransitCardPayType : Swift.Sendable {}
+extension TransitSDK.CMACManager.Error : Swift.Equatable {}
+extension TransitSDK.CMACManager.Error : Swift.Hashable {}
+extension TransitSDK.Kind : Swift.Equatable {}
+extension TransitSDK.Kind : Swift.Hashable {}
+extension TransitSDK.TransitErrorCode : Swift.Equatable {}
+extension TransitSDK.TransitErrorCode : Swift.Hashable {}
+extension TransitSDK.TransitErrorCode : Swift.RawRepresentable {}
+extension TransitSDK.KeyAlgorithm.Signature : Swift.Equatable {}
+extension TransitSDK.KeyAlgorithm.Signature : Swift.Hashable {}
+extension TransitSDK.TransitEnvironment : Swift.Equatable {}
+extension TransitSDK.TransitEnvironment : Swift.Hashable {}
