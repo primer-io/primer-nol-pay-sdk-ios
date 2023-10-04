@@ -24,6 +24,6 @@
       "Foundation",
       "UIKit"
     ],
-    "vendored_frameworks": "Sources/Frameworks/TransitSDK.framework"
+    "vendored_frameworks": "Sources/Frameworks/TransitSDK.xcframework"
   }
 }
