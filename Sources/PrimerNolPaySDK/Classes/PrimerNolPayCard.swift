@@ -12,7 +12,7 @@ public class PrimerNolPayCard {
     public var cardNumber: String = ""
     public var expiredTime: String = ""
     
-    private init(cardNumber: String, expiredTime: String) {
+    public init(cardNumber: String, expiredTime: String) {
         self.cardNumber = cardNumber
         self.expiredTime = expiredTime
     }
