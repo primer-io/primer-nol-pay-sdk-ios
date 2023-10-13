@@ -218,6 +218,8 @@ extension PrimerNolPay: TransitNFCReaderDelegate {
         }
     }
     public func readCardFailure(_ session: NFCTagReaderSession?) {
-        session!.alertMessage = "An error occured"
+        if session != nil{
+            session!.alertMessage = "An error occured"
+        }
     }
 }

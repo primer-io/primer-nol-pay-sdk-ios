@@ -10,15 +10,15 @@ import TransitSDK
 
 public struct PrimerNolPayError: LocalizedError {
     public var description: String
-    public var errorCode: Int?
+    public var errorCode: String?
         
-    public init(description: String, errorCode: Int? = nil) {
+    public init(description: String, errorCode: String? = nil) {
         self.description = description
         self.errorCode = errorCode
     }
     
     public static func nolPaySdkError(code: String? = nil, message: String) -> PrimerNolPayError {
-        return PrimerNolPayError(description: "TransitSDK encountered an error with code[\(code ?? "")], and message[ \(message)]")
+        return PrimerNolPayError(description: "TransitSDK encountered an error with code[\(code ?? "")], and message[ \(message)]", errorCode: code)
     }
 }
 

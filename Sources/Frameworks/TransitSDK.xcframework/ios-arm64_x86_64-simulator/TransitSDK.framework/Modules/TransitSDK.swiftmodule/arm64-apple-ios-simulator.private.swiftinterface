@@ -1398,6 +1398,7 @@ public struct UserDefaultsManager {
   public func setLang(language: TransitSDK.TransitLang)
   public func getApplySdkSecret(_ request: TransitSDK.TransitSdkSecretRequest, callback: @escaping (TransitSDK.TransitCallback<TransitSDK.TransitSdkSecretResponse, TransitSDK.TransitException>) -> Swift.Void)
   public func generateOutTradeNos(_ request: TransitSDK.TransitRequestBean, callback: @escaping (TransitSDK.TransitCallback<TransitSDK.TransitSdkOutTradeNoResponse, TransitSDK.TransitException>) -> Swift.Void)
+  public class func getId() -> Swift.String
   @objc override dynamic public init()
   @objc deinit
 }

@@ -22,51 +22,51 @@
 		</data>
 		<key>Modules/TransitSDK.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		Bflv+8HkWl0Sx6xDIXveIV9wiY8=
+		vojUwjwGFU459lRlFv1JmL//Xgk=
 		</data>
 		<key>Modules/TransitSDK.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		hP5PZWZsNii4DdC+0PuwPCrZtMg=
+		WSbtl/bzDBKeZy52DSE+v8RvyOk=
 		</data>
 		<key>Modules/TransitSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		7w5nOxKD3aK1HLIMoetjw4Z7ZYo=
+		AGYyYWEwRcW5HnlUoh9iv3k6WhM=
 		</data>
 		<key>Modules/TransitSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		TubBswRhln+GlfLq1ZUY4ob4Bg4=
+		bpOdhM3CtJqx4n7F/CZNsmcTziA=
 		</data>
 		<key>Modules/TransitSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		qIbFpbB+zoiCCp+rY4T1xNuDgdY=
+		xOH931IxY1sNfjhlhEKbq6Jcqyw=
 		</data>
 		<key>Modules/TransitSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		TubBswRhln+GlfLq1ZUY4ob4Bg4=
+		bpOdhM3CtJqx4n7F/CZNsmcTziA=
 		</data>
 		<key>Modules/TransitSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		BR6ECS90hu+wHtGoOcdPy0RZi8M=
+		14V1FYP0Qg1e5XHUeBxAwiyVEy4=
 		</data>
 		<key>Modules/TransitSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		7w5nOxKD3aK1HLIMoetjw4Z7ZYo=
+		AGYyYWEwRcW5HnlUoh9iv3k6WhM=
 		</data>
 		<key>Modules/TransitSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		zVKa7N9t/6xoFbpSboDkcX/HsAU=
+		DbtKnQTMswgyuepxo44zdZOInHc=
 		</data>
 		<key>Modules/TransitSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		Zuz5g2Y3zMS6Hk70VCyRN6ApACo=
+		f9BvHGheNYIeL24B1mLrw9p+MdU=
 		</data>
 		<key>Modules/TransitSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		zVKa7N9t/6xoFbpSboDkcX/HsAU=
+		DbtKnQTMswgyuepxo44zdZOInHc=
 		</data>
 		<key>Modules/TransitSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		hETPC469kNefCWsMRli4M312P/o=
+		AZJKL6acwEr8B62NhGlCtwnZWEU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -112,132 +112,132 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Bflv+8HkWl0Sx6xDIXveIV9wiY8=
+			vojUwjwGFU459lRlFv1JmL//Xgk=
 			</data>
 			<key>hash2</key>
 			<data>
-			bwgADLc2+BtCVChy1hZcCDjmrr1v99FdyM+cq5o7QC8=
+			uV2W+sPZAOL3VVn90NiYwa79J7VyiJJrSJeBzhF6My0=
 			</data>
 		</dict>
 		<key>Modules/TransitSDK.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			hP5PZWZsNii4DdC+0PuwPCrZtMg=
+			WSbtl/bzDBKeZy52DSE+v8RvyOk=
 			</data>
 			<key>hash2</key>
 			<data>
-			PaVMI9hRovSreLcTRckMP8Ni8HBVrws4JrWOIWLeqM8=
+			li0X8IvO+OLbr5HFv/VXsslaWvCM6WsqZKlxxYY5n1Q=
 			</data>
 		</dict>
 		<key>Modules/TransitSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			7w5nOxKD3aK1HLIMoetjw4Z7ZYo=
+			AGYyYWEwRcW5HnlUoh9iv3k6WhM=
 			</data>
 			<key>hash2</key>
 			<data>
-			Z2Ahuu7Z/2Ng3mRaBq5kDj1VfsOxh3U7Y1XeBNmWJHc=
+			bw9qDJtwZ8kj5+ITKIspkMJhm/c7lc+5whT67p6Ht6U=
 			</data>
 		</dict>
 		<key>Modules/TransitSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			TubBswRhln+GlfLq1ZUY4ob4Bg4=
+			bpOdhM3CtJqx4n7F/CZNsmcTziA=
 			</data>
 			<key>hash2</key>
 			<data>
-			TSAdAAPlUKNdVdTj6c5Q2UvETuNyXnch6RwMuGAxKnE=
+			x6zZ8V/LtLyIGaNITIlGltGPK2ZybAjmTRPOFRrf7MY=
 			</data>
 		</dict>
 		<key>Modules/TransitSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			qIbFpbB+zoiCCp+rY4T1xNuDgdY=
+			xOH931IxY1sNfjhlhEKbq6Jcqyw=
 			</data>
 			<key>hash2</key>
 			<data>
-			W3xDO824B7XGunL0a3GwPkp7mxWuMmRWyFl621smOJ0=
+			aSTr6Gs6Z2kIs+WWTxvs9Hb1TSV6dq9GaAAKGj2Z1Pg=
 			</data>
 		</dict>
 		<key>Modules/TransitSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			TubBswRhln+GlfLq1ZUY4ob4Bg4=
+			bpOdhM3CtJqx4n7F/CZNsmcTziA=
 			</data>
 			<key>hash2</key>
 			<data>
-			TSAdAAPlUKNdVdTj6c5Q2UvETuNyXnch6RwMuGAxKnE=
+			x6zZ8V/LtLyIGaNITIlGltGPK2ZybAjmTRPOFRrf7MY=
 			</data>
 		</dict>
 		<key>Modules/TransitSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			BR6ECS90hu+wHtGoOcdPy0RZi8M=
+			14V1FYP0Qg1e5XHUeBxAwiyVEy4=
 			</data>
 			<key>hash2</key>
 			<data>
-			LwqZajCmwMb0WbZw64uwaHCUfOEIKbB13PzBMGINc1o=
+			tNNSgqLTv8lu1poIkx6IMdES/UpX6GhstmG9Dqno9fs=
 			</data>
 		</dict>
 		<key>Modules/TransitSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			7w5nOxKD3aK1HLIMoetjw4Z7ZYo=
+			AGYyYWEwRcW5HnlUoh9iv3k6WhM=
 			</data>
 			<key>hash2</key>
 			<data>
-			Z2Ahuu7Z/2Ng3mRaBq5kDj1VfsOxh3U7Y1XeBNmWJHc=
+			bw9qDJtwZ8kj5+ITKIspkMJhm/c7lc+5whT67p6Ht6U=
 			</data>
 		</dict>
 		<key>Modules/TransitSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			zVKa7N9t/6xoFbpSboDkcX/HsAU=
+			DbtKnQTMswgyuepxo44zdZOInHc=
 			</data>
 			<key>hash2</key>
 			<data>
-			ZixOEfHKnaTO8s1+CTETUoy7zkFpQGVWsw/70iCJKkI=
+			KS1OsnxREpVITdF6hFHcKH2t3GpQz+mMmkRGa2iYSbE=
 			</data>
 		</dict>
 		<key>Modules/TransitSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Zuz5g2Y3zMS6Hk70VCyRN6ApACo=
+			f9BvHGheNYIeL24B1mLrw9p+MdU=
 			</data>
 			<key>hash2</key>
 			<data>
-			5/OL7bkwv5QAyCCs/2BMYw6gfrjOl1TIjFufu6SdOHM=
+			j2IAkBOT9gjSeO/1iec31jFYiUhXiRSD1kSa4BI0PTs=
 			</data>
 		</dict>
 		<key>Modules/TransitSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			zVKa7N9t/6xoFbpSboDkcX/HsAU=
+			DbtKnQTMswgyuepxo44zdZOInHc=
 			</data>
 			<key>hash2</key>
 			<data>
-			ZixOEfHKnaTO8s1+CTETUoy7zkFpQGVWsw/70iCJKkI=
+			KS1OsnxREpVITdF6hFHcKH2t3GpQz+mMmkRGa2iYSbE=
 			</data>
 		</dict>
 		<key>Modules/TransitSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			hETPC469kNefCWsMRli4M312P/o=
+			AZJKL6acwEr8B62NhGlCtwnZWEU=
 			</data>
 			<key>hash2</key>
 			<data>
-			lUqt4CNdpR1Mm4hWXXDbvpa7tDavVsIJk81cZmoaLyc=
+			u6u4cC2k4V6dVBjAw1+UD9VHZUbXnqm/vwguYVbSjuE=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
