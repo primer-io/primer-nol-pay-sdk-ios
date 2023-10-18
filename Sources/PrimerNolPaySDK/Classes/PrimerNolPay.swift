@@ -58,7 +58,7 @@ public class PrimerNolPay {
     }
     
     /// Make linking token from scanned card
-    public func makeLinkingTokenFor(cardNumber: String, completion: @escaping (Result<String, PrimerNolPayError>) -> Void) {
+    public func makeLinkingToken(for cardNumber: String, completion: @escaping (Result<String, PrimerNolPayError>) -> Void) {
         
         let request = TransitLinkPaymentCardTokenRequest()
         request.setCardNumber(cardNumber)
@@ -75,9 +75,9 @@ public class PrimerNolPay {
     }
     
     /// Trigger OTP SMS sending for linking
-    public func sendLinkOTPTo(mobileNumber: String,
-                            withCountryCode countryCode: String,
-                            andToken token: String,
+    public func sendLinkOTP(to mobileNumber: String,
+                            with countryCode: String,
+                            and token: String,
                             completion: ((Result<Bool, PrimerNolPayError>) -> Void)? = nil) {
         
         let request = TransitLinkPaymentCardOTPRequest()
@@ -97,8 +97,8 @@ public class PrimerNolPay {
     }
     
     /// Link Nol payment card
-    public func linkCardFor(otp: String,
-                         andLinkToken linkToken: String,
+    public func linkCard(for otp: String,
+                         and linkToken: String,
                          completion: @escaping (Result<Bool, PrimerNolPayError>) -> Void) {
         
         let request = TransitLinkPaymentCardRequest()
@@ -117,9 +117,9 @@ public class PrimerNolPay {
     }
     
     /// Trigger OTP SMS sending for unlinking
-    public func sendUnlinkOTPTo(mobileNumber: String,
-                              withCountryCode countryCode: String,
-                              andCardNumber cardNumber: String,
+    public func sendUnlinkOTP(to mobileNumber: String,
+                              with countryCode: String,
+                              and cardNumber: String,
                               completion: @escaping (Result<(String, String), PrimerNolPayError>) -> Void) {
         
         let request = TransitUnlinkPaymentCardOTPRequest()
@@ -139,9 +139,9 @@ public class PrimerNolPay {
     }
     
     /// Unlink payment card
-    public func unlinkCardWith(cardNumber: String,
+    public func unlinkCard(with cardNumber: String,
                            otp: String,
-                           andUnlinkToken unlinkToken: String,
+                           and unlinkToken: String,
                            completion: @escaping (Result<Bool, PrimerNolPayError>) -> Void) {
         
         let request = TransitUnlinkPaymentCardRequest()
@@ -161,8 +161,8 @@ public class PrimerNolPay {
     }
     
     /// Get linked cards from Nol
-    public func getAvaliableCardsFor(mobileNumber: String,
-                                  withCountryCode countryCode: String,
+    public func getAvailableCards(for mobileNumber: String,
+                                  with countryCode: String,
                                   completion: @escaping (Result<[PrimerNolPayCard], PrimerNolPayError>) -> Void) {
         
         let request = TransitPaymentCardListRequest()
@@ -186,8 +186,8 @@ public class PrimerNolPay {
     }
     
     /// Request payment
-    public func requestPaymentFor(cardNumber: String,
-                               andTransactionNumber transactionNumber: String,
+    public func requestPayment(for cardNumber: String,
+                               and transactionNumber: String,
                                completion: @escaping (Result<Bool, PrimerNolPayError>) -> Void) {
         
         let request = TransitPayRequest()

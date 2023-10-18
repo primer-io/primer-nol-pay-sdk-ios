@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		507EE37CE93BFAB68F9BDAEA /* Pods_PrimerNolPaySDK_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFB4F85EF99C1D7DDA7BC78E /* Pods_PrimerNolPaySDK_Tests.framework */; };
+		3CCFC15247A3A8DF5B594D44 /* Pods_PrimerNolPaySDK_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58308DCB9723B7364F0737BA /* Pods_PrimerNolPaySDK_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		EB7F0C08364C305CB9F15B93 /* Pods_PrimerNolPaySDK_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1429B8F8994CBDB4CF9CAB1 /* Pods_PrimerNolPaySDK_Example.framework */; };
+		A541565EB5F270DACE814CCD /* Pods_PrimerNolPaySDK_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D87287A68E32F9CE4AF3AA /* Pods_PrimerNolPaySDK_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,8 +28,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		27804A29364226C52B543F16 /* Pods-PrimerNolPaySDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimerNolPaySDK_Tests.release.xcconfig"; path = "Target Support Files/Pods-PrimerNolPaySDK_Tests/Pods-PrimerNolPaySDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		54584B2EE648E7A5672408D0 /* Pods-PrimerNolPaySDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimerNolPaySDK_Tests.debug.xcconfig"; path = "Target Support Files/Pods-PrimerNolPaySDK_Tests/Pods-PrimerNolPaySDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		05ABA015572566116F500E32 /* Pods-PrimerNolPaySDK_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimerNolPaySDK_Example.debug.xcconfig"; path = "Target Support Files/Pods-PrimerNolPaySDK_Example/Pods-PrimerNolPaySDK_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		2AC6D7E44DA987D68C5AD56A /* Pods-PrimerNolPaySDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimerNolPaySDK_Tests.release.xcconfig"; path = "Target Support Files/Pods-PrimerNolPaySDK_Tests/Pods-PrimerNolPaySDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		43A927DD4E3B80AF25CFF31C /* Pods-PrimerNolPaySDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimerNolPaySDK_Tests.debug.xcconfig"; path = "Target Support Files/Pods-PrimerNolPaySDK_Tests/Pods-PrimerNolPaySDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		58308DCB9723B7364F0737BA /* Pods_PrimerNolPaySDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrimerNolPaySDK_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* PrimerNolPaySDK_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrimerNolPaySDK_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,14 +42,12 @@
 		607FACE51AFB9204008FA782 /* PrimerNolPaySDK_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrimerNolPaySDK_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		62B99774B40BAE77F77CAC96 /* Pods-PrimerNolPaySDK_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimerNolPaySDK_Example.release.xcconfig"; path = "Target Support Files/Pods-PrimerNolPaySDK_Example/Pods-PrimerNolPaySDK_Example.release.xcconfig"; sourceTree = "<group>"; };
 		71004D0AEEC6367D118546C9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		7EEAE4DD1F768257D3E27027 /* Pods-PrimerNolPaySDK_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimerNolPaySDK_Example.release.xcconfig"; path = "Target Support Files/Pods-PrimerNolPaySDK_Example/Pods-PrimerNolPaySDK_Example.release.xcconfig"; sourceTree = "<group>"; };
 		A13678852AA10E62001EDB69 /* PrimerNolPaySDK_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PrimerNolPaySDK_Example.entitlements; sourceTree = "<group>"; };
 		A891392B7C007364569953FD /* PrimerNolPaySDK.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = PrimerNolPaySDK.podspec; path = ../PrimerNolPaySDK.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BFCDED88583ED69510DF72B6 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		C1429B8F8994CBDB4CF9CAB1 /* Pods_PrimerNolPaySDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrimerNolPaySDK_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CFB4F85EF99C1D7DDA7BC78E /* Pods_PrimerNolPaySDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrimerNolPaySDK_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F6AD482AB367524DEBDD662D /* Pods-PrimerNolPaySDK_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimerNolPaySDK_Example.debug.xcconfig"; path = "Target Support Files/Pods-PrimerNolPaySDK_Example/Pods-PrimerNolPaySDK_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		D8D87287A68E32F9CE4AF3AA /* Pods_PrimerNolPaySDK_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrimerNolPaySDK_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB7F0C08364C305CB9F15B93 /* Pods_PrimerNolPaySDK_Example.framework in Frameworks */,
+				A541565EB5F270DACE814CCD /* Pods_PrimerNolPaySDK_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,7 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				507EE37CE93BFAB68F9BDAEA /* Pods_PrimerNolPaySDK_Tests.framework in Frameworks */,
+				3CCFC15247A3A8DF5B594D44 /* Pods_PrimerNolPaySDK_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,10 +73,10 @@
 		58DBE5D71DF2211EF4004811 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F6AD482AB367524DEBDD662D /* Pods-PrimerNolPaySDK_Example.debug.xcconfig */,
-				7EEAE4DD1F768257D3E27027 /* Pods-PrimerNolPaySDK_Example.release.xcconfig */,
-				54584B2EE648E7A5672408D0 /* Pods-PrimerNolPaySDK_Tests.debug.xcconfig */,
-				27804A29364226C52B543F16 /* Pods-PrimerNolPaySDK_Tests.release.xcconfig */,
+				05ABA015572566116F500E32 /* Pods-PrimerNolPaySDK_Example.debug.xcconfig */,
+				62B99774B40BAE77F77CAC96 /* Pods-PrimerNolPaySDK_Example.release.xcconfig */,
+				43A927DD4E3B80AF25CFF31C /* Pods-PrimerNolPaySDK_Tests.debug.xcconfig */,
+				2AC6D7E44DA987D68C5AD56A /* Pods-PrimerNolPaySDK_Tests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -90,7 +90,7 @@
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				58DBE5D71DF2211EF4004811 /* Pods */,
-				69D26A2445E1068405A02C08 /* Frameworks */,
+				ADF999641B2203D523373AB9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,11 +152,11 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		69D26A2445E1068405A02C08 /* Frameworks */ = {
+		ADF999641B2203D523373AB9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C1429B8F8994CBDB4CF9CAB1 /* Pods_PrimerNolPaySDK_Example.framework */,
-				CFB4F85EF99C1D7DDA7BC78E /* Pods_PrimerNolPaySDK_Tests.framework */,
+				D8D87287A68E32F9CE4AF3AA /* Pods_PrimerNolPaySDK_Example.framework */,
+				58308DCB9723B7364F0737BA /* Pods_PrimerNolPaySDK_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -168,11 +168,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "PrimerNolPaySDK_Example" */;
 			buildPhases = (
-				1BD6BAEF8BB2E092095861CE /* [CP] Check Pods Manifest.lock */,
+				053A9F58BEDE99D61EC3B9CE /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				BF45549C12577174A92116EE /* [CP] Embed Pods Frameworks */,
+				2D082571471C4819200F09C8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -187,7 +187,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "PrimerNolPaySDK_Tests" */;
 			buildPhases = (
-				5FC2965C9AB08F5466D663EB /* [CP] Check Pods Manifest.lock */,
+				0AF7669B44AD1927519F8FF3 /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
@@ -264,7 +264,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1BD6BAEF8BB2E092095861CE /* [CP] Check Pods Manifest.lock */ = {
+		053A9F58BEDE99D61EC3B9CE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -286,7 +286,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5FC2965C9AB08F5466D663EB /* [CP] Check Pods Manifest.lock */ = {
+		0AF7669B44AD1927519F8FF3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -308,7 +308,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BF45549C12577174A92116EE /* [CP] Embed Pods Frameworks */ = {
+		2D082571471C4819200F09C8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -486,7 +486,7 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F6AD482AB367524DEBDD662D /* Pods-PrimerNolPaySDK_Example.debug.xcconfig */;
+			baseConfigurationReference = 05ABA015572566116F500E32 /* Pods-PrimerNolPaySDK_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PrimerNolPaySDK_Example.entitlements;
@@ -506,7 +506,7 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7EEAE4DD1F768257D3E27027 /* Pods-PrimerNolPaySDK_Example.release.xcconfig */;
+			baseConfigurationReference = 62B99774B40BAE77F77CAC96 /* Pods-PrimerNolPaySDK_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PrimerNolPaySDK_Example.entitlements;
@@ -526,7 +526,7 @@
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 54584B2EE648E7A5672408D0 /* Pods-PrimerNolPaySDK_Tests.debug.xcconfig */;
+			baseConfigurationReference = 43A927DD4E3B80AF25CFF31C /* Pods-PrimerNolPaySDK_Tests.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = N8UN9TR5DY;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -553,7 +553,7 @@
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 27804A29364226C52B543F16 /* Pods-PrimerNolPaySDK_Tests.release.xcconfig */;
+			baseConfigurationReference = 2AC6D7E44DA987D68C5AD56A /* Pods-PrimerNolPaySDK_Tests.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = N8UN9TR5DY;
 				FRAMEWORK_SEARCH_PATHS = (

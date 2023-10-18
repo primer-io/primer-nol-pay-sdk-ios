@@ -16,62 +16,63 @@
 		1C002E72C0173ACF9806E1FCD11D9A5E /* Pods-PrimerNolPaySDK_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E07796F3997E0BE9324EAFD0C029F078 /* Pods-PrimerNolPaySDK_Tests-dummy.m */; };
 		1D8031C86A94D32E00ED55B80428A0F3 /* IQKeyboardManager+Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72854F72E0889CC05AD906C479CBA47C /* IQKeyboardManager+Toolbar.swift */; };
 		20616A47873318F80BFFEABAC9730122 /* IQTitleBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD7948F2836D6E5A2C382F373805A98 /* IQTitleBarButtonItem.swift */; };
-		227B2FA80765C56014BAD103C1A912FD /* PrimerNolPayCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6685D02E4DDED544B5340A1B84F11BBC /* PrimerNolPayCard.swift */; };
-		24BC4F0BC7F5A8028DB5775B77F24BD6 /* PrimerNolPayError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CFCBE5F6CA41864A5C521C441DA182 /* PrimerNolPayError.swift */; };
 		24EC44FF102C2635A476CEF7567F89DA /* IQPreviousNextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44A1802E658439BC4380D98DB8DC5F3 /* IQPreviousNextView.swift */; };
+		255A72BA1BCF9F4AE44696052FC9AEA8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D60AC13D33197690A05C641925DDDA /* UIKit.framework */; };
 		2CA0B3B43A972DF3AD79F58092E3403E /* IQKeyboardManager+Internal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AAA271F3A9B93DF8620F90EF07D6566 /* IQKeyboardManager+Internal.swift */; };
 		2E5138271A6C79BDA3C0835F2596219B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D60AC13D33197690A05C641925DDDA /* UIKit.framework */; };
 		2EC96162DD6740ECE67FF38B8400A7C5 /* IQKeyboardManager+Debug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293C7104272A3D4FF208B5743BAB1FD2 /* IQKeyboardManager+Debug.swift */; };
+		30BFFBE9BB20B483120FE30FEB422DB7 /* PrimerNolPayCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C28C2EB85618DCA5A73B988FAA1F196 /* PrimerNolPayCard.swift */; };
+		332DAACF1567CF1D2D6741DB6862A54D /* PrimerNolPaySDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F0CCC4C7AA98E43D4A52E2764F68085B /* PrimerNolPaySDK-dummy.m */; };
 		34C39BDBFE7A2CC585787F5AFCA39FDE /* IQUIView+IQKeyboardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4280CDA65D22B3380E8F3793AD676448 /* IQUIView+IQKeyboardToolbar.swift */; };
 		3F01EED6380B596E1D0C1497CBCF9B95 /* IQUITextFieldView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA30101B5B5E098E3C8AF82705FC9153 /* IQUITextFieldView+Additions.swift */; };
 		4016E6350D380F34CECC02380E2BD595 /* Pods-PrimerNolPaySDK_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C0B778C5CB79C3447F4EC9CAFCBEA64 /* Pods-PrimerNolPaySDK_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		41CD40F5713CD71AD5AB1471E81C97E1 /* IQBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D76EF06E4464FFC6A5C773DB0BBE58 /* IQBarButtonItem.swift */; };
-		4D01C491D250C36EBBD67B983D86A7A1 /* PrimerNolPaySDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F393C068576D1CE32BB9560BF3735E9 /* PrimerNolPaySDK-dummy.m */; };
+		420A01A1CF4EB0F937D760AC86CB4524 /* PrimerNolPaySDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F786C4D48C40127D1B8109DF42C6548 /* PrimerNolPaySDK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4DC04B76F7D79B6C02F080B3ED123C06 /* version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB80DBB00A79697FE43D96355BE5947 /* version.swift */; };
 		5FDB341E39226EE977690C87379BD7E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */; };
 		60C6606FF8176EE5A38870CFD9F649C8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */; };
 		62D5677EC17D604F16DAF13F32A68F83 /* Pods-PrimerNolPaySDK_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0719F7E85E8CA14AB175B5D3AB9F958A /* Pods-PrimerNolPaySDK_Example-dummy.m */; };
 		7AC995F567A776FC1A80A9FA0733F3D1 /* IQNSArray+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B5A5E28C072A0624118F840538984D /* IQNSArray+Sort.swift */; };
-		7B61D68D243B0812E112872DE832CE8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */; };
+		7F143F0FF92AD7DE6761B521D4C50E98 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */; };
 		85F13B069B06ADF2B6DCA622E4645110 /* IQKeyboardManagerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C7C8A5A21E510A303D762337DF7B23 /* IQKeyboardManagerConstants.swift */; };
 		86A03DE9366D1BE94EB99AA387EACD1F /* IQKeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4B74522135041E0DF1BF1033D9B174 /* IQKeyboardManager.swift */; };
+		878334FCFA94BC0F41B5442BED8EBC95 /* PrimerNolPay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E931A93A995CF534536F946F88E17D /* PrimerNolPay.swift */; };
+		8888C56129F84524694CC704B6A3F32A /* PrimerNolPayError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B8325361BCF814B39282BD0AE5B3C2 /* PrimerNolPayError.swift */; };
 		A4BAEE317BFF650DCC888FC67BFBF7EF /* IQKeyboardManager+UIKeyboardNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9AC1854EF5DFAE2B65F9F7F823EA27 /* IQKeyboardManager+UIKeyboardNotification.swift */; };
 		B1B6A2491AC437909DABE20C71BECDBC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 840FA0B75AF62912A30DDC66B647ED98 /* CoreGraphics.framework */; };
 		B413A91629D9DD7AB394845D51DAA44D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */; };
 		B6B43B1B78EC0E52CC08F82841A22A31 /* IQKeyboardManagerSwift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A298EC196A378BD5C7FE4A436CBD1BB9 /* IQKeyboardManagerSwift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B6EC6D40823E66D5B389ACEAC9FD7AAE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A42DBD2F42D55606EEBA514009498B87 /* QuartzCore.framework */; };
-		C01AE61AF503394EB6BECDD48A2B39C0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D60AC13D33197690A05C641925DDDA /* UIKit.framework */; };
 		C39AEC02E92A2453F65C504D08033F05 /* Pods-PrimerNolPaySDK_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 44F6393586F07E38F6EBD55CF2595D2A /* Pods-PrimerNolPaySDK_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C81CB3B5D25BDBCB6D3A3632BE408229 /* IQKeyboardReturnKeyHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137093D8E49217C090D374983F152184 /* IQKeyboardReturnKeyHandler.swift */; };
 		D31356D54A39420DB91C892502CFFD57 /* IQUIViewController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2C69CCD080DCE1292F31874E43B91D /* IQUIViewController+Additions.swift */; };
 		D6516B5451008BF1ABA150E6482F6325 /* IQKeyboardManager+UITextFieldViewNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6E6BC7C022A99DF59AD0ED4B5597B7 /* IQKeyboardManager+UITextFieldViewNotification.swift */; };
 		DF33C3DE068D6116B3F551B0453ACD23 /* IQUIScrollView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368438D51285F622AEC4CA45FB117A53 /* IQUIScrollView+Additions.swift */; };
-		DFF62D2BF0788499920BDACA25FC567E /* PrimerNolPay.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7CAD861F5A9AF4C6DABC1843B615581 /* PrimerNolPay.swift */; };
 		E72E1BDDFF31003BD089544FC112FAAC /* IQTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCFE3BBAB67A853B21025B246B315134 /* IQTextView.swift */; };
-		EFD75BA33A57366139537E774354F6C7 /* PrimerNolPaySDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 17129FFFF875191E7ED03049DB9B1291 /* PrimerNolPaySDK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F2B1C1D70C629AE19C0D5121B1BBA891 /* IQKeyboardManager+Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA75D03BE22858F15248EF62C270F15 /* IQKeyboardManager+Position.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		6A2E16515118AD0262E16373052D3D89 /* PBXContainerItemProxy */ = {
+		2ECB4644F7ADDA87D7C308518CE9EAF3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = B490E7485944099E16C9CBD79119D1D4;
 			remoteInfo = IQKeyboardManagerSwift;
 		};
-		BE27B2ADF1A0638CC0B405FF59062222 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F8AD2BC35B55A9F034807CF59000CC1C;
-			remoteInfo = PrimerNolPaySDK;
-		};
-		D9F6D46EE01E5E1524D3465E0DF569BC /* PBXContainerItemProxy */ = {
+		51DC8F68F7C300F3DF0077F0110D6CD6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 326C92AA105A8BDA7FCB6AC432DC856A;
 			remoteInfo = "Pods-PrimerNolPaySDK_Example";
+		};
+		6D962099DE033C83B510DCFACC69214F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F8AD2BC35B55A9F034807CF59000CC1C;
+			remoteInfo = PrimerNolPaySDK;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -79,31 +80,34 @@
 		04D60AC13D33197690A05C641925DDDA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		06A0CAEB27A23E33D4F8FAEBFD906BA4 /* Pods-PrimerNolPaySDK_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PrimerNolPaySDK_Example.release.xcconfig"; sourceTree = "<group>"; };
 		0719F7E85E8CA14AB175B5D3AB9F958A /* Pods-PrimerNolPaySDK_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PrimerNolPaySDK_Example-dummy.m"; sourceTree = "<group>"; };
+		07E931A93A995CF534536F946F88E17D /* PrimerNolPay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PrimerNolPay.swift; path = Sources/PrimerNolPaySDK/Classes/PrimerNolPay.swift; sourceTree = "<group>"; };
 		0C0B778C5CB79C3447F4EC9CAFCBEA64 /* Pods-PrimerNolPaySDK_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PrimerNolPaySDK_Tests-umbrella.h"; sourceTree = "<group>"; };
-		0F393C068576D1CE32BB9560BF3735E9 /* PrimerNolPaySDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PrimerNolPaySDK-dummy.m"; sourceTree = "<group>"; };
+		0C28C2EB85618DCA5A73B988FAA1F196 /* PrimerNolPayCard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PrimerNolPayCard.swift; path = Sources/PrimerNolPaySDK/Classes/PrimerNolPayCard.swift; sourceTree = "<group>"; };
 		0FC3E63CA03E18657D6980B690C09A4B /* PrimerNolPaySDK */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PrimerNolPaySDK; path = PrimerNolPaySDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		137093D8E49217C090D374983F152184 /* IQKeyboardReturnKeyHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardReturnKeyHandler.swift; path = IQKeyboardManagerSwift/IQKeyboardReturnKeyHandler.swift; sourceTree = "<group>"; };
-		17129FFFF875191E7ED03049DB9B1291 /* PrimerNolPaySDK-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PrimerNolPaySDK-umbrella.h"; sourceTree = "<group>"; };
-		1EEC3D61F781CC30EE588C0C52A95FF5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		28AD0C9012809CFEFE9495CD0F2C0208 /* Pods-PrimerNolPaySDK_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PrimerNolPaySDK_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		293C7104272A3D4FF208B5743BAB1FD2 /* IQKeyboardManager+Debug.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+Debug.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+Debug.swift"; sourceTree = "<group>"; };
 		2DBB1613E5A0BC4CAF3DE161C1976D06 /* IQKeyboardManagerSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IQKeyboardManagerSwift.release.xcconfig; sourceTree = "<group>"; };
 		2F52550AD1ACBAA22F54ABB6F6614A9F /* IQKeyboardManagerSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IQKeyboardManagerSwift-prefix.pch"; sourceTree = "<group>"; };
+		2F786C4D48C40127D1B8109DF42C6548 /* PrimerNolPaySDK-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PrimerNolPaySDK-umbrella.h"; sourceTree = "<group>"; };
+		30F2D149EE3BC80B89B07B69046DAC3E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		32B3D1DF7E09F65F0106D3876CEE8040 /* TransitSDK.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = TransitSDK.xcframework; path = Sources/Frameworks/TransitSDK.xcframework; sourceTree = "<group>"; };
 		3524C45E74E4C9923EA8A15FF24E894F /* Pods-PrimerNolPaySDK_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PrimerNolPaySDK_Tests.modulemap"; sourceTree = "<group>"; };
 		368438D51285F622AEC4CA45FB117A53 /* IQUIScrollView+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIScrollView+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIScrollView+Additions.swift"; sourceTree = "<group>"; };
-		36CDE7288AE47AD4BC3E52B9BC68489F /* PrimerNolPaySDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PrimerNolPaySDK.modulemap; sourceTree = "<group>"; };
-		3A40309A0282F2DA803D2268FCAA203B /* TransitSDK.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = TransitSDK.xcframework; path = Sources/Frameworks/TransitSDK.xcframework; sourceTree = "<group>"; };
+		39B8325361BCF814B39282BD0AE5B3C2 /* PrimerNolPayError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PrimerNolPayError.swift; path = Sources/PrimerNolPaySDK/Classes/PrimerNolPayError.swift; sourceTree = "<group>"; };
 		3AAA271F3A9B93DF8620F90EF07D6566 /* IQKeyboardManager+Internal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+Internal.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+Internal.swift"; sourceTree = "<group>"; };
 		4280CDA65D22B3380E8F3793AD676448 /* IQUIView+IQKeyboardToolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIView+IQKeyboardToolbar.swift"; path = "IQKeyboardManagerSwift/IQToolbar/IQUIView+IQKeyboardToolbar.swift"; sourceTree = "<group>"; };
 		44F6393586F07E38F6EBD55CF2595D2A /* Pods-PrimerNolPaySDK_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PrimerNolPaySDK_Example-umbrella.h"; sourceTree = "<group>"; };
+		46DD5106FD63F5D5F0813E51C4333693 /* PrimerNolPaySDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PrimerNolPaySDK.debug.xcconfig; sourceTree = "<group>"; };
+		48EC7337AAB47141C3EBFA3C16971809 /* PrimerNolPaySDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = PrimerNolPaySDK.modulemap; sourceTree = "<group>"; };
+		494136D382828AD3A76E461AD0CCE2D3 /* PrimerNolPaySDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PrimerNolPaySDK-prefix.pch"; sourceTree = "<group>"; };
 		4EA75D03BE22858F15248EF62C270F15 /* IQKeyboardManager+Position.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+Position.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+Position.swift"; sourceTree = "<group>"; };
-		542FED10254593279EA740DE65A79877 /* PrimerNolPaySDK-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "PrimerNolPaySDK-xcframeworks.sh"; sourceTree = "<group>"; };
-		571C7AFF708356C2D5720D3F09A04598 /* PrimerNolPaySDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PrimerNolPaySDK.release.xcconfig; sourceTree = "<group>"; };
 		5888EAC9F9D90C8FB57381D5A792FB3E /* Pods-PrimerNolPaySDK_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PrimerNolPaySDK_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		5C3B9A35288DE6023FFD04D199D0E590 /* PrimerNolPaySDK-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "PrimerNolPaySDK-xcframeworks.sh"; sourceTree = "<group>"; };
+		5FB80DBB00A79697FE43D96355BE5947 /* version.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = version.swift; path = Sources/PrimerNolPaySDK/Classes/version.swift; sourceTree = "<group>"; };
 		615AB13CC06C5DFC09B42ED8FC44B9CB /* IQKeyboardManagerConstantsInternal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManagerConstantsInternal.swift; path = IQKeyboardManagerSwift/Constants/IQKeyboardManagerConstantsInternal.swift; sourceTree = "<group>"; };
 		63C7C8A5A21E510A303D762337DF7B23 /* IQKeyboardManagerConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManagerConstants.swift; path = IQKeyboardManagerSwift/Constants/IQKeyboardManagerConstants.swift; sourceTree = "<group>"; };
 		64B0F7BF78C1D89726BA66A586C2ADAA /* IQToolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQToolbar.swift; path = IQKeyboardManagerSwift/IQToolbar/IQToolbar.swift; sourceTree = "<group>"; };
-		6685D02E4DDED544B5340A1B84F11BBC /* PrimerNolPayCard.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PrimerNolPayCard.swift; path = Sources/PrimerNolPaySDK/Classes/PrimerNolPayCard.swift; sourceTree = "<group>"; };
 		68B5A5E28C072A0624118F840538984D /* IQNSArray+Sort.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQNSArray+Sort.swift"; path = "IQKeyboardManagerSwift/Categories/IQNSArray+Sort.swift"; sourceTree = "<group>"; };
 		72854F72E0889CC05AD906C479CBA47C /* IQKeyboardManager+Toolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+Toolbar.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+Toolbar.swift"; sourceTree = "<group>"; };
 		79CF7D56C5D50C18B2EA0ED106D998C7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -111,10 +115,8 @@
 		807B4030A421E5D083D81CF575F3292A /* Pods-PrimerNolPaySDK_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PrimerNolPaySDK_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		840FA0B75AF62912A30DDC66B647ED98 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		87464AFE37AD7E01C2DDE2DEED490451 /* Pods-PrimerNolPaySDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PrimerNolPaySDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		8D24DE7EDEBDD04F04D505388DE4CC90 /* PrimerNolPaySDK-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PrimerNolPaySDK-Info.plist"; sourceTree = "<group>"; };
 		9450D00855D3C7FC82B53EA59B0390A0 /* Pods-PrimerNolPaySDK_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PrimerNolPaySDK_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		95FFB27501EE210F7F38B8EEC73AA3A9 /* Pods-PrimerNolPaySDK_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-PrimerNolPaySDK_Tests"; path = Pods_PrimerNolPaySDK_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		97CFCBE5F6CA41864A5C521C441DA182 /* PrimerNolPayError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PrimerNolPayError.swift; path = Sources/PrimerNolPaySDK/Classes/PrimerNolPayError.swift; sourceTree = "<group>"; };
 		99962DAC4888FBCD19CB8FCACABE28C5 /* Pods-PrimerNolPaySDK_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PrimerNolPaySDK_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		9A9AC1854EF5DFAE2B65F9F7F823EA27 /* IQKeyboardManager+UIKeyboardNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+UIKeyboardNotification.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+UIKeyboardNotification.swift"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -122,26 +124,26 @@
 		9FD7948F2836D6E5A2C382F373805A98 /* IQTitleBarButtonItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQTitleBarButtonItem.swift; path = IQKeyboardManagerSwift/IQToolbar/IQTitleBarButtonItem.swift; sourceTree = "<group>"; };
 		A298EC196A378BD5C7FE4A436CBD1BB9 /* IQKeyboardManagerSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "IQKeyboardManagerSwift-umbrella.h"; sourceTree = "<group>"; };
 		A42DBD2F42D55606EEBA514009498B87 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		A437C33D8F40EA0CE8EEB18FFD542718 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		A44A1802E658439BC4380D98DB8DC5F3 /* IQPreviousNextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQPreviousNextView.swift; path = IQKeyboardManagerSwift/IQToolbar/IQPreviousNextView.swift; sourceTree = "<group>"; };
 		A8E950A16D00F649C54FFB30F81D7842 /* IQKeyboardManagerSwift */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = IQKeyboardManagerSwift; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA4B74522135041E0DF1BF1033D9B174 /* IQKeyboardManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQKeyboardManager.swift; path = IQKeyboardManagerSwift/IQKeyboardManager.swift; sourceTree = "<group>"; };
 		AE7A8BAEA08310718466A194312E933F /* IQKeyboardManagerSwift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = IQKeyboardManagerSwift.modulemap; sourceTree = "<group>"; };
 		B448259DDF783866B707C90BBB300BA4 /* IQKeyboardManagerSwift-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "IQKeyboardManagerSwift-Info.plist"; sourceTree = "<group>"; };
 		B6D76EF06E4464FFC6A5C773DB0BBE58 /* IQBarButtonItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQBarButtonItem.swift; path = IQKeyboardManagerSwift/IQToolbar/IQBarButtonItem.swift; sourceTree = "<group>"; };
-		B78A4C9CB79A28ADC9BA25A289DC022C /* PrimerNolPaySDK.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = PrimerNolPaySDK.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		C3CF2A5CAEE3965380B78E407FF383E3 /* IQUIView+Hierarchy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUIView+Hierarchy.swift"; path = "IQKeyboardManagerSwift/Categories/IQUIView+Hierarchy.swift"; sourceTree = "<group>"; };
 		C775F591CDDFF3351062096A7889B501 /* Pods-PrimerNolPaySDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PrimerNolPaySDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		CBF5FC03197DBAD4C38070DF1AD6C091 /* PrimerNolPaySDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PrimerNolPaySDK.debug.xcconfig; sourceTree = "<group>"; };
 		D4F38298278DA6564A5853E702159B38 /* IQKeyboardManager+OrientationNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQKeyboardManager+OrientationNotification.swift"; path = "IQKeyboardManagerSwift/IQKeyboardManager+OrientationNotification.swift"; sourceTree = "<group>"; };
 		D74FA4F54F1DC2616F38D44D3CDC55DE /* IQInvocation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQInvocation.swift; path = IQKeyboardManagerSwift/IQToolbar/IQInvocation.swift; sourceTree = "<group>"; };
-		D7CAD861F5A9AF4C6DABC1843B615581 /* PrimerNolPay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PrimerNolPay.swift; path = Sources/PrimerNolPaySDK/Classes/PrimerNolPay.swift; sourceTree = "<group>"; };
 		DA30101B5B5E098E3C8AF82705FC9153 /* IQUITextFieldView+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "IQUITextFieldView+Additions.swift"; path = "IQKeyboardManagerSwift/Categories/IQUITextFieldView+Additions.swift"; sourceTree = "<group>"; };
 		DAF7FE9F1447111EC4F646B5B5077B6A /* IQKeyboardManagerSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IQKeyboardManagerSwift.debug.xcconfig; sourceTree = "<group>"; };
 		E07796F3997E0BE9324EAFD0C029F078 /* Pods-PrimerNolPaySDK_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PrimerNolPaySDK_Tests-dummy.m"; sourceTree = "<group>"; };
 		E1E02C059F30C94A093E7AAABF6D6A06 /* Pods-PrimerNolPaySDK_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PrimerNolPaySDK_Example.modulemap"; sourceTree = "<group>"; };
+		EA0CA901AD0ABAFFE7EB642E5A94F370 /* PrimerNolPaySDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PrimerNolPaySDK.release.xcconfig; sourceTree = "<group>"; };
+		EA2C515F02A08CA703986FD7E627FAA2 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		ECED4D8706483695AC126F803442379C /* PrimerNolPaySDK-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PrimerNolPaySDK-Info.plist"; sourceTree = "<group>"; };
+		EE9E7F048128919BF11E1650B43ACDF3 /* PrimerNolPaySDK.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = PrimerNolPaySDK.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		F0CCC4C7AA98E43D4A52E2764F68085B /* PrimerNolPaySDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PrimerNolPaySDK-dummy.m"; sourceTree = "<group>"; };
 		F0EB244AD79873584DF5275A31D8E432 /* IQKeyboardManagerSwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "IQKeyboardManagerSwift-dummy.m"; sourceTree = "<group>"; };
-		F3FD2F07B822A35E37B74706FBC7EE55 /* PrimerNolPaySDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PrimerNolPaySDK-prefix.pch"; sourceTree = "<group>"; };
 		F6C406EE1F22F5E3754542FD32007F2D /* Pods-PrimerNolPaySDK_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PrimerNolPaySDK_Tests-Info.plist"; sourceTree = "<group>"; };
 		FA8C6EA636F473CC03B483668E73E1DE /* Pods-PrimerNolPaySDK_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PrimerNolPaySDK_Example-frameworks.sh"; sourceTree = "<group>"; };
 		FCFE3BBAB67A853B21025B246B315134 /* IQTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IQTextView.swift; path = IQKeyboardManagerSwift/IQTextView/IQTextView.swift; sourceTree = "<group>"; };
@@ -166,15 +168,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A39CA4077385A18C55A9721784BEB3BA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7B61D68D243B0812E112872DE832CE8C /* Foundation.framework in Frameworks */,
-				C01AE61AF503394EB6BECDD48A2B39C0 /* UIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A3B77577C54970218F8F8340516D00F2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -183,6 +176,15 @@
 				60C6606FF8176EE5A38870CFD9F649C8 /* Foundation.framework in Frameworks */,
 				B6EC6D40823E66D5B389ACEAC9FD7AAE /* QuartzCore.framework in Frameworks */,
 				2E5138271A6C79BDA3C0835F2596219B /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6F7949AC747DEB6F4214BA92E6ED3B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F143F0FF92AD7DE6761B521D4C50E98 /* Foundation.framework in Frameworks */,
+				255A72BA1BCF9F4AE44696052FC9AEA8 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,22 +222,6 @@
 			path = "../Target Support Files/IQKeyboardManagerSwift";
 			sourceTree = "<group>";
 		};
-		0752541CCA32A1D8987A267506ECCA35 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				36CDE7288AE47AD4BC3E52B9BC68489F /* PrimerNolPaySDK.modulemap */,
-				0F393C068576D1CE32BB9560BF3735E9 /* PrimerNolPaySDK-dummy.m */,
-				8D24DE7EDEBDD04F04D505388DE4CC90 /* PrimerNolPaySDK-Info.plist */,
-				F3FD2F07B822A35E37B74706FBC7EE55 /* PrimerNolPaySDK-prefix.pch */,
-				17129FFFF875191E7ED03049DB9B1291 /* PrimerNolPaySDK-umbrella.h */,
-				542FED10254593279EA740DE65A79877 /* PrimerNolPaySDK-xcframeworks.sh */,
-				CBF5FC03197DBAD4C38070DF1AD6C091 /* PrimerNolPaySDK.debug.xcconfig */,
-				571C7AFF708356C2D5720D3F09A04598 /* PrimerNolPaySDK.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/PrimerNolPaySDK";
-			sourceTree = "<group>";
-		};
 		1E4A90E2F40D68CE67592A4310FB6620 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -247,10 +233,10 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2213129CFDDC4212F667B2874E19834A /* Frameworks */ = {
+		1F2DA742B8FFA57F721A7637B54703D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3A40309A0282F2DA803D2268FCAA203B /* TransitSDK.xcframework */,
+				32B3D1DF7E09F65F0106D3876CEE8040 /* TransitSDK.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -287,26 +273,20 @@
 			path = IQKeyboardManagerSwift;
 			sourceTree = "<group>";
 		};
-		2EC4147CFF98D94FB50BD828EFDB80C7 /* PrimerNolPaySDK */ = {
-			isa = PBXGroup;
-			children = (
-				D7CAD861F5A9AF4C6DABC1843B615581 /* PrimerNolPay.swift */,
-				6685D02E4DDED544B5340A1B84F11BBC /* PrimerNolPayCard.swift */,
-				97CFCBE5F6CA41864A5C521C441DA182 /* PrimerNolPayError.swift */,
-				2213129CFDDC4212F667B2874E19834A /* Frameworks */,
-				B027DCC8013F5A250453E78D48FEA29B /* Pod */,
-				0752541CCA32A1D8987A267506ECCA35 /* Support Files */,
-			);
-			name = PrimerNolPaySDK;
-			path = ../..;
-			sourceTree = "<group>";
-		};
 		4DCB0EA7BD00EC84DBADB5488807591C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				2276EB770E01B540B3C11C8375D9234C /* IQKeyboardManagerSwift */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		593E482F84F91B81D7F701DE806A67D3 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				83B797FDF80E8E1B186EC6454D368269 /* PrimerNolPaySDK */,
+			);
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		665FA4854DD6955CEE20F7AF7D19319B /* Pods-PrimerNolPaySDK_Example */ = {
@@ -326,12 +306,45 @@
 			path = "Target Support Files/Pods-PrimerNolPaySDK_Example";
 			sourceTree = "<group>";
 		};
-		829801189AA99CB4D90036B437A30F52 /* Development Pods */ = {
+		83B797FDF80E8E1B186EC6454D368269 /* PrimerNolPaySDK */ = {
 			isa = PBXGroup;
 			children = (
-				2EC4147CFF98D94FB50BD828EFDB80C7 /* PrimerNolPaySDK */,
+				07E931A93A995CF534536F946F88E17D /* PrimerNolPay.swift */,
+				0C28C2EB85618DCA5A73B988FAA1F196 /* PrimerNolPayCard.swift */,
+				39B8325361BCF814B39282BD0AE5B3C2 /* PrimerNolPayError.swift */,
+				5FB80DBB00A79697FE43D96355BE5947 /* version.swift */,
+				1F2DA742B8FFA57F721A7637B54703D4 /* Frameworks */,
+				9A150F902FB252B94C6332D3191B6367 /* Pod */,
+				98ED3177573BED5DD3E27DEF4B2739CC /* Support Files */,
 			);
-			name = "Development Pods";
+			name = PrimerNolPaySDK;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		98ED3177573BED5DD3E27DEF4B2739CC /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				48EC7337AAB47141C3EBFA3C16971809 /* PrimerNolPaySDK.modulemap */,
+				F0CCC4C7AA98E43D4A52E2764F68085B /* PrimerNolPaySDK-dummy.m */,
+				ECED4D8706483695AC126F803442379C /* PrimerNolPaySDK-Info.plist */,
+				494136D382828AD3A76E461AD0CCE2D3 /* PrimerNolPaySDK-prefix.pch */,
+				2F786C4D48C40127D1B8109DF42C6548 /* PrimerNolPaySDK-umbrella.h */,
+				5C3B9A35288DE6023FFD04D199D0E590 /* PrimerNolPaySDK-xcframeworks.sh */,
+				46DD5106FD63F5D5F0813E51C4333693 /* PrimerNolPaySDK.debug.xcconfig */,
+				EA0CA901AD0ABAFFE7EB642E5A94F370 /* PrimerNolPaySDK.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/PrimerNolPaySDK";
+			sourceTree = "<group>";
+		};
+		9A150F902FB252B94C6332D3191B6367 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				30F2D149EE3BC80B89B07B69046DAC3E /* LICENSE */,
+				EE9E7F048128919BF11E1650B43ACDF3 /* PrimerNolPaySDK.podspec */,
+				EA2C515F02A08CA703986FD7E627FAA2 /* README.md */,
+			);
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		AC60D92F608E613705E7D9BCA94B5F07 /* Targets Support Files */ = {
@@ -341,16 +354,6 @@
 				00BF8866315D433EA5AB790E6709B146 /* Pods-PrimerNolPaySDK_Tests */,
 			);
 			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		B027DCC8013F5A250453E78D48FEA29B /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				A437C33D8F40EA0CE8EEB18FFD542718 /* LICENSE */,
-				B78A4C9CB79A28ADC9BA25A289DC022C /* PrimerNolPaySDK.podspec */,
-				1EEC3D61F781CC30EE588C0C52A95FF5 /* README.md */,
-			);
-			name = Pod;
 			sourceTree = "<group>";
 		};
 		BA4F31F07263C99FC76E66D632A59F09 /* Frameworks */ = {
@@ -365,7 +368,7 @@
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				829801189AA99CB4D90036B437A30F52 /* Development Pods */,
+				593E482F84F91B81D7F701DE806A67D3 /* Development Pods */,
 				BA4F31F07263C99FC76E66D632A59F09 /* Frameworks */,
 				4DCB0EA7BD00EC84DBADB5488807591C /* Pods */,
 				1E4A90E2F40D68CE67592A4310FB6620 /* Products */,
@@ -387,19 +390,19 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		11E0F092A505D6CCC1BC9ECB92FC8E7A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				420A01A1CF4EB0F937D760AC86CB4524 /* PrimerNolPaySDK-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		684C7FAE6902CD5AA44F1339D75BF9F3 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				4016E6350D380F34CECC02380E2BD595 /* Pods-PrimerNolPaySDK_Tests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B49E3D96CDDF40B4B5E2F3E8BD412157 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				EFD75BA33A57366139537E774354F6C7 /* PrimerNolPaySDK-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,8 +437,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				33B817BD9264871A7520821896042A1E /* PBXTargetDependency */,
-				1901B45C64D1523F07FF25954BE29A4E /* PBXTargetDependency */,
+				B2D9BDA341ABE3AEE6A5616A59A31AF5 /* PBXTargetDependency */,
+				F08082187BA9241870E7E78D452401CE /* PBXTargetDependency */,
 			);
 			name = "Pods-PrimerNolPaySDK_Example";
 			productName = Pods_PrimerNolPaySDK_Example;
@@ -454,7 +457,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				EFA330C77064841C3E161EF5703AF54F /* PBXTargetDependency */,
+				1DFF7C6FAE0EAFEDD2C297A202F804B3 /* PBXTargetDependency */,
 			);
 			name = "Pods-PrimerNolPaySDK_Tests";
 			productName = Pods_PrimerNolPaySDK_Tests;
@@ -481,13 +484,13 @@
 		};
 		F8AD2BC35B55A9F034807CF59000CC1C /* PrimerNolPaySDK */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8DDEBB7F1D09AB5E632C07FAA5D35683 /* Build configuration list for PBXNativeTarget "PrimerNolPaySDK" */;
+			buildConfigurationList = 5704953DB43C70800B0E042B668C0358 /* Build configuration list for PBXNativeTarget "PrimerNolPaySDK" */;
 			buildPhases = (
-				B49E3D96CDDF40B4B5E2F3E8BD412157 /* Headers */,
-				0F21DF1C17DE9C5EC5FE4DC01E90E2D2 /* [CP] Copy XCFrameworks */,
-				A2063203F22677D90258A5F53DE938AA /* Sources */,
-				A39CA4077385A18C55A9721784BEB3BA /* Frameworks */,
-				943F518EAFB4F09BF116AAAF8328B8AE /* Resources */,
+				11E0F092A505D6CCC1BC9ECB92FC8E7A /* Headers */,
+				735B3662EF30AD6163BAFE389F5FB72C /* [CP] Copy XCFrameworks */,
+				73773FA40720CE8B24556B70E7C4098A /* Sources */,
+				B6F7949AC747DEB6F4214BA92E6ED3B1 /* Frameworks */,
+				F1196C8A96900D58798ED9C73BA3A8C9 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -536,14 +539,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		943F518EAFB4F09BF116AAAF8328B8AE /* Resources */ = {
+		DAEA1F953296419744C852BAA2739BA1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DAEA1F953296419744C852BAA2739BA1 /* Resources */ = {
+		F1196C8A96900D58798ED9C73BA3A8C9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -560,7 +563,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0F21DF1C17DE9C5EC5FE4DC01E90E2D2 /* [CP] Copy XCFrameworks */ = {
+		735B3662EF30AD6163BAFE389F5FB72C /* [CP] Copy XCFrameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -588,14 +591,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A2063203F22677D90258A5F53DE938AA /* Sources */ = {
+		73773FA40720CE8B24556B70E7C4098A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DFF62D2BF0788499920BDACA25FC567E /* PrimerNolPay.swift in Sources */,
-				227B2FA80765C56014BAD103C1A912FD /* PrimerNolPayCard.swift in Sources */,
-				24BC4F0BC7F5A8028DB5775B77F24BD6 /* PrimerNolPayError.swift in Sources */,
-				4D01C491D250C36EBBD67B983D86A7A1 /* PrimerNolPaySDK-dummy.m in Sources */,
+				878334FCFA94BC0F41B5442BED8EBC95 /* PrimerNolPay.swift in Sources */,
+				30BFFBE9BB20B483120FE30FEB422DB7 /* PrimerNolPayCard.swift in Sources */,
+				8888C56129F84524694CC704B6A3F32A /* PrimerNolPayError.swift in Sources */,
+				332DAACF1567CF1D2D6741DB6862A54D /* PrimerNolPaySDK-dummy.m in Sources */,
+				4DC04B76F7D79B6C02F080B3ED123C06 /* version.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -641,62 +645,27 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1901B45C64D1523F07FF25954BE29A4E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = PrimerNolPaySDK;
-			target = F8AD2BC35B55A9F034807CF59000CC1C /* PrimerNolPaySDK */;
-			targetProxy = BE27B2ADF1A0638CC0B405FF59062222 /* PBXContainerItemProxy */;
-		};
-		33B817BD9264871A7520821896042A1E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = IQKeyboardManagerSwift;
-			target = B490E7485944099E16C9CBD79119D1D4 /* IQKeyboardManagerSwift */;
-			targetProxy = 6A2E16515118AD0262E16373052D3D89 /* PBXContainerItemProxy */;
-		};
-		EFA330C77064841C3E161EF5703AF54F /* PBXTargetDependency */ = {
+		1DFF7C6FAE0EAFEDD2C297A202F804B3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-PrimerNolPaySDK_Example";
 			target = 326C92AA105A8BDA7FCB6AC432DC856A /* Pods-PrimerNolPaySDK_Example */;
-			targetProxy = D9F6D46EE01E5E1524D3465E0DF569BC /* PBXContainerItemProxy */;
+			targetProxy = 51DC8F68F7C300F3DF0077F0110D6CD6 /* PBXContainerItemProxy */;
+		};
+		B2D9BDA341ABE3AEE6A5616A59A31AF5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = IQKeyboardManagerSwift;
+			target = B490E7485944099E16C9CBD79119D1D4 /* IQKeyboardManagerSwift */;
+			targetProxy = 2ECB4644F7ADDA87D7C308518CE9EAF3 /* PBXContainerItemProxy */;
+		};
+		F08082187BA9241870E7E78D452401CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PrimerNolPaySDK;
+			target = F8AD2BC35B55A9F034807CF59000CC1C /* PrimerNolPaySDK */;
+			targetProxy = 6D962099DE033C83B510DCFACC69214F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		040BED76E239DB3928A9C4DCCD6D71BF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CBF5FC03197DBAD4C38070DF1AD6C091 /* PrimerNolPaySDK.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/PrimerNolPaySDK/PrimerNolPaySDK-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PrimerNolPaySDK/PrimerNolPaySDK-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/PrimerNolPaySDK/PrimerNolPaySDK.modulemap";
-				PRODUCT_MODULE_NAME = PrimerNolPaySDK;
-				PRODUCT_NAME = PrimerNolPaySDK;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		072CF24DD597B28B1EC6485A97C6DC75 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -834,6 +803,41 @@
 			};
 			name = Release;
 		};
+		6A27406BD891AF8EC2A082BA4612AA17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46DD5106FD63F5D5F0813E51C4333693 /* PrimerNolPaySDK.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PrimerNolPaySDK/PrimerNolPaySDK-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PrimerNolPaySDK/PrimerNolPaySDK-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/PrimerNolPaySDK/PrimerNolPaySDK.modulemap";
+				PRODUCT_MODULE_NAME = PrimerNolPaySDK;
+				PRODUCT_NAME = PrimerNolPaySDK;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		748C7417728DB5217F94865B40B1E686 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DAF7FE9F1447111EC4F646B5B5077B6A /* IQKeyboardManagerSwift.debug.xcconfig */;
@@ -944,42 +948,6 @@
 			};
 			name = Release;
 		};
-		83B7A8F4082AA18819B0C06D12444044 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 571C7AFF708356C2D5720D3F09A04598 /* PrimerNolPaySDK.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/PrimerNolPaySDK/PrimerNolPaySDK-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PrimerNolPaySDK/PrimerNolPaySDK-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/PrimerNolPaySDK/PrimerNolPaySDK.modulemap";
-				PRODUCT_MODULE_NAME = PrimerNolPaySDK;
-				PRODUCT_NAME = PrimerNolPaySDK;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		94CA9DF48CE575FECE47DDD8786D50E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1046,6 +1014,42 @@
 			};
 			name = Debug;
 		};
+		B5965EEA3ACD6548C58903463BDE1EBB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA0CA901AD0ABAFFE7EB642E5A94F370 /* PrimerNolPaySDK.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PrimerNolPaySDK/PrimerNolPaySDK-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PrimerNolPaySDK/PrimerNolPaySDK-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/PrimerNolPaySDK/PrimerNolPaySDK.modulemap";
+				PRODUCT_MODULE_NAME = PrimerNolPaySDK;
+				PRODUCT_NAME = PrimerNolPaySDK;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		C76AA726FD1DC2DDCE57161BF4818A8C /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2DBB1613E5A0BC4CAF3DE161C1976D06 /* IQKeyboardManagerSwift.release.xcconfig */;
@@ -1103,20 +1107,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		5704953DB43C70800B0E042B668C0358 /* Build configuration list for PBXNativeTarget "PrimerNolPaySDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A27406BD891AF8EC2A082BA4612AA17 /* Debug */,
+				B5965EEA3ACD6548C58903463BDE1EBB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		66D968C95D47ABE4D5AD96E20D4C150D /* Build configuration list for PBXNativeTarget "Pods-PrimerNolPaySDK_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				826B9619AD29E9F4DA3A138181F06FCB /* Debug */,
 				58E7B88B7A9BD4F9F570D1A4B548AAE2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8DDEBB7F1D09AB5E632C07FAA5D35683 /* Build configuration list for PBXNativeTarget "PrimerNolPaySDK" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				040BED76E239DB3928A9C4DCCD6D71BF /* Debug */,
-				83B7A8F4082AA18819B0C06D12444044 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -247,7 +247,7 @@ class ViewController: UIViewController {
                 
             case .success(let cardNumber):
                 self.cardNumberLabel.text = cardNumber
-                self.nolPay.makeLinkingTokenFor(cardNumber: cardNumber) { result in
+                self.nolPay.makeLinkingToken(for: cardNumber) { result in
                     switch result {
                         
                     case .success(let token):
@@ -277,7 +277,7 @@ class ViewController: UIViewController {
             return
         }
         
-        nolPay.sendLinkOTPTo(mobileNumber: phoneNumber, withCountryCode: countryCode, andToken: linkToken) { result in
+        nolPay.sendLinkOTP(to: phoneNumber, with: countryCode, and: linkToken) { result in
             switch result {
             case .success(let success):
                 if success {
@@ -304,7 +304,7 @@ class ViewController: UIViewController {
             return
         }
         
-        nolPay.linkCardFor(otp: otp, andLinkToken: linkToken) { result in
+        nolPay.linkCard(for: otp, and: linkToken) { result in
             switch result {
             case .success(let success):
                 if success {
@@ -336,7 +336,7 @@ class ViewController: UIViewController {
             return
         }
         
-        nolPay.sendUnlinkOTPTo(mobileNumber: mobileNumber, withCountryCode: countryCode, andCardNumber: cardNumber) { result in
+        nolPay.sendUnlinkOTP(to: mobileNumber, with: countryCode, and: cardNumber) { result in
             switch result {
                 
             case .success((_, let token)):
@@ -365,7 +365,7 @@ class ViewController: UIViewController {
             return
         }
         
-        nolPay.unlinkCardWith(cardNumber: cardNumber, otp: otp, andUnlinkToken: unlinkToken) { result in
+        nolPay.unlinkCard(with: cardNumber, otp: otp, and: unlinkToken) { result in
             switch result {
                 
             case .success(let success):
@@ -392,7 +392,7 @@ class ViewController: UIViewController {
             return
         }
         
-        nolPay.getAvaliableCardsFor(mobileNumber: phoneNumber, withCountryCode: countryCode) { result in
+        nolPay.getAvailableCards(for: phoneNumber, with: countryCode) { result in
             switch result {
                 
             case .success(let cards):
@@ -424,7 +424,7 @@ class ViewController: UIViewController {
             return
         }
         
-        nolPay.requestPaymentFor(cardNumber: card.cardNumber, andTransactionNumber: transactionNumber) { result in
+        nolPay.requestPayment(for: card.cardNumber, and: transactionNumber) { result in
             self.paymentInProgress = false
             
             switch result {
