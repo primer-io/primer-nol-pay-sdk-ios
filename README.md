@@ -174,3 +174,4 @@ See the [LICENSE](LICENSE) file for more details.
 ## Contributions:
 
 Pull requests are welcome! We'd love to hear your feedback and improvements.
+
