@@ -1,6 +1,6 @@
 [tool.commitizen]
 version_name = "semver"
-version = "0.0.0"
+version = "0.1.0"
 version_files = [
   "Sources/PrimerNolPaySDK/Classes/version.swift:let PrimerNolPayVersion",
   "PrimerNolPaySDK.podspec:spec.version"
