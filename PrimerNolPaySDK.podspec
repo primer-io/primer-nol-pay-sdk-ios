@@ -19,10 +19,14 @@ A wrapper around the Nol payment SDK.
   s.author           = { 'Primer' => 'dx@primer.io' }
   s.source           = { :git => 'https://github.com/primer-io/primer-nol-pay-sdk-ios.git', :tag => s.version.to_s }
 
+  s.swift_version = '5'
   s.ios.deployment_target = '13.1'
 
   s.ios.source_files = 'Sources/PrimerNolPaySDK/Classes/*.{swift}'
   s.ios.frameworks  = 'Foundation', 'UIKit'
   s.ios.vendored_frameworks = 'Sources/Frameworks/TransitSDK.xcframework'
+
+  s.ios.pod_target_xcconfig = { "BUILD_LIBRARY_FOR_DISTRIBUTION" => 'YES' }
+  s.xcconfig = { 'OTHER_SWIFT_FLAGS' => '-no-verify-emitted-module-interface' }
 
 end
