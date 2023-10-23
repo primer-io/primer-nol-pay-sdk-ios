@@ -1,1 +1,1 @@
-let PrimerNolPayVersion = "0.1.0"
+let PrimerNolPayVersion = "0.1.1"
