@@ -10,7 +10,9 @@ import TransitSDK
 import CoreNFC
 
 public class PrimerNolPay {
-    
+    public static var version: String = VersionUtils.wrapperSDKVersionNumber
+    public static var transitSDKVersion = VersionUtils.transitSDKVersionNumber
+
     private let appSecretHandler: (String, String) async throws -> String
     
     /// Initialisation of the wrapper SDK
