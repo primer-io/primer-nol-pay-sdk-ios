@@ -1,14 +1,12 @@
-name: Post PR Merge
+name: Post Release PR Merge
 
-on: 
+on:
   pull_request:
-    branches:
-      - release/next
     types: [ closed ]
 
 jobs:
   release_merge:
-    if: github.event.pull_request.merged == true
+    if: github.head_ref == 'release/next' && github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - name: Git - Checkout
@@ -25,9 +23,12 @@ jobs:
         run: |
           git tag $RELEASE_VERSION
           git push origin $RELEASE_VERSION
-      - name: Create a Release
-        uses: elgohr/Github-Release-Action@v4
-        env:
-          GITHUB_TOKEN: ${{ secrets.RELEASE_ACCESS_TOKEN }}
+      - name: Record changelog for current release
+        run: cz changelog $RELEASE_VERSION --file-name="release.md"
+      - name: Create release
+        uses: ncipollo/release-action@v1
         with:
           title: Release ${{ env.RELEASE_VERSION }}
+          name: "Release ${{ env.RELEASE_VERSION }}"
+          tag: ${{ env.RELEASE_VERSION }}
+          bodyFile: "release.md"
