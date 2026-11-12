@@ -19,18 +19,19 @@ The SDK provides a simple UI to demonstrate all available flows for implementati
 
 ## Installation:
 
-### Using CocoaPods:
+### Swift Package Manager:
 
-To integrate \`primer-nol-pay-sdk-ios\` into your Xcode project using CocoaPods, add the following line to your \`Podfile\`:
+Add `https://github.com/primer-io/primer-sdk-ios` to your app with the Exact Version rule, set to the PrimerSDK version that ends in `-3ds-nolpay`. That version brings in PrimerNolPaySDK. Do not add this package next to PrimerSDK yourself, because PrimerSDK may then build without it.
+
+### CocoaPods:
+
+Add the Primer spec repo and the CocoaPods CDN at the top of your Podfile, in this order. Then add the pod:
 
 ```ruby
+source 'https://github.com/primer-io/primer-sdk-ios-specs.git'
+source 'https://cdn.cocoapods.org/'
+
 pod 'PrimerNolPaySDK'
-```
-
-Then, run the following command in the terminal:
-
-```
-pod install
 ```
 
 ## Initialization:
