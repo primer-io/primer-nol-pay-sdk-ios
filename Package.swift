@@ -20,6 +20,7 @@ let package = Package(
     targets: [
         .target(
             name: "PrimerNolPaySDK",
+            dependencies: ["TransitSDKFramework"],
             path: "Sources/PrimerNolPaySDK"
         ),
         .binaryTarget(
