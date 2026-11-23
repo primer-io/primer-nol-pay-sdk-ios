@@ -1,3 +1,9 @@
+## 1.0.3 (2026-11-23)
+
+### Fix
+
+- Declare the TransitSDK dependency in Package.swift (ORC-7739) (#17)
+
 ## 1.0.2 (2024-05-20)
 - Added Package.swift to allow use of SDK via SPM
 
